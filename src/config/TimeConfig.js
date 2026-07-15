@@ -1,0 +1,8 @@
+module.exports = {
+    MINUTES_PER_HOUR: 60,
+    HOURS_PER_DAY: 24,
+    DAYS_PER_MONTH: 30,
+    MONTHS_PER_YEAR: 12,
+    SEASONS_PER_YEAR: 4,
+    TICKS_PER_MINUTE: 1
+};
