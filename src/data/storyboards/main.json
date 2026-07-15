@@ -1,0 +1,96 @@
+[
+    {
+        "id": "SB_0001",
+        "title": "Gerbang Kota",
+        "description": "Kabut tipis menyelimuti gerbang kota. Seorang penjaga berdiri memperhatikan setiap orang yang datang.",
+        "choices": [
+            {
+                "text": "Dekati penjaga",
+                "target": "SB_0002"
+            },
+            {
+                "text": "Periksa gerbang",
+                "target": "SB_0003"
+            },
+            {
+                "text": "Pergi dari tempat ini",
+                "target": "SB_0004"
+            }
+        ]
+    },
+    {
+        "id": "SB_0002",
+        "title": "Penjaga Tua",
+        "description": "Penjaga itu menatapmu. 'Jarang ada orang datang ke kota ini saat kabut turun.'",
+        "choices": [
+            {
+                "text": "Tanyakan tentang kota",
+                "target": "SB_0005"
+            },
+            {
+                "text": "Masuk ke kota",
+                "target": "SB_0006"
+            }
+        ]
+    },
+    {
+        "id": "SB_0003",
+        "title": "Gerbang Berukir",
+        "description": "Kamu menemukan simbol kuno di sisi gerbang. Ukiran itu terlihat seperti bagian dari teka-teki.",
+        "choices": [
+            {
+                "text": "Pelajari simbol",
+                "target": "SB_0007"
+            },
+            {
+                "text": "Kembali ke penjaga",
+                "target": "SB_0002"
+            }
+        ]
+    },
+    {
+        "id": "SB_0004",
+        "title": "Jalan Berkabut",
+        "description": "Kamu meninggalkan gerbang kota dan berjalan menuju hutan yang diselimuti kabut.",
+        "choices": [
+            {
+                "text": "Kembali ke kota",
+                "target": "SB_0001"
+            }
+        
+        ]
+    },
+{
+    "id": "SB_0005",
+    "title": "Rahasia Kota",
+    "description": "Penjaga menceritakan bahwa kota ini menyimpan rahasia yang hilang selama ratusan tahun.",
+    "choices": [
+        {
+            "text": "Tanyakan lebih lanjut",
+            "target": "SB_0002"
+        }
+    ]
+},
+{
+    "id": "SB_0006",
+    "title": "Pintu Kota Terbuka",
+    "description": "Penjaga membuka gerbang dan membiarkanmu memasuki kota tua.",
+    "choices": [
+        {
+            "text": "Masuk ke alun-alun",
+            "target": "SB_0005"
+        }
+    ]
+},
+{
+    "id": "SB_0007",
+    "title": "Simbol Kuno",
+    "description": "Kamu menemukan bahwa simbol tersebut berkaitan dengan sejarah kota yang terlupakan.",
+    "choices": [
+        {
+            "text": "Kembali ke gerbang",
+            "target": "SB_0003"
+        }
+    ]
+}
+]

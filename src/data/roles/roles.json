@@ -1,0 +1,37 @@
+[
+    {
+        "id": "vanguard",
+        "name": "Vanguard",
+        "description": "Petarung garis depan yang kuat dalam bertahan dan menghadapi ancaman langsung."
+    },
+    {
+        "id": "ranger",
+        "name": "Ranger",
+        "description": "Pengintai yang ahli membaca lingkungan dan menemukan jalur tersembunyi."
+    },
+    {
+        "id": "scholar",
+        "name": "Scholar",
+        "description": "Peneliti yang memiliki kemampuan analisis, sejarah, dan pemecahan misteri."
+    },
+    {
+        "id": "artificer",
+        "name": "Artificer",
+        "description": "Pencipta alat yang memahami teknologi dan mekanisme kuno."
+    },
+    {
+        "id": "mystic",
+        "name": "Mystic",
+        "description": "Pengguna energi misterius yang mampu memahami fenomena tidak biasa."
+    },
+    {
+        "id": "diplomat",
+        "name": "Diplomat",
+        "description": "Ahli komunikasi yang mampu membuka jalan melalui interaksi sosial."
+    },
+    {
+        "id": "medic",
+        "name": "Medic",
+        "description": "Pendukung yang memahami penyembuhan dan kondisi pemain."
+    }
+]
