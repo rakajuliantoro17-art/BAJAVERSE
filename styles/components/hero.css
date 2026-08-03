@@ -1,1 +1,332 @@
 
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
+
+HERO COMPONENT
+Version : 0.0.1 Alpha
+
+Description:
+Narrative Hero Section
+
+Used in:
+- Home
+- Chapter
+- Region
+- Kingdom
+- Event
+- Campaign
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.hero{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+}
+
+/* ======================================================
+   BACKGROUND
+====================================================== */
+
+.hero-background{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-3;
+
+}
+
+.hero-background img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* ======================================================
+   OVERLAY
+====================================================== */
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-2;
+
+    background:
+
+        linear-gradient(
+
+            to top,
+
+            rgba(0,0,0,.88),
+
+            rgba(0,0,0,.35),
+
+            rgba(0,0,0,.15)
+
+        );
+
+}
+
+/* ======================================================
+   DECORATION
+====================================================== */
+
+.hero-decoration{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+/* ======================================================
+   CONTENT
+====================================================== */
+
+.hero-content{
+
+    width:min(1200px,92vw);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-xl);
+
+    padding:
+
+        calc(var(--space-3xl) * 2)
+
+        var(--space-xl);
+
+}
+
+/* ======================================================
+   EYEBROW
+====================================================== */
+
+.hero-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:var(--space-sm);
+
+    font-size:var(--font-size-sm);
+
+    letter-spacing:.25em;
+
+    text-transform:uppercase;
+
+    color:var(--color-primary);
+
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
+
+.hero-title{
+
+    max-width:12ch;
+
+    font-family:var(--font-heading);
+
+    font-size:clamp(3rem,7vw,6.5rem);
+
+    line-height:1;
+
+    color:var(--color-text-inverse);
+
+    text-wrap:balance;
+
+}
+
+/* ======================================================
+   DESCRIPTION
+====================================================== */
+
+.hero-description{
+
+    max-width:62ch;
+
+    font-family:var(--font-story);
+
+    font-size:var(--font-size-lg);
+
+    line-height:1.9;
+
+    color:rgba(255,255,255,.88);
+
+}
+
+/* ======================================================
+   ACTIONS
+====================================================== */
+
+.hero-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:var(--space-md);
+
+}
+
+/* ======================================================
+   META
+====================================================== */
+
+.hero-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:var(--space-lg);
+
+    margin-top:var(--space-lg);
+
+}
+
+.hero-meta-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-xs);
+
+}
+
+.hero-meta-label{
+
+    font-size:var(--font-size-xs);
+
+    color:var(--color-text-secondary);
+
+    text-transform:uppercase;
+
+    letter-spacing:.15em;
+
+}
+
+.hero-meta-value{
+
+    font-size:var(--font-size-md);
+
+    font-weight:600;
+
+    color:var(--color-text-inverse);
+
+}
+
+/* ======================================================
+   SCROLL INDICATOR
+====================================================== */
+
+.hero-scroll{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:var(--space-xl);
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:var(--space-xs);
+
+    color:rgba(255,255,255,.75);
+
+    font-size:var(--font-size-xs);
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:768px){
+
+    .hero{
+
+        min-height:100svh;
+
+    }
+
+    .hero-content{
+
+        padding:
+
+            var(--space-3xl)
+
+            var(--space-lg);
+
+    }
+
+    .hero-title{
+
+        font-size:clamp(2.5rem,11vw,4rem);
+
+    }
+
+    .hero-description{
+
+        font-size:var(--font-size-md);
+
+    }
+
+    .hero-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+}
