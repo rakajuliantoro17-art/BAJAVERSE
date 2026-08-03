@@ -1,1 +1,132 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+TYPOGRAPHY SYSTEM
+Version : 0.0.1 Alpha
+
+Description:
+Global typography tokens.
+
+Rule:
+- Never hardcode font sizes.
+- Always use typography variables.
+- Mobile First.
+
+==========================================================
+*/
+
+:root{
+
+    /* ==================================================
+       FONT FAMILY
+    ================================================== */
+
+    --font-heading:
+        "Cinzel",
+        serif;
+
+    --font-body:
+        "Inter",
+        sans-serif;
+
+    --font-dialogue:
+        "Lora",
+        serif;
+
+    --font-ui:
+        "Inter",
+        sans-serif;
+
+    --font-code:
+        "JetBrains Mono",
+        monospace;
+
+    /* ==================================================
+       FONT SIZE
+    ================================================== */
+
+    --text-xs: .75rem;      /* 12px */
+
+    --text-sm: .875rem;     /* 14px */
+
+    --text-base: 1rem;      /* 16px */
+
+    --text-lg: 1.125rem;    /* 18px */
+
+    --text-xl: 1.25rem;     /* 20px */
+
+    --text-2xl: 1.5rem;     /* 24px */
+
+    --text-3xl: 2rem;       /* 32px */
+
+    --text-4xl: 2.5rem;     /* 40px */
+
+    --text-5xl: 3rem;       /* 48px */
+
+    --text-6xl: 4rem;       /* 64px */
+
+    /* ==================================================
+       FONT WEIGHT
+    ================================================== */
+
+    --weight-light: 300;
+
+    --weight-regular: 400;
+
+    --weight-medium: 500;
+
+    --weight-semibold: 600;
+
+    --weight-bold: 700;
+
+    --weight-black: 900;
+
+    /* ==================================================
+       LINE HEIGHT
+    ================================================== */
+
+    --leading-tight: 1.2;
+
+    --leading-normal: 1.5;
+
+    --leading-relaxed: 1.8;
+
+    --leading-story: 2;
+
+    /* ==================================================
+       LETTER SPACING
+    ================================================== */
+
+    --tracking-tight: -.02em;
+
+    --tracking-normal: 0;
+
+    --tracking-wide: .05em;
+
+    --tracking-wider: .12em;
+
+    --tracking-title: .18em;
+
+    /* ==================================================
+       SEMANTIC TOKENS
+    ================================================== */
+
+    --font-display: var(--font-heading);
+
+    --font-title: var(--font-heading);
+
+    --font-subtitle: var(--font-heading);
+
+    --font-paragraph: var(--font-body);
+
+    --font-story: var(--font-dialogue);
+
+    --font-navigation: var(--font-ui);
+
+    --font-button: var(--font-ui);
+
+    --font-caption: var(--font-ui);
+
+}
