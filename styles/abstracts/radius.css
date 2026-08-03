@@ -1,1 +1,92 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+RADIUS SYSTEM
+Version : 0.0.1 Alpha
+
+Description:
+Global border radius tokens.
+
+Inspired by:
+- Ancient manuscripts
+- Wooden frames
+- Stone architecture
+- Royal ornaments
+
+Always use CSS variables.
+Never hardcode border-radius values.
+
+==========================================================
+*/
+
+:root{
+
+    /* ==========================================
+       BASE RADIUS SCALE
+    ========================================== */
+
+    --radius-none: 0px;
+
+    --radius-xs: 2px;
+
+    --radius-sm: 4px;
+
+    --radius-md: 8px;
+
+    --radius-lg: 12px;
+
+    --radius-xl: 16px;
+
+    --radius-2xl: 24px;
+
+    --radius-3xl: 32px;
+
+    --radius-full: 9999px;
+
+    /* ==========================================
+       COMPONENT TOKENS
+    ========================================== */
+
+    --radius-button: var(--radius-md);
+
+    --radius-card: var(--radius-lg);
+
+    --radius-panel: var(--radius-xl);
+
+    --radius-dialog: var(--radius-xl);
+
+    --radius-modal: var(--radius-2xl);
+
+    --radius-input: var(--radius-md);
+
+    --radius-image: var(--radius-lg);
+
+    --radius-avatar: var(--radius-full);
+
+    --radius-badge: var(--radius-full);
+
+    --radius-tooltip: var(--radius-md);
+
+    /* ==========================================
+       STORY EXPERIENCE
+    ========================================== */
+
+    --radius-book: var(--radius-sm);
+
+    --radius-manuscript: var(--radius-xs);
+
+    --radius-chronicle: var(--radius-md);
+
+    --radius-choice: var(--radius-lg);
+
+    --radius-dialogue: var(--radius-lg);
+
+    --radius-map-card: var(--radius-xl);
+
+    --radius-bestiary: var(--radius-lg);
+
+    --radius-kingdom-card: var(--radius-xl);
+
+}
