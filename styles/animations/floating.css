@@ -1,1 +1,275 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+FLOATING ANIMATION SYSTEM
+Version : 0.0.1 Alpha
+
+Description:
+Ambient floating animations.
+
+Inspired by:
+- Floating leaves
+- Ancient relics
+- Forest spirits
+- Hanging lanterns
+- Sacred artifacts
+
+==========================================================
+*/
+
+/* ======================================================
+   KEYFRAMES
+====================================================== */
+
+/* Gentle Float */
+
+@keyframes float-gentle{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    25%{
+
+        transform:
+            translateY(-4px)
+            rotate(.5deg);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-8px)
+            rotate(0deg);
+
+    }
+
+    75%{
+
+        transform:
+            translateY(-4px)
+            rotate(-.5deg);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+}
+
+/* Slow Float */
+
+@keyframes float-slow{
+
+    0%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* Drift */
+
+@keyframes float-drift{
+
+    0%{
+
+        transform:
+            translate(0,0);
+
+    }
+
+    25%{
+
+        transform:
+            translate(6px,-4px);
+
+    }
+
+    50%{
+
+        transform:
+            translate(0,-10px);
+
+    }
+
+    75%{
+
+        transform:
+            translate(-6px,-4px);
+
+    }
+
+    100%{
+
+        transform:
+            translate(0,0);
+
+    }
+
+}
+
+/* Pulse Float */
+
+@keyframes float-pulse{
+
+    0%{
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-6px)
+            scale(1.03);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+/* ======================================================
+   UTILITIES
+====================================================== */
+
+.float{
+
+    animation:
+        float-gentle 6s ease-in-out infinite;
+
+    will-change: transform;
+
+}
+
+.float-slow{
+
+    animation:
+        float-slow 10s ease-in-out infinite;
+
+    will-change: transform;
+
+}
+
+.float-drift{
+
+    animation:
+        float-drift 14s ease-in-out infinite;
+
+    will-change: transform;
+
+}
+
+.float-pulse{
+
+    animation:
+        float-pulse 8s ease-in-out infinite;
+
+    will-change: transform;
+
+}
+
+/* ======================================================
+   SPEED MODIFIERS
+====================================================== */
+
+.float-fast{
+
+    animation-duration:4s;
+
+}
+
+.float-normal{
+
+    animation-duration:7s;
+
+}
+
+.float-very-slow{
+
+    animation-duration:14s;
+
+}
+
+/* ======================================================
+   DELAY
+====================================================== */
+
+.float-delay-1{
+
+    animation-delay:.5s;
+
+}
+
+.float-delay-2{
+
+    animation-delay:1s;
+
+}
+
+.float-delay-3{
+
+    animation-delay:1.5s;
+
+}
+
+.float-delay-4{
+
+    animation-delay:2s;
+
+}
+
+/* ======================================================
+   REDUCED MOTION
+====================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    .float,
+    .float-slow,
+    .float-drift,
+    .float-pulse{
+
+        animation:none;
+
+    }
+
+}
