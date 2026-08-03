@@ -1,1 +1,269 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+LOADING COMPONENT
+Version : 0.0.1 Alpha
+
+Description:
+Global loading system.
+
+Used in:
+- Initial Loading
+- Route Transition
+- Story Loading
+- Save / Load
+- World Loading
+- API Loading
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.loading{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(12,12,16,.94);
+
+    backdrop-filter:blur(14px);
+
+    z-index:var(--z-loading);
+
+}
+
+/* ======================================================
+   CONTAINER
+====================================================== */
+
+.loading-container{
+
+    width:min(420px,90vw);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:var(--space-xl);
+
+    text-align:center;
+
+}
+
+/* ======================================================
+   LOGO
+====================================================== */
+
+.loading-logo{
+
+    width:96px;
+
+    height:96px;
+
+    object-fit:contain;
+
+    animation:
+
+        floating 4s ease-in-out infinite;
+
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
+
+.loading-title{
+
+    font-family:var(--font-heading);
+
+    font-size:var(--font-size-2xl);
+
+    color:var(--color-text-inverse);
+
+}
+
+/* ======================================================
+   MESSAGE
+====================================================== */
+
+.loading-message{
+
+    max-width:40ch;
+
+    font-family:var(--font-story);
+
+    font-size:var(--font-size-md);
+
+    line-height:1.8;
+
+    color:var(--color-text-secondary);
+
+}
+
+/* ======================================================
+   SPINNER
+====================================================== */
+
+.loading-spinner{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    border:4px solid rgba(255,255,255,.15);
+
+    border-top-color:var(--color-primary);
+
+    animation:
+
+        loading-spin .9s linear infinite;
+
+}
+
+/* ======================================================
+   PROGRESS
+====================================================== */
+
+.loading-progress{
+
+    width:100%;
+
+    height:8px;
+
+    overflow:hidden;
+
+    border-radius:var(--radius-full);
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.loading-progress-bar{
+
+    width:0;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            var(--color-primary),
+
+            var(--color-primary-dark)
+
+        );
+
+    border-radius:inherit;
+
+    transition:
+
+        width .35s ease;
+
+}
+
+/* ======================================================
+   PERCENT
+====================================================== */
+
+.loading-percent{
+
+    font-size:var(--font-size-sm);
+
+    font-weight:600;
+
+    color:var(--color-primary);
+
+}
+
+/* ======================================================
+   HIDDEN
+====================================================== */
+
+.loading[data-state="hidden"]{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+
+        opacity .4s ease,
+
+        visibility .4s ease;
+
+}
+
+/* ======================================================
+   STATES
+====================================================== */
+
+.loading[data-state="loading"]{
+
+    opacity:1;
+
+}
+
+.loading[data-state="complete"]{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+/* ======================================================
+   ANIMATION
+====================================================== */
+
+@keyframes loading-spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:768px){
+
+    .loading-container{
+
+        gap:var(--space-lg);
+
+    }
+
+    .loading-logo{
+
+        width:72px;
+
+        height:72px;
+
+    }
+
+}
