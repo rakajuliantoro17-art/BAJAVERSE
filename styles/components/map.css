@@ -1,1 +1,254 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+WORLD MAP COMPONENT
+Version : 0.0.1 Alpha
+
+Description:
+Interactive world map component.
+
+Used in:
+- World Map
+- Region Selection
+- Kingdom Selection
+- Story Progress
+- Fast Travel (Future)
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.map{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    background:var(--color-background);
+
+}
+
+/* ======================================================
+   CANVAS
+====================================================== */
+
+.map-canvas{
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    overflow:hidden;
+
+    border-radius:var(--radius-2xl);
+
+    border:1px solid var(--color-border);
+
+    background:var(--color-surface);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/* ======================================================
+   IMAGE
+====================================================== */
+
+.map-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    user-select:none;
+
+    pointer-events:none;
+
+}
+
+/* ======================================================
+   MARKERS
+====================================================== */
+
+.map-markers{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+/* ======================================================
+   MARKER
+====================================================== */
+
+.map-marker{
+
+    position:absolute;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:22px;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    border:2px solid #fff;
+
+    background:var(--color-primary);
+
+    cursor:pointer;
+
+    transform:translate(-50%,-50%);
+
+    transition:
+
+        transform var(--transition-fast),
+
+        box-shadow var(--transition-fast),
+
+        background-color var(--transition-fast);
+
+}
+
+.map-marker:hover{
+
+    transform:
+
+        translate(-50%,-50%)
+
+        scale(1.15);
+
+    box-shadow:
+
+        0 0 16px rgba(255,215,0,.45);
+
+}
+
+/* ======================================================
+   LABEL
+====================================================== */
+
+.map-label{
+
+    position:absolute;
+
+    top:calc(100% + .5rem);
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    white-space:nowrap;
+
+    font-size:var(--font-size-xs);
+
+    color:var(--color-text-inverse);
+
+    text-shadow:0 2px 6px rgba(0,0,0,.6);
+
+}
+
+/* ======================================================
+   TOOLTIP
+====================================================== */
+
+.map-tooltip{
+
+    position:absolute;
+
+    min-width:220px;
+
+    padding:var(--space-md);
+
+    border-radius:var(--radius-lg);
+
+    background:rgba(20,20,24,.92);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid var(--color-border);
+
+    box-shadow:var(--shadow-lg);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+
+        opacity var(--transition-fast);
+
+}
+
+.map-marker:hover + .map-tooltip{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/* ======================================================
+   STATES
+====================================================== */
+
+.map-marker[data-state="locked"]{
+
+    background:var(--color-secondary);
+
+    opacity:.45;
+
+}
+
+.map-marker[data-state="active"]{
+
+    background:var(--color-success);
+
+}
+
+.map-marker[data-state="completed"]{
+
+    background:var(--color-primary);
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:768px){
+
+    .map-canvas{
+
+        aspect-ratio:4/5;
+
+    }
+
+    .map-marker{
+
+        width:18px;
+
+    }
+
+}
