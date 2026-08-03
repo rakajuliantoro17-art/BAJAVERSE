@@ -1,1 +1,241 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+FIREFLIES ANIMATION
+Version : 0.0.1 Alpha
+
+Description:
+Ambient fireflies animation inspired by
+the tropical forests of Nusantara.
+
+==========================================================
+*/
+
+/* ======================================================
+   CONTAINER
+====================================================== */
+
+.fireflies{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:var(--z-base);
+
+}
+
+/* ======================================================
+   PARTICLE
+====================================================== */
+
+.firefly{
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:rgba(255,230,120,.95);
+
+    box-shadow:
+
+        0 0 8px rgba(255,220,120,.8),
+
+        0 0 18px rgba(255,220,120,.45);
+
+    animation:
+
+        firefly-float linear infinite,
+
+        firefly-glow ease-in-out infinite;
+
+    will-change:transform,opacity;
+
+}
+
+/* ======================================================
+   FLOAT
+====================================================== */
+
+@keyframes firefly-float{
+
+    0%{
+
+        transform:
+
+            translate3d(0,0,0)
+            scale(.8);
+
+    }
+
+    25%{
+
+        transform:
+
+            translate3d(30px,-40px,0)
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+
+            translate3d(-25px,-90px,0)
+            scale(.9);
+
+    }
+
+    75%{
+
+        transform:
+
+            translate3d(20px,-140px,0)
+            scale(1.05);
+
+    }
+
+    100%{
+
+        transform:
+
+            translate3d(0,-220px,0)
+            scale(.8);
+
+    }
+
+}
+
+/* ======================================================
+   GLOW
+====================================================== */
+
+@keyframes firefly-glow{
+
+    0%{
+
+        opacity:.2;
+
+    }
+
+    25%{
+
+        opacity:.9;
+
+    }
+
+    50%{
+
+        opacity:.45;
+
+    }
+
+    75%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:.2;
+
+    }
+
+}
+
+/* ======================================================
+   SIZE VARIANTS
+====================================================== */
+
+.firefly-xs{
+
+    width:3px;
+
+    height:3px;
+
+}
+
+.firefly-sm{
+
+    width:5px;
+
+    height:5px;
+
+}
+
+.firefly-md{
+
+    width:7px;
+
+    height:7px;
+
+}
+
+.firefly-lg{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+/* ======================================================
+   SPEED VARIANTS
+====================================================== */
+
+.firefly-slow{
+
+    animation-duration:
+
+        18s,
+
+        3s;
+
+}
+
+.firefly-normal{
+
+    animation-duration:
+
+        12s,
+
+        2.5s;
+
+}
+
+.firefly-fast{
+
+    animation-duration:
+
+        8s,
+
+        2s;
+
+}
+
+/* ======================================================
+   REDUCED MOTION
+====================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    .firefly{
+
+        animation:none;
+
+        opacity:.35;
+
+    }
+
+}
