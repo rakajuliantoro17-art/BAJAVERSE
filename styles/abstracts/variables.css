@@ -1,1 +1,200 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+GLOBAL VARIABLES
+Version : 0.0.1 Alpha
+
+Description:
+Master design tokens and global variables.
+
+This file defines:
+- Layout
+- Transition
+- Blur
+- Opacity
+- Glassmorphism
+- Container
+- Reading Width
+- Navigation
+- Layer
+- Motion
+
+DO NOT define colors or typography here.
+Those belong to their own files.
+
+==========================================================
+*/
+
+:root{
+
+    /* ==================================================
+       APPLICATION
+    ================================================== */
+
+    --app-name: "BAJAVERSE";
+
+    --app-version: "0.0.1";
+
+    /* ==================================================
+       LAYOUT
+    ================================================== */
+
+    --navbar-height: 72px;
+
+    --footer-height: 96px;
+
+    --sidebar-width: 320px;
+
+    --container-xs: 480px;
+
+    --container-sm: 640px;
+
+    --container-md: 768px;
+
+    --container-lg: 1024px;
+
+    --container-xl: 1280px;
+
+    --container-2xl: 1440px;
+
+    --container-fluid: 100%;
+
+    /* ==================================================
+       READING EXPERIENCE
+    ================================================== */
+
+    --reading-width: 760px;
+
+    --dialog-width: 840px;
+
+    --story-width: 900px;
+
+    --book-width: 960px;
+
+    --timeline-width: 1200px;
+
+    --world-width: 1440px;
+
+    /* ==================================================
+       GLASSMORPHISM
+    ================================================== */
+
+    --glass-opacity: .08;
+
+    --glass-border-opacity: .10;
+
+    --glass-blur: 20px;
+
+    --glass-saturation: 180%;
+
+    /* ==================================================
+       BACKDROP
+    ================================================== */
+
+    --backdrop-blur: 24px;
+
+    --overlay-opacity: .72;
+
+    /* ==================================================
+       BORDER
+    ================================================== */
+
+    --border-width: 1px;
+
+    --border-width-bold: 2px;
+
+    /* ==================================================
+       ICON
+    ================================================== */
+
+    --icon-xs: 14px;
+
+    --icon-sm: 18px;
+
+    --icon-md: 24px;
+
+    --icon-lg: 32px;
+
+    --icon-xl: 48px;
+
+    /* ==================================================
+       IMAGE
+    ================================================== */
+
+    --image-ratio-landscape: 16 / 9;
+
+    --image-ratio-square: 1 / 1;
+
+    --image-ratio-portrait: 3 / 4;
+
+    /* ==================================================
+       OPACITY
+    ================================================== */
+
+    --opacity-disabled: .40;
+
+    --opacity-muted: .65;
+
+    --opacity-overlay: .80;
+
+    /* ==================================================
+       MOTION
+    ================================================== */
+
+    --transition-fast: .15s ease;
+
+    --transition-normal: .25s ease;
+
+    --transition-slow: .45s ease;
+
+    --transition-story: .8s ease;
+
+    --transition-book: 1.2s ease;
+
+    /* ==================================================
+       ZOOM
+    ================================================== */
+
+    --hover-scale: 1.02;
+
+    --active-scale: .98;
+
+    /* ==================================================
+       ELEVATION
+    ================================================== */
+
+    --card-elevation: 1;
+
+    --modal-elevation: 10;
+
+    --overlay-elevation: 20;
+
+    /* ==================================================
+       SCROLL
+    ================================================== */
+
+    --scroll-offset: 96px;
+
+    --scroll-speed: smooth;
+
+    /* ==================================================
+       LOADING
+    ================================================== */
+
+    --loading-duration: 2s;
+
+    /* ==================================================
+       STORY ENGINE
+    ================================================== */
+
+    --typing-speed: 32ms;
+
+    --page-turn-duration: 900ms;
+
+    --dialog-delay: 250ms;
+
+    --choice-animation: 300ms;
+
+}
