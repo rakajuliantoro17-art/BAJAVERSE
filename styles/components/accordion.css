@@ -1,1 +1,251 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+ACCORDION COMPONENT
+Version : 0.0.1 Alpha
+
+Description:
+Reusable accordion component.
+
+Used in:
+- Codex
+- Lore
+- Bestiary
+- History
+- Characters
+- FAQ
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.accordion{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-md);
+
+}
+
+/* ======================================================
+   ITEM
+====================================================== */
+
+.accordion-item{
+
+    overflow:hidden;
+
+    border:
+
+        1px solid var(--color-border);
+
+    border-radius:
+
+        var(--radius-lg);
+
+    background:
+
+        var(--color-surface);
+
+    box-shadow:
+
+        var(--shadow-sm);
+
+    transition:
+
+        box-shadow var(--transition-normal),
+
+        border-color var(--transition-normal);
+
+}
+
+.accordion-item:hover{
+
+    border-color:
+
+        var(--color-primary);
+
+    box-shadow:
+
+        var(--shadow-md);
+
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.accordion-header{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:var(--space-md);
+
+    padding:
+
+        var(--space-lg);
+
+    background:transparent;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    text-align:left;
+
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
+
+.accordion-title{
+
+    flex:1;
+
+    font-family:
+
+        var(--font-heading);
+
+    font-size:
+
+        var(--font-size-lg);
+
+    color:
+
+        var(--color-text-primary);
+
+}
+
+/* ======================================================
+   ICON
+====================================================== */
+
+.accordion-icon{
+
+    flex-shrink:0;
+
+    width:20px;
+
+    height:20px;
+
+    transition:
+
+        transform var(--transition-normal);
+
+}
+
+.accordion-item.is-open
+.accordion-icon{
+
+    transform:
+
+        rotate(180deg);
+
+}
+
+/* ======================================================
+   CONTENT
+====================================================== */
+
+.accordion-content{
+
+    display:grid;
+
+    grid-template-rows:0fr;
+
+    transition:
+
+        grid-template-rows var(--transition-story);
+
+}
+
+.accordion-content-inner{
+
+    overflow:hidden;
+
+}
+
+.accordion-item.is-open
+.accordion-content{
+
+    grid-template-rows:1fr;
+
+}
+
+/* ======================================================
+   BODY
+====================================================== */
+
+.accordion-body{
+
+    padding:
+
+        0
+
+        var(--space-lg)
+
+        var(--space-lg);
+
+    color:
+
+        var(--color-text-secondary);
+
+    line-height:1.8;
+
+}
+
+/* ======================================================
+   FOCUS
+====================================================== */
+
+.accordion-header:focus-visible{
+
+    outline:
+
+        2px solid var(--color-primary);
+
+    outline-offset:2px;
+
+}
+
+/* ======================================================
+   DISABLED
+====================================================== */
+
+.accordion-item.is-disabled{
+
+    opacity:.55;
+
+    pointer-events:none;
+
+}
+
+/* ======================================================
+   REDUCED MOTION
+====================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    .accordion-content,
+
+    .accordion-icon{
+
+        transition:none;
+
+    }
+
+}
