@@ -1,1 +1,248 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+SIDEBAR LAYOUT
+Version : 0.0.1 Alpha
+
+Description:
+Universal sidebar layout.
+
+Used in:
+- Story
+- Codex
+- Character
+- Inventory
+- Quest
+- Settings
+- Dashboard
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.sidebar{
+
+    display:flex;
+
+    flex-direction:column;
+
+    width:280px;
+
+    min-width:280px;
+
+    height:100%;
+
+    background:var(--color-surface);
+
+    border-right:1px solid var(--color-border);
+
+    overflow:hidden;
+
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.sidebar-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:var(--space-md);
+
+    padding:var(--space-lg);
+
+    border-bottom:1px solid var(--color-border);
+
+}
+
+.sidebar-title{
+
+    font-family:var(--font-heading);
+
+    font-size:var(--font-size-lg);
+
+    color:var(--color-text-primary);
+
+}
+
+/* ======================================================
+   CONTENT
+====================================================== */
+
+.sidebar-content{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:var(--space-md);
+
+}
+
+/* ======================================================
+   GROUP
+====================================================== */
+
+.sidebar-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-xs);
+
+    margin-bottom:var(--space-xl);
+
+}
+
+.sidebar-group-title{
+
+    padding-inline:var(--space-sm);
+
+    font-size:var(--font-size-xs);
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    color:var(--color-text-secondary);
+
+}
+
+/* ======================================================
+   ITEM
+====================================================== */
+
+.sidebar-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:var(--space-md);
+
+    min-height:44px;
+
+    padding:.75rem 1rem;
+
+    border-radius:var(--radius-lg);
+
+    color:var(--color-text-secondary);
+
+    text-decoration:none;
+
+    transition:
+
+        background-color var(--transition-fast),
+
+        color var(--transition-fast),
+
+        transform var(--transition-fast);
+
+}
+
+.sidebar-item:hover{
+
+    background:rgba(255,255,255,.05);
+
+    color:var(--color-text-primary);
+
+}
+
+.sidebar-item[aria-current="page"]{
+
+    background:var(--color-primary);
+
+    color:var(--color-surface);
+
+}
+
+/* ======================================================
+   ICON
+====================================================== */
+
+.sidebar-icon{
+
+    width:20px;
+
+    height:20px;
+
+    flex-shrink:0;
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.sidebar-footer{
+
+    padding:var(--space-lg);
+
+    border-top:1px solid var(--color-border);
+
+}
+
+/* ======================================================
+   COLLAPSED
+====================================================== */
+
+.sidebar[data-collapsed="true"]{
+
+    width:88px;
+
+    min-width:88px;
+
+}
+
+.sidebar[data-collapsed="true"] .sidebar-title,
+.sidebar[data-collapsed="true"] .sidebar-group-title,
+.sidebar[data-collapsed="true"] .sidebar-label{
+
+    display:none;
+
+}
+
+.sidebar[data-collapsed="true"] .sidebar-item{
+
+    justify-content:center;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:960px){
+
+    .sidebar{
+
+        position:fixed;
+
+        inset:0 auto 0 0;
+
+        transform:translateX(-100%);
+
+        transition:transform var(--transition-normal);
+
+        z-index:var(--z-sidebar);
+
+    }
+
+    .sidebar[data-open="true"]{
+
+        transform:translateX(0);
+
+    }
+
+}
