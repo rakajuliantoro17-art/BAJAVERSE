@@ -1,1 +1,126 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+SHADOW SYSTEM
+Version : 0.0.1 Alpha
+
+Description:
+Global shadow tokens.
+
+Inspired by:
+- Ancient manuscripts
+- Candle light
+- Royal gold
+- Tropical forest
+- Magical artifacts
+
+Do NOT hardcode box-shadow values.
+
+==========================================================
+*/
+
+:root{
+
+    /* ==================================================
+       NEUTRAL SHADOWS
+    ================================================== */
+
+    --shadow-xs:
+        0 1px 2px rgba(0,0,0,.18);
+
+    --shadow-sm:
+        0 2px 6px rgba(0,0,0,.22);
+
+    --shadow-md:
+        0 6px 18px rgba(0,0,0,.28);
+
+    --shadow-lg:
+        0 12px 28px rgba(0,0,0,.34);
+
+    --shadow-xl:
+        0 18px 42px rgba(0,0,0,.42);
+
+    --shadow-2xl:
+        0 30px 64px rgba(0,0,0,.50);
+
+    /* ==================================================
+       INNER SHADOW
+    ================================================== */
+
+    --shadow-inset:
+        inset 0 1px 3px rgba(255,255,255,.04),
+        inset 0 -2px 6px rgba(0,0,0,.25);
+
+    /* ==================================================
+       GLOW EFFECTS
+    ================================================== */
+
+    --glow-gold:
+        0 0 12px rgba(200,162,76,.30);
+
+    --glow-gold-lg:
+        0 0 24px rgba(200,162,76,.45);
+
+    --glow-blue:
+        0 0 18px rgba(74,144,226,.35);
+
+    --glow-green:
+        0 0 18px rgba(63,167,107,.30);
+
+    --glow-red:
+        0 0 18px rgba(217,83,79,.35);
+
+    --glow-purple:
+        0 0 18px rgba(156,77,204,.35);
+
+    /* ==================================================
+       STORY TOKENS
+    ================================================== */
+
+    --shadow-card:
+        var(--shadow-md);
+
+    --shadow-panel:
+        var(--shadow-lg);
+
+    --shadow-modal:
+        var(--shadow-xl);
+
+    --shadow-button:
+        var(--shadow-sm);
+
+    --shadow-dialog:
+        var(--shadow-md);
+
+    --shadow-book:
+        0 10px 30px rgba(0,0,0,.38);
+
+    --shadow-manuscript:
+        0 6px 16px rgba(20,18,14,.30);
+
+    --shadow-bestiary:
+        0 12px 24px rgba(0,0,0,.30);
+
+    --shadow-map:
+        0 16px 32px rgba(0,0,0,.42);
+
+    /* ==================================================
+       HOVER
+    ================================================== */
+
+    --shadow-hover:
+        0 18px 40px rgba(0,0,0,.40);
+
+    --shadow-hover-gold:
+        0 18px 40px rgba(200,162,76,.30);
+
+    /* ==================================================
+       DIVIDER
+    ================================================== */
+
+    --shadow-border-light:
+        0 0 0 1px rgba(255,255,255,.05);
+
+}
