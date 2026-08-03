@@ -1,1 +1,335 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+PARTICLE SYSTEM
+Version : 0.0.1 Alpha
+
+Description:
+Universal particle animation system.
+
+This file is the foundation for:
+
+- Fireflies
+- Leaves
+- Dust
+- Ash
+- Magic
+- Ember
+- Rain Drops
+- Snow (Future)
+- Spirit Energy
+
+==========================================================
+*/
+
+/* ======================================================
+   PARTICLE ROOT
+====================================================== */
+
+.particles{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:var(--z-base);
+
+}
+
+/* ======================================================
+   BASE PARTICLE
+====================================================== */
+
+.particle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    opacity:.75;
+
+    will-change:
+
+        transform,
+
+        opacity;
+
+    backface-visibility:hidden;
+
+}
+
+/* ======================================================
+   SIZE
+====================================================== */
+
+.particle-xs{
+
+    width:2px;
+
+    height:2px;
+
+}
+
+.particle-sm{
+
+    width:4px;
+
+    height:4px;
+
+}
+
+.particle-md{
+
+    width:6px;
+
+    height:6px;
+
+}
+
+.particle-lg{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+/* ======================================================
+   SHAPE
+====================================================== */
+
+.particle-circle{
+
+    border-radius:50%;
+
+}
+
+.particle-square{
+
+    border-radius:2px;
+
+}
+
+.particle-soft{
+
+    filter:blur(1px);
+
+}
+
+.particle-glow{
+
+    filter:blur(.5px);
+
+}
+
+/* ======================================================
+   SPEED
+====================================================== */
+
+.speed-slow{
+
+    animation-duration:18s;
+
+}
+
+.speed-normal{
+
+    animation-duration:12s;
+
+}
+
+.speed-fast{
+
+    animation-duration:7s;
+
+}
+
+/* ======================================================
+   OPACITY
+====================================================== */
+
+.opacity-low{
+
+    opacity:.20;
+
+}
+
+.opacity-medium{
+
+    opacity:.55;
+
+}
+
+.opacity-high{
+
+    opacity:.9;
+
+}
+
+/* ======================================================
+   MOVEMENT
+====================================================== */
+
+@keyframes particle-float{
+
+    0%{
+
+        transform:
+            translate3d(0,0,0);
+
+    }
+
+    25%{
+
+        transform:
+            translate3d(10px,-30px,0);
+
+    }
+
+    50%{
+
+        transform:
+            translate3d(-12px,-70px,0);
+
+    }
+
+    75%{
+
+        transform:
+            translate3d(8px,-120px,0);
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(0,-180px,0);
+
+    }
+
+}
+
+@keyframes particle-drift{
+
+    0%{
+
+        transform:
+            translateX(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateX(30px);
+
+    }
+
+    100%{
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+@keyframes particle-pulse{
+
+    0%{
+
+        opacity:.3;
+
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        opacity:.3;
+
+        transform:scale(.8);
+
+    }
+
+}
+
+/* ======================================================
+   ANIMATION UTILITIES
+====================================================== */
+
+.particle-float{
+
+    animation:
+
+        particle-float linear infinite;
+
+}
+
+.particle-drift{
+
+    animation:
+
+        particle-drift ease-in-out infinite;
+
+}
+
+.particle-pulse{
+
+    animation:
+
+        particle-pulse ease-in-out infinite;
+
+}
+
+/* ======================================================
+   BLEND MODES
+====================================================== */
+
+.blend-screen{
+
+    mix-blend-mode:screen;
+
+}
+
+.blend-overlay{
+
+    mix-blend-mode:overlay;
+
+}
+
+.blend-soft-light{
+
+    mix-blend-mode:soft-light;
+
+}
+
+/* ======================================================
+   REDUCED MOTION
+====================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    .particle{
+
+        animation:none;
+
+        opacity:.25;
+
+    }
+
+}
