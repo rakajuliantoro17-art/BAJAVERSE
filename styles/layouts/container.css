@@ -1,1 +1,181 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+CONTAINER LAYOUT
+Version : 0.0.1 Alpha
+
+Description:
+Global responsive container system.
+
+Used in:
+- Home
+- Story
+- Chapter
+- Codex
+- Inventory
+- Character
+- Settings
+- Dashboard
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT CONTAINER
+====================================================== */
+
+.container{
+
+    width:min(100% - (var(--space-xl) * 2), 1440px);
+
+    margin-inline:auto;
+
+}
+
+/* ======================================================
+   SIZE
+====================================================== */
+
+.container-xs{
+
+    max-width:480px;
+
+}
+
+.container-sm{
+
+    max-width:640px;
+
+}
+
+.container-md{
+
+    max-width:768px;
+
+}
+
+.container-lg{
+
+    max-width:1024px;
+
+}
+
+.container-xl{
+
+    max-width:1280px;
+
+}
+
+.container-2xl{
+
+    max-width:1440px;
+
+}
+
+.container-fluid{
+
+    width:100%;
+
+    max-width:none;
+
+}
+
+/* ======================================================
+   SPACING
+====================================================== */
+
+.container-padding-sm{
+
+    padding-block:var(--space-lg);
+
+}
+
+.container-padding-md{
+
+    padding-block:var(--space-xl);
+
+}
+
+.container-padding-lg{
+
+    padding-block:var(--space-2xl);
+
+}
+
+.container-padding-xl{
+
+    padding-block:var(--space-3xl);
+
+}
+
+/* ======================================================
+   ALIGNMENT
+====================================================== */
+
+.container-center{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.container-start{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+.container-end{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+}
+
+/* ======================================================
+   STATES
+====================================================== */
+
+.container-full-height{
+
+    min-height:100vh;
+
+}
+
+.container-scroll{
+
+    overflow:auto;
+
+}
+
+.container-hidden{
+
+    overflow:hidden;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:768px){
+
+    .container{
+
+        width:min(100% - (var(--space-md) * 2), 100%);
+
+    }
+
+}
