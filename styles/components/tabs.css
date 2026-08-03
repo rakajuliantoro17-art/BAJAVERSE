@@ -1,1 +1,219 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+TABS COMPONENT
+Version : 0.0.1 Alpha
+
+Description:
+Universal tabs navigation system.
+
+Used in:
+- Character
+- Inventory
+- Codex
+- Settings
+- Journal
+- Quest
+- Book
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.tabs{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-lg);
+
+}
+
+/* ======================================================
+   NAVIGATION
+====================================================== */
+
+.tabs-nav{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:var(--space-sm);
+
+    padding-bottom:var(--space-sm);
+
+    border-bottom:1px solid var(--color-border);
+
+}
+
+/* ======================================================
+   BUTTON
+====================================================== */
+
+.tab{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:var(--space-xs);
+
+    min-height:44px;
+
+    padding:
+
+        .65rem
+        1.2rem;
+
+    border:none;
+
+    border-radius:var(--radius-full);
+
+    background:transparent;
+
+    color:var(--color-text-secondary);
+
+    font-family:var(--font-ui);
+
+    font-size:var(--font-size-sm);
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+
+        background-color var(--transition-fast),
+
+        color var(--transition-fast),
+
+        transform var(--transition-fast);
+
+}
+
+.tab:hover{
+
+    background:rgba(255,255,255,.05);
+
+    color:var(--color-text-primary);
+
+}
+
+.tab:focus-visible{
+
+    outline:2px solid var(--color-primary);
+
+    outline-offset:2px;
+
+}
+
+/* ======================================================
+   ACTIVE
+====================================================== */
+
+.tab[aria-selected="true"]{
+
+    background:var(--color-primary);
+
+    color:var(--color-surface);
+
+}
+
+/* ======================================================
+   ICON
+====================================================== */
+
+.tab-icon{
+
+    width:18px;
+
+    height:18px;
+
+    flex-shrink:0;
+
+}
+
+/* ======================================================
+   PANEL
+====================================================== */
+
+.tabs-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.tab-panel{
+
+    display:none;
+
+    animation:
+
+        fade-in
+
+        var(--transition-normal)
+
+        ease;
+
+}
+
+.tab-panel[data-state="active"]{
+
+    display:block;
+
+}
+
+/* ======================================================
+   DISABLED
+====================================================== */
+
+.tab[aria-disabled="true"]{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    pointer-events:none;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:768px){
+
+    .tabs-nav{
+
+        overflow-x:auto;
+
+        flex-wrap:nowrap;
+
+        scrollbar-width:none;
+
+    }
+
+    .tabs-nav::-webkit-scrollbar{
+
+        display:none;
+
+    }
+
+    .tab{
+
+        flex-shrink:0;
+
+    }
+
+}
