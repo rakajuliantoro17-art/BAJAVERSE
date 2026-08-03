@@ -1,1 +1,204 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+SECTION LAYOUT
+Version : 0.0.1 Alpha
+
+Description:
+Global section layout system.
+
+Used in:
+- Landing
+- Story
+- Chapter
+- Character
+- Codex
+- World
+- Dashboard
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.section{
+
+    position:relative;
+
+    width:100%;
+
+    padding-block:var(--space-3xl);
+
+}
+
+/* ======================================================
+   SIZE
+====================================================== */
+
+.section[data-size="xs"]{
+
+    padding-block:var(--space-lg);
+
+}
+
+.section[data-size="sm"]{
+
+    padding-block:var(--space-xl);
+
+}
+
+.section[data-size="md"]{
+
+    padding-block:var(--space-2xl);
+
+}
+
+.section[data-size="lg"]{
+
+    padding-block:var(--space-3xl);
+
+}
+
+.section[data-size="xl"]{
+
+    padding-block:var(--space-4xl);
+
+}
+
+/* ======================================================
+   ALIGNMENT
+====================================================== */
+
+.section[data-align="center"]{
+
+    text-align:center;
+
+}
+
+.section[data-align="left"]{
+
+    text-align:left;
+
+}
+
+.section[data-align="right"]{
+
+    text-align:right;
+
+}
+
+/* ======================================================
+   BACKGROUND
+====================================================== */
+
+.section[data-surface="default"]{
+
+    background:transparent;
+
+}
+
+.section[data-surface="surface"]{
+
+    background:var(--color-surface);
+
+}
+
+.section[data-surface="glass"]{
+
+    background:rgba(255,255,255,.03);
+
+    backdrop-filter:blur(12px);
+
+}
+
+.section[data-surface="primary"]{
+
+    background:var(--color-primary);
+
+    color:var(--color-surface);
+
+}
+
+/* ======================================================
+   BORDER
+====================================================== */
+
+.section[data-divider="top"]{
+
+    border-top:1px solid var(--color-border);
+
+}
+
+.section[data-divider="bottom"]{
+
+    border-bottom:1px solid var(--color-border);
+
+}
+
+.section[data-divider="both"]{
+
+    border-top:1px solid var(--color-border);
+
+    border-bottom:1px solid var(--color-border);
+
+}
+
+/* ======================================================
+   FULL HEIGHT
+====================================================== */
+
+.section[data-height="screen"]{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+/* ======================================================
+   OVERLAY
+====================================================== */
+
+.section-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.4;
+
+}
+
+/* ======================================================
+   CONTENT
+====================================================== */
+
+.section-content{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:768px){
+
+    .section{
+
+        padding-block:var(--space-2xl);
+
+    }
+
+}
