@@ -1,1 +1,239 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+PARALLAX SYSTEM
+Version : 0.0.1 Alpha
+
+Description:
+Cinematic layered parallax animation system.
+
+Inspired by:
+- Tropical forests
+- Ancient temples
+- Mountains
+- Royal kingdoms
+- Fantasy RPG
+
+==========================================================
+*/
+
+/* ======================================================
+   PARALLAX ROOT
+====================================================== */
+
+.parallax{
+
+    position:relative;
+
+    overflow:hidden;
+
+    perspective:1000px;
+
+    transform-style:preserve-3d;
+
+}
+
+/* ======================================================
+   LAYERS
+====================================================== */
+
+.parallax-layer{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    will-change:transform;
+
+}
+
+/* ======================================================
+   DEPTH
+====================================================== */
+
+.layer-back{
+
+    transform:translateZ(-200px) scale(1.25);
+
+}
+
+.layer-far{
+
+    transform:translateZ(-120px) scale(1.15);
+
+}
+
+.layer-middle{
+
+    transform:translateZ(-60px) scale(1.08);
+
+}
+
+.layer-front{
+
+    transform:translateZ(0);
+
+}
+
+.layer-ui{
+
+    position:relative;
+
+    z-index:var(--z-content);
+
+}
+
+/* ======================================================
+   FLOAT MOVEMENT
+====================================================== */
+
+@keyframes parallax-float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ======================================================
+   SLOW DRIFT
+====================================================== */
+
+@keyframes parallax-drift{
+
+    0%{
+
+        transform:translateX(0);
+
+    }
+
+    50%{
+
+        transform:translateX(24px);
+
+    }
+
+    100%{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* ======================================================
+   CLASSES
+====================================================== */
+
+.parallax-float{
+
+    animation:
+
+        parallax-float
+
+        14s
+
+        ease-in-out
+
+        infinite;
+
+}
+
+.parallax-drift{
+
+    animation:
+
+        parallax-drift
+
+        24s
+
+        ease-in-out
+
+        infinite;
+
+}
+
+.parallax-slow{
+
+    animation-duration:28s;
+
+}
+
+.parallax-fast{
+
+    animation-duration:10s;
+
+}
+
+/* ======================================================
+   IMAGE
+====================================================== */
+
+.parallax img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/* ======================================================
+   PERFORMANCE
+====================================================== */
+
+.parallax-layer{
+
+    backface-visibility:hidden;
+
+    transform-style:preserve-3d;
+
+}
+
+/* ======================================================
+   REDUCED MOTION
+====================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    .parallax-float,
+    .parallax-drift{
+
+        animation:none;
+
+    }
+
+    .parallax{
+
+        perspective:none;
+
+    }
+
+}
