@@ -1,1 +1,236 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+TOOLTIP COMPONENT
+Version : 0.0.1 Alpha
+
+Description:
+Universal tooltip system.
+
+Used in:
+- Item
+- Character
+- Skill
+- Kingdom
+- Codex
+- Quest
+- Buttons
+- Map Marker
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.tooltip{
+
+    position:relative;
+
+    display:inline-flex;
+
+}
+
+/* ======================================================
+   CONTENT
+====================================================== */
+
+.tooltip-content{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:calc(100% + .75rem);
+
+    transform:
+        translateX(-50%)
+        translateY(8px);
+
+    min-width:220px;
+
+    max-width:320px;
+
+    padding:var(--space-md);
+
+    border-radius:var(--radius-lg);
+
+    border:1px solid var(--color-border);
+
+    background:rgba(20,20,24,.96);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:var(--shadow-lg);
+
+    color:var(--color-text-primary);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+
+        opacity var(--transition-fast),
+
+        transform var(--transition-fast),
+
+        visibility var(--transition-fast);
+
+    z-index:var(--z-tooltip);
+
+}
+
+/* ======================================================
+   SHOW
+====================================================== */
+
+.tooltip:hover .tooltip-content,
+.tooltip:focus-within .tooltip-content{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+
+}
+
+/* ======================================================
+   ARROW
+====================================================== */
+
+.tooltip-content::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:100%;
+
+    transform:translateX(-50%);
+
+    border-width:8px;
+
+    border-style:solid;
+
+    border-color:
+
+        rgba(20,20,24,.96)
+
+        transparent
+
+        transparent
+
+        transparent;
+
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
+
+.tooltip-title{
+
+    margin-bottom:var(--space-xs);
+
+    font-family:var(--font-heading);
+
+    font-size:var(--font-size-md);
+
+    color:var(--color-primary);
+
+}
+
+/* ======================================================
+   DESCRIPTION
+====================================================== */
+
+.tooltip-description{
+
+    line-height:1.7;
+
+    color:var(--color-text-secondary);
+
+    font-size:var(--font-size-sm);
+
+}
+
+/* ======================================================
+   META
+====================================================== */
+
+.tooltip-meta{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:var(--space-sm);
+
+    margin-top:var(--space-md);
+
+    font-size:var(--font-size-xs);
+
+    color:var(--color-text-secondary);
+
+}
+
+/* ======================================================
+   RARITY
+====================================================== */
+
+.tooltip[data-rarity="common"]{
+
+    --tooltip-accent:#9CA3AF;
+
+}
+
+.tooltip[data-rarity="rare"]{
+
+    --tooltip-accent:#3B82F6;
+
+}
+
+.tooltip[data-rarity="epic"]{
+
+    --tooltip-accent:#8B5CF6;
+
+}
+
+.tooltip[data-rarity="legendary"]{
+
+    --tooltip-accent:#F59E0B;
+
+}
+
+.tooltip[data-rarity] .tooltip-content{
+
+    border-color:var(--tooltip-accent);
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:768px){
+
+    .tooltip-content{
+
+        min-width:180px;
+
+        max-width:260px;
+
+    }
+
+}
