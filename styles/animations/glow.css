@@ -1,1 +1,270 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+GLOW ANIMATION SYSTEM
+Version : 0.0.1 Alpha
+
+Description:
+Ambient glow animations.
+
+Inspired by:
+- Ancient relics
+- Sacred artifacts
+- Royal treasures
+- Moonlight
+- Forest spirits
+- Lantern light
+
+==========================================================
+*/
+
+/* ======================================================
+   KEYFRAMES
+====================================================== */
+
+@keyframes glow-soft{
+
+    0%{
+
+        filter:brightness(1);
+
+        box-shadow:0 0 6px rgba(255,215,120,.15);
+
+    }
+
+    50%{
+
+        filter:brightness(1.08);
+
+        box-shadow:
+            0 0 14px rgba(255,215,120,.35),
+            0 0 28px rgba(255,215,120,.18);
+
+    }
+
+    100%{
+
+        filter:brightness(1);
+
+        box-shadow:0 0 6px rgba(255,215,120,.15);
+
+    }
+
+}
+
+@keyframes glow-gold{
+
+    0%{
+
+        box-shadow:
+
+            0 0 8px rgba(200,162,76,.20);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+            0 0 22px rgba(200,162,76,.55),
+
+            0 0 48px rgba(200,162,76,.25);
+
+    }
+
+    100%{
+
+        box-shadow:
+
+            0 0 8px rgba(200,162,76,.20);
+
+    }
+
+}
+
+@keyframes glow-blue{
+
+    0%{
+
+        box-shadow:0 0 8px rgba(74,144,226,.18);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+            0 0 22px rgba(74,144,226,.45),
+
+            0 0 42px rgba(74,144,226,.20);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 8px rgba(74,144,226,.18);
+
+    }
+
+}
+
+@keyframes glow-green{
+
+    0%{
+
+        box-shadow:0 0 8px rgba(63,167,107,.18);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+            0 0 20px rgba(63,167,107,.45),
+
+            0 0 40px rgba(63,167,107,.18);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 8px rgba(63,167,107,.18);
+
+    }
+
+}
+
+@keyframes glow-red{
+
+    0%{
+
+        box-shadow:0 0 8px rgba(217,83,79,.18);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+            0 0 20px rgba(217,83,79,.48),
+
+            0 0 42px rgba(217,83,79,.22);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 8px rgba(217,83,79,.18);
+
+    }
+
+}
+
+/* ======================================================
+   UTILITY CLASSES
+====================================================== */
+
+.glow-soft{
+
+    animation:
+        glow-soft 4s ease-in-out infinite;
+
+}
+
+.glow-gold{
+
+    animation:
+        glow-gold 3.5s ease-in-out infinite;
+
+}
+
+.glow-blue{
+
+    animation:
+        glow-blue 4s ease-in-out infinite;
+
+}
+
+.glow-green{
+
+    animation:
+        glow-green 4.5s ease-in-out infinite;
+
+}
+
+.glow-red{
+
+    animation:
+        glow-red 3.8s ease-in-out infinite;
+
+}
+
+/* ======================================================
+   COMBINED EFFECTS
+====================================================== */
+
+.glow-floating{
+
+    animation:
+
+        glow-soft 5s ease-in-out infinite,
+
+        float-gentle 8s ease-in-out infinite;
+
+}
+
+.glow-pulse{
+
+    animation:
+
+        glow-gold 2.5s ease-in-out infinite,
+
+        float-pulse 8s ease-in-out infinite;
+
+}
+
+/* ======================================================
+   HOVER
+====================================================== */
+
+.glow-hover{
+
+    transition:
+
+        box-shadow var(--transition-normal),
+
+        transform var(--transition-normal);
+
+}
+
+.glow-hover:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+        0 0 24px rgba(200,162,76,.35);
+
+}
+
+/* ======================================================
+   REDUCED MOTION
+====================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    .glow-soft,
+    .glow-gold,
+    .glow-blue,
+    .glow-green,
+    .glow-red,
+    .glow-floating,
+    .glow-pulse{
+
+        animation:none;
+
+    }
+
+}
