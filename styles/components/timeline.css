@@ -1,1 +1,245 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+TIMELINE COMPONENT
+Version : 0.0.1 Alpha
+
+Description:
+Chronicle timeline component.
+
+Used in:
+- Main Story
+- Quest Progress
+- History
+- Codex
+- Character Journey
+- World Events
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.timeline{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-xl);
+
+    width:100%;
+
+}
+
+/* ======================================================
+   LINE
+====================================================== */
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:22px;
+
+    top:0;
+
+    bottom:0;
+
+    width:3px;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            var(--color-primary),
+            rgba(255,255,255,.08)
+        );
+
+}
+
+/* ======================================================
+   ITEM
+====================================================== */
+
+.timeline-item{
+
+    position:relative;
+
+    display:flex;
+
+    gap:var(--space-lg);
+
+    padding-left:64px;
+
+}
+
+/* ======================================================
+   MARKER
+====================================================== */
+
+.timeline-marker{
+
+    position:absolute;
+
+    left:10px;
+
+    top:8px;
+
+    width:24px;
+
+    height:24px;
+
+    border-radius:50%;
+
+    border:3px solid var(--color-primary);
+
+    background:var(--color-surface);
+
+    box-shadow:0 0 12px rgba(255,215,0,.25);
+
+    z-index:1;
+
+}
+
+/* ======================================================
+   CARD
+====================================================== */
+
+.timeline-card{
+
+    flex:1;
+
+    padding:var(--space-lg);
+
+    border-radius:var(--radius-xl);
+
+    border:1px solid var(--color-border);
+
+    background:var(--color-surface);
+
+    box-shadow:var(--shadow-md);
+
+    transition:
+
+        transform var(--transition-fast),
+
+        box-shadow var(--transition-fast);
+
+}
+
+.timeline-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/* ======================================================
+   DATE
+====================================================== */
+
+.timeline-date{
+
+    font-size:var(--font-size-sm);
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:var(--color-primary);
+
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
+
+.timeline-title{
+
+    margin-top:var(--space-xs);
+
+    font-family:var(--font-heading);
+
+    font-size:var(--font-size-xl);
+
+    color:var(--color-text-primary);
+
+}
+
+/* ======================================================
+   DESCRIPTION
+====================================================== */
+
+.timeline-description{
+
+    margin-top:var(--space-sm);
+
+    line-height:1.8;
+
+    color:var(--color-text-secondary);
+
+}
+
+/* ======================================================
+   STATES
+====================================================== */
+
+.timeline-item[data-state="locked"]{
+
+    opacity:.45;
+
+}
+
+.timeline-item[data-state="active"] .timeline-marker{
+
+    background:var(--color-primary);
+
+}
+
+.timeline-item[data-state="completed"] .timeline-marker{
+
+    background:var(--color-success);
+
+    border-color:var(--color-success);
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:768px){
+
+    .timeline::before{
+
+        left:16px;
+
+    }
+
+    .timeline-item{
+
+        padding-left:48px;
+
+    }
+
+    .timeline-marker{
+
+        width:18px;
+
+        height:18px;
+
+        left:7px;
+
+    }
+
+}
