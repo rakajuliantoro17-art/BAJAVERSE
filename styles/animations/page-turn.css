@@ -1,1 +1,267 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+PAGE TURN ANIMATION
+Version : 0.0.1 Alpha
+
+Description:
+Narrative page transition system.
+
+Inspired by:
+- Ancient manuscripts
+- Royal chronicles
+- Palm leaf books (Lontar)
+- Historical codex
+
+==========================================================
+*/
+
+/* ======================================================
+   KEYFRAMES
+====================================================== */
+
+/* Open Book */
+
+@keyframes page-open{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            perspective(1400px)
+            rotateY(-8deg)
+            scale(.98);
+
+        filter:blur(2px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+            perspective(1400px)
+            rotateY(0)
+            scale(1);
+
+        filter:blur(0);
+
+    }
+
+}
+
+/* Close Book */
+
+@keyframes page-close{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+            perspective(1400px)
+            rotateY(0)
+            scale(1);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            perspective(1400px)
+            rotateY(8deg)
+            scale(.98);
+
+    }
+
+}
+
+/* Turn Left */
+
+@keyframes page-turn-left{
+
+    0%{
+
+        transform-origin:left center;
+
+        transform:
+            perspective(1600px)
+            rotateY(0);
+
+    }
+
+    100%{
+
+        transform-origin:left center;
+
+        transform:
+            perspective(1600px)
+            rotateY(-8deg);
+
+    }
+
+}
+
+/* Turn Right */
+
+@keyframes page-turn-right{
+
+    0%{
+
+        transform-origin:right center;
+
+        transform:
+            perspective(1600px)
+            rotateY(8deg);
+
+    }
+
+    100%{
+
+        transform-origin:right center;
+
+        transform:
+            perspective(1600px)
+            rotateY(0);
+
+    }
+
+}
+
+/* ======================================================
+   PAGE CLASSES
+====================================================== */
+
+.page-open{
+
+    animation:
+
+        page-open
+
+        var(--page-turn-duration)
+
+        ease-out
+
+        forwards;
+
+}
+
+.page-close{
+
+    animation:
+
+        page-close
+
+        var(--page-turn-duration)
+
+        ease-in
+
+        forwards;
+
+}
+
+.page-next{
+
+    animation:
+
+        page-turn-left
+
+        var(--page-turn-duration)
+
+        ease-in-out;
+
+}
+
+.page-prev{
+
+    animation:
+
+        page-turn-right
+
+        var(--page-turn-duration)
+
+        ease-in-out;
+
+}
+
+/* ======================================================
+   BOOK CONTAINER
+====================================================== */
+
+.book-page{
+
+    transform-style:preserve-3d;
+
+    backface-visibility:hidden;
+
+    transform-origin:center;
+
+    box-shadow:var(--shadow-book);
+
+    border-radius:var(--radius-book);
+
+    overflow:hidden;
+
+}
+
+/* ======================================================
+   CHAPTER TRANSITION
+====================================================== */
+
+.chapter-transition{
+
+    animation:
+
+        fade-out .3s ease,
+
+        page-turn-left var(--page-turn-duration) ease,
+
+        fade-in .6s ease .3s forwards;
+
+}
+
+/* ======================================================
+   HOVER
+====================================================== */
+
+.book-page:hover{
+
+    transition:
+
+        transform var(--transition-normal),
+
+        box-shadow var(--transition-normal);
+
+    transform:
+
+        translateY(-2px);
+
+    box-shadow:
+
+        var(--shadow-hover);
+
+}
+
+/* ======================================================
+   REDUCED MOTION
+====================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .page-open,
+    .page-close,
+    .page-next,
+    .page-prev,
+    .chapter-transition{
+
+        animation:none;
+
+    }
+
+}
