@@ -1,1 +1,199 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+BADGES
+Version : 0.0.1 Alpha
+
+Description:
+Reusable badge component.
+
+Used in:
+- Character
+- Quest
+- Dialogue
+- Inventory
+- Kingdom
+- Codex
+- Bestiary
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:var(--space-xs);
+
+    padding:
+
+        .35rem
+        .75rem;
+
+    border-radius:
+
+        var(--radius-full);
+
+    border:
+
+        1px solid transparent;
+
+    font-family:
+
+        var(--font-ui);
+
+    font-size:
+
+        var(--font-size-xs);
+
+    font-weight:600;
+
+    line-height:1;
+
+    white-space:nowrap;
+
+    user-select:none;
+
+    transition:
+
+        background-color var(--transition-fast),
+
+        color var(--transition-fast),
+
+        border-color var(--transition-fast),
+
+        transform var(--transition-fast);
+
+}
+
+/* ======================================================
+   SIZE
+====================================================== */
+
+.badge-sm{
+
+    font-size:.70rem;
+
+    padding:.25rem .55rem;
+
+}
+
+.badge-md{
+
+    font-size:.80rem;
+
+}
+
+.badge-lg{
+
+    font-size:.95rem;
+
+    padding:.50rem .95rem;
+
+}
+
+/* ======================================================
+   VARIANTS
+====================================================== */
+
+.badge-primary{
+
+    background:var(--color-primary);
+
+    color:var(--color-surface);
+
+}
+
+.badge-secondary{
+
+    background:var(--color-secondary);
+
+    color:var(--color-surface);
+
+}
+
+.badge-success{
+
+    background:var(--color-success);
+
+    color:#fff;
+
+}
+
+.badge-warning{
+
+    background:var(--color-warning);
+
+    color:#111;
+
+}
+
+.badge-danger{
+
+    background:var(--color-danger);
+
+    color:#fff;
+
+}
+
+.badge-outline{
+
+    background:transparent;
+
+    border-color:var(--color-border);
+
+    color:var(--color-text-primary);
+
+}
+
+/* ======================================================
+   ICON
+====================================================== */
+
+.badge-icon{
+
+    width:14px;
+
+    height:14px;
+
+    flex-shrink:0;
+
+}
+
+/* ======================================================
+   STATES
+====================================================== */
+
+.badge:hover{
+
+    transform:translateY(-1px);
+
+}
+
+.badge:active{
+
+    transform:scale(.97);
+
+}
+
+/* ======================================================
+   DISABLED
+====================================================== */
+
+.badge[aria-disabled="true"]{
+
+    opacity:.5;
+
+    pointer-events:none;
+
+}
