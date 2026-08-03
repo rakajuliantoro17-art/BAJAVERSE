@@ -1,1 +1,355 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+SLIDE ANIMATION SYSTEM
+Version : 0.0.1 Alpha
+
+Description:
+Global slide animation library.
+
+Inspired by:
+- Story transitions
+- RPG dialogue
+- Ancient manuscripts
+- Cinematic storytelling
+
+==========================================================
+*/
+
+/* ======================================================
+   KEYFRAMES
+====================================================== */
+
+/* Slide Up */
+
+@keyframes slide-up{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(48px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* Slide Down */
+
+@keyframes slide-down{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(-48px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* Slide Left */
+
+@keyframes slide-left{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(-64px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+/* Slide Right */
+
+@keyframes slide-right{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(64px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+/* Slide Scale */
+
+@keyframes slide-scale{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(24px)
+            scale(.97);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+/* ======================================================
+   UTILITIES
+====================================================== */
+
+.slide-up{
+
+    animation:
+
+        slide-up
+
+        var(--transition-normal)
+
+        ease-out
+
+        forwards;
+
+}
+
+.slide-down{
+
+    animation:
+
+        slide-down
+
+        var(--transition-normal)
+
+        ease-out
+
+        forwards;
+
+}
+
+.slide-left{
+
+    animation:
+
+        slide-left
+
+        var(--transition-normal)
+
+        ease-out
+
+        forwards;
+
+}
+
+.slide-right{
+
+    animation:
+
+        slide-right
+
+        var(--transition-normal)
+
+        ease-out
+
+        forwards;
+
+}
+
+.slide-scale{
+
+    animation:
+
+        slide-scale
+
+        var(--transition-story)
+
+        ease-out
+
+        forwards;
+
+}
+
+/* ======================================================
+   STORY VARIANTS
+====================================================== */
+
+.slide-dialogue{
+
+    animation:
+
+        slide-up
+
+        .45s
+
+        ease-out
+
+        forwards;
+
+}
+
+.slide-choice{
+
+    animation:
+
+        slide-scale
+
+        .5s
+
+        ease-out
+
+        forwards;
+
+}
+
+.slide-panel{
+
+    animation:
+
+        slide-right
+
+        .35s
+
+        ease-out
+
+        forwards;
+
+}
+
+.slide-cinematic{
+
+    animation:
+
+        slide-up
+
+        1s
+
+        ease-out
+
+        forwards;
+
+}
+
+/* ======================================================
+   STAGGER DELAYS
+====================================================== */
+
+.delay-1{
+
+    animation-delay:.1s;
+
+}
+
+.delay-2{
+
+    animation-delay:.2s;
+
+}
+
+.delay-3{
+
+    animation-delay:.3s;
+
+}
+
+.delay-4{
+
+    animation-delay:.4s;
+
+}
+
+.delay-5{
+
+    animation-delay:.5s;
+
+}
+
+/* ======================================================
+   HOVER
+====================================================== */
+
+.hover-lift{
+
+    transition:
+
+        transform var(--transition-normal);
+
+}
+
+.hover-lift:hover{
+
+    transform:
+
+        translateY(-4px);
+
+}
+
+/* ======================================================
+   REDUCED MOTION
+====================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    .slide-up,
+    .slide-down,
+    .slide-left,
+    .slide-right,
+    .slide-scale,
+    .slide-dialogue,
+    .slide-choice,
+    .slide-panel,
+    .slide-cinematic{
+
+        animation:none;
+
+    }
+
+}
