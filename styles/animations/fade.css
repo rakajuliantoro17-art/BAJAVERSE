@@ -1,1 +1,249 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+FADE ANIMATION SYSTEM
+Version : 0.0.1 Alpha
+
+Description:
+Global fade animation library.
+
+==========================================================
+*/
+
+/* =======================================================
+   KEYFRAMES
+======================================================= */
+
+/* Fade In */
+
+@keyframes fade-in{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/* Fade Out */
+
+@keyframes fade-out{
+
+    from{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+/* Fade Up */
+
+@keyframes fade-up{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(24px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* Fade Down */
+
+@keyframes fade-down{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(-24px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* Fade Left */
+
+@keyframes fade-left{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(-32px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+/* Fade Right */
+
+@keyframes fade-right{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(32px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+/* =======================================================
+   UTILITIES
+======================================================= */
+
+.fade-in{
+
+    animation:
+        fade-in
+        var(--transition-normal)
+        forwards;
+
+}
+
+.fade-out{
+
+    animation:
+        fade-out
+        var(--transition-normal)
+        forwards;
+
+}
+
+.fade-up{
+
+    animation:
+        fade-up
+        var(--transition-normal)
+        forwards;
+
+}
+
+.fade-down{
+
+    animation:
+        fade-down
+        var(--transition-normal)
+        forwards;
+
+}
+
+.fade-left{
+
+    animation:
+        fade-left
+        var(--transition-normal)
+        forwards;
+
+}
+
+.fade-right{
+
+    animation:
+        fade-right
+        var(--transition-normal)
+        forwards;
+
+}
+
+/* =======================================================
+   STORY TIMING
+======================================================= */
+
+.fade-story{
+
+    animation:
+        fade-up
+        var(--transition-story)
+        forwards;
+
+}
+
+.fade-book{
+
+    animation:
+        fade-in
+        var(--transition-book)
+        forwards;
+
+}
+
+.fade-dialogue{
+
+    animation:
+        fade-up
+        .45s
+        ease-out
+        forwards;
+
+}
+
+.fade-cinematic{
+
+    animation:
+        fade-in
+        1.5s
+        ease-out
+        forwards;
+
+}
