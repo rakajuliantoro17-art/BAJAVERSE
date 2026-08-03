@@ -1,1 +1,123 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
+Global Stylesheet
 
+Version : 0.0.1 Alpha
+Author  : BAJAVERSE Team
+
+Description:
+Global stylesheet loader.
+This file ONLY imports all design system layers.
+Do not place component styles directly here.
+
+Architecture:
+Abstracts
+→ Base
+→ Layouts
+→ Components
+→ Narrative
+→ Pages
+→ Animations
+→ Themes
+→ Utilities
+
+==========================================================
+*/
+
+/* =======================================================
+   ABSTRACTS
+======================================================= */
+
+@import "./abstracts/variables.css";
+@import "./abstracts/colors.css";
+@import "./abstracts/typography.css";
+@import "./abstracts/spacing.css";
+@import "./abstracts/radius.css";
+@import "./abstracts/shadows.css";
+@import "./abstracts/z-index.css";
+@import "./abstracts/breakpoints.css";
+
+/* =======================================================
+   BASE
+======================================================= */
+
+@import "./base/reset.css";
+@import "./base/fonts.css";
+@import "./base/body.css";
+@import "./base/selection.css";
+@import "./base/scrollbar.css";
+
+/* =======================================================
+   LAYOUT
+======================================================= */
+
+@import "./layouts/container.css";
+@import "./layouts/grid.css";
+@import "./layouts/navbar.css";
+@import "./layouts/footer.css";
+@import "./layouts/section.css";
+
+/* =======================================================
+   COMPONENTS
+======================================================= */
+
+@import "./components/buttons.css";
+@import "./components/cards.css";
+@import "./components/modal.css";
+@import "./components/tabs.css";
+@import "./components/dialog.css";
+@import "./components/loading.css";
+
+/* =======================================================
+   NARRATIVE SYSTEM
+======================================================= */
+
+@import "./narrative/manuscript.css";
+@import "./narrative/book.css";
+@import "./narrative/chapter.css";
+@import "./narrative/dialogue.css";
+@import "./narrative/story.css";
+@import "./narrative/chronicle.css";
+@import "./narrative/bestiary.css";
+
+/* =======================================================
+   PAGES
+======================================================= */
+
+@import "./pages/home.css";
+@import "./pages/world.css";
+@import "./pages/kingdom.css";
+@import "./pages/story.css";
+@import "./pages/monster.css";
+@import "./pages/about.css";
+
+/* =======================================================
+   ANIMATIONS
+======================================================= */
+
+@import "./animations/fade.css";
+@import "./animations/slide.css";
+@import "./animations/glow.css";
+@import "./animations/parallax.css";
+@import "./animations/page-turn.css";
+@import "./animations/floating.css";
+
+/* =======================================================
+   THEMES
+======================================================= */
+
+@import "./themes/dark.css";
+@import "./themes/light.css";
+@import "./themes/ancient.css";
+
+/* =======================================================
+   UTILITIES
+======================================================= */
+
+@import "./utilities/flex.css";
+@import "./utilities/grid.css";
+@import "./utilities/text.css";
+@import "./utilities/spacing.css";
+@import "./utilities/display.css";
