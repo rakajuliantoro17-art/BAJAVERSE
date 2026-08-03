@@ -1,1 +1,259 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+DIALOG COMPONENT
+Version : 0.0.1 Alpha
+
+Description:
+Narrative dialogue system.
+
+Used in:
+- Story
+- NPC
+- Cutscene
+- Quest
+- Battle Intro
+- Tutorial
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.dialog{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-lg);
+
+    width:100%;
+
+    max-width:960px;
+
+    margin-inline:auto;
+
+}
+
+/* ======================================================
+   PANEL
+====================================================== */
+
+.dialog-panel{
+
+    display:flex;
+
+    gap:var(--space-lg);
+
+    padding:var(--space-xl);
+
+    border:1px solid var(--color-border);
+
+    border-radius:var(--radius-xl);
+
+    background:rgba(18,18,20,.85);
+
+    backdrop-filter:blur(16px);
+
+    box-shadow:var(--shadow-book);
+
+}
+
+/* ======================================================
+   PORTRAIT
+====================================================== */
+
+.dialog-portrait{
+
+    width:120px;
+
+    aspect-ratio:1;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+    border-radius:var(--radius-lg);
+
+    border:2px solid var(--color-primary);
+
+}
+
+.dialog-portrait img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* ======================================================
+   CONTENT
+====================================================== */
+
+.dialog-content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-md);
+
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.dialog-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:var(--space-md);
+
+}
+
+/* ======================================================
+   NAME
+====================================================== */
+
+.dialog-name{
+
+    font-family:var(--font-heading);
+
+    font-size:var(--font-size-xl);
+
+    color:var(--color-primary);
+
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
+
+.dialog-role{
+
+    font-size:var(--font-size-sm);
+
+    color:var(--color-text-secondary);
+
+}
+
+/* ======================================================
+   TEXT
+====================================================== */
+
+.dialog-text{
+
+    font-family:var(--font-story);
+
+    font-size:var(--font-size-lg);
+
+    line-height:1.9;
+
+    color:var(--color-text-primary);
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.dialog-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:var(--space-md);
+
+}
+
+/* ======================================================
+   CHOICES
+====================================================== */
+
+.dialog-choices{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-sm);
+
+}
+
+/* ======================================================
+   STATES
+====================================================== */
+
+.dialog[data-state="typing"]{
+
+    opacity:.95;
+
+}
+
+.dialog[data-state="waiting"]{
+
+    opacity:1;
+
+}
+
+.dialog[data-state="disabled"]{
+
+    opacity:.5;
+
+    pointer-events:none;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:768px){
+
+    .dialog-panel{
+
+        flex-direction:column;
+
+        padding:var(--space-lg);
+
+    }
+
+    .dialog-portrait{
+
+        width:88px;
+
+    }
+
+    .dialog-name{
+
+        font-size:var(--font-size-lg);
+
+    }
+
+    .dialog-text{
+
+        font-size:var(--font-size-md);
+
+    }
+
+}
