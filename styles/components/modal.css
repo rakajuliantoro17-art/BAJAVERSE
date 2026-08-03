@@ -1,1 +1,312 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+MODAL COMPONENT
+Version : 0.0.1 Alpha
+
+Description:
+Universal overlay/modal component.
+
+Used in:
+- Character Sheet
+- Inventory
+- Codex
+- Quest
+- Settings
+- Save Game
+- Tutorial
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:var(--space-xl);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+
+        opacity var(--transition-normal),
+
+        visibility var(--transition-normal);
+
+    z-index:var(--z-modal);
+
+}
+
+/* ======================================================
+   ACTIVE
+====================================================== */
+
+.modal[data-state="open"]{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+/* ======================================================
+   BACKDROP
+====================================================== */
+
+.modal-backdrop{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(8,10,16,.72);
+
+    backdrop-filter:blur(12px);
+
+}
+
+/* ======================================================
+   CONTAINER
+====================================================== */
+
+.modal-container{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    width:min(900px,100%);
+
+    max-height:90vh;
+
+    overflow:hidden;
+
+    border-radius:var(--radius-2xl);
+
+    border:1px solid var(--color-border);
+
+    background:var(--color-surface);
+
+    box-shadow:var(--shadow-xl);
+
+    animation:
+
+        modal-enter
+
+        var(--transition-normal)
+
+        ease;
+
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.modal-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:var(--space-md);
+
+    padding:var(--space-lg);
+
+    border-bottom:1px solid var(--color-border);
+
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
+
+.modal-title{
+
+    font-family:var(--font-heading);
+
+    font-size:var(--font-size-xl);
+
+    color:var(--color-text-primary);
+
+}
+
+/* ======================================================
+   CLOSE
+====================================================== */
+
+.modal-close{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:40px;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:transparent;
+
+    transition:
+
+        background-color var(--transition-fast),
+
+        transform var(--transition-fast);
+
+}
+
+.modal-close:hover{
+
+    background:rgba(255,255,255,.08);
+
+    transform:rotate(90deg);
+
+}
+
+/* ======================================================
+   BODY
+====================================================== */
+
+.modal-body{
+
+    flex:1;
+
+    overflow:auto;
+
+    padding:var(--space-xl);
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.modal-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:var(--space-md);
+
+    padding:var(--space-lg);
+
+    border-top:1px solid var(--color-border);
+
+}
+
+/* ======================================================
+   SIZE
+====================================================== */
+
+.modal[data-size="sm"] .modal-container{
+
+    width:420px;
+
+}
+
+.modal[data-size="md"] .modal-container{
+
+    width:720px;
+
+}
+
+.modal[data-size="lg"] .modal-container{
+
+    width:960px;
+
+}
+
+.modal[data-size="xl"] .modal-container{
+
+    width:1200px;
+
+}
+
+/* ======================================================
+   ANIMATION
+====================================================== */
+
+@keyframes modal-enter{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(24px)
+
+            scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0)
+
+            scale(1);
+
+    }
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:768px){
+
+    .modal{
+
+        padding:var(--space-md);
+
+        align-items:flex-end;
+
+    }
+
+    .modal-container{
+
+        width:100%;
+
+        max-height:92vh;
+
+        border-bottom-left-radius:0;
+
+        border-bottom-right-radius:0;
+
+    }
+
+}
