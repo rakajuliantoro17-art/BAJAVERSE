@@ -1,1 +1,281 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+NAVBAR LAYOUT
+Version : 0.0.1 Alpha
+
+Description:
+Primary world navigation.
+
+Used in:
+- Landing
+- Story
+- Chapter
+- World
+- Dashboard
+
+==========================================================
+*/
+
+/* ======================================================
+   ROOT
+====================================================== */
+
+.navbar{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:var(--z-navbar);
+
+    width:100%;
+
+    backdrop-filter:blur(18px);
+
+    background:
+
+        rgba(12,12,16,.72);
+
+    border-bottom:
+
+        1px solid var(--color-border);
+
+}
+
+/* ======================================================
+   CONTAINER
+====================================================== */
+
+.navbar-container{
+
+    width:min(1440px,92vw);
+
+    margin-inline:auto;
+
+    min-height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:var(--space-xl);
+
+}
+
+/* ======================================================
+   BRAND
+====================================================== */
+
+.navbar-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:var(--space-md);
+
+    text-decoration:none;
+
+}
+
+.navbar-logo{
+
+    width:44px;
+
+    height:44px;
+
+    object-fit:contain;
+
+}
+
+.navbar-title{
+
+    font-family:var(--font-heading);
+
+    font-size:var(--font-size-lg);
+
+    color:var(--color-text-primary);
+
+}
+
+/* ======================================================
+   NAVIGATION
+====================================================== */
+
+.navbar-nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:var(--space-sm);
+
+}
+
+/* ======================================================
+   LINK
+====================================================== */
+
+.navbar-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    padding:
+
+        .75rem
+        1rem;
+
+    border-radius:
+
+        var(--radius-full);
+
+    color:
+
+        var(--color-text-secondary);
+
+    text-decoration:none;
+
+    transition:
+
+        background-color var(--transition-fast),
+
+        color var(--transition-fast);
+
+}
+
+.navbar-link:hover{
+
+    background:
+
+        rgba(255,255,255,.05);
+
+    color:
+
+        var(--color-text-primary);
+
+}
+
+.navbar-link[aria-current="page"]{
+
+    background:
+
+        var(--color-primary);
+
+    color:
+
+        var(--color-surface);
+
+}
+
+/* ======================================================
+   ACTIONS
+====================================================== */
+
+.navbar-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:var(--space-md);
+
+}
+
+/* ======================================================
+   ICON BUTTON
+====================================================== */
+
+.navbar-icon{
+
+    width:42px;
+
+    height:42px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    transition:
+
+        background-color var(--transition-fast),
+
+        transform var(--transition-fast);
+
+}
+
+.navbar-icon:hover{
+
+    background:
+
+        rgba(255,255,255,.06);
+
+    transform:translateY(-2px);
+
+}
+
+/* ======================================================
+   PROFILE
+====================================================== */
+
+.navbar-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.75rem;
+
+}
+
+.navbar-avatar{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+.navbar-toggle{
+
+    display:none;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:960px){
+
+    .navbar-nav{
+
+        display:none;
+
+    }
+
+    .navbar-toggle{
+
+        display:flex;
+
+    }
+
+}
