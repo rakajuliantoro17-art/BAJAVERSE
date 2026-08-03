@@ -1,1 +1,136 @@
+/*
+==========================================================
+BAJAVERSE
+Living Story Universe
 
+TEXT SELECTION
+Version : 0.0.1 Alpha
+
+Description:
+Global text selection styles.
+
+Provides:
+- Text selection
+- Theme-ready selection
+- Accessibility support
+
+==========================================================
+*/
+
+/* ======================================================
+   DEFAULT
+====================================================== */
+
+::selection{
+
+    background:
+
+        var(--color-primary);
+
+    color:
+
+        var(--color-surface);
+
+    text-shadow:none;
+
+}
+
+::-moz-selection{
+
+    background:
+
+        var(--color-primary);
+
+    color:
+
+        var(--color-surface);
+
+    text-shadow:none;
+
+}
+
+/* ======================================================
+   STORY
+====================================================== */
+
+.story-selection::selection{
+
+    background:
+
+        rgba(176,141,87,.35);
+
+    color:
+
+        var(--color-text-primary);
+
+}
+
+/* ======================================================
+   DIALOGUE
+====================================================== */
+
+.dialogue-selection::selection{
+
+    background:
+
+        rgba(63,125,78,.30);
+
+    color:
+
+        var(--color-text-primary);
+
+}
+
+/* ======================================================
+   CODEX
+====================================================== */
+
+.codex-selection::selection{
+
+    background:
+
+        rgba(122,90,42,.35);
+
+    color:
+
+        var(--color-text-primary);
+
+}
+
+/* ======================================================
+   DISABLED
+====================================================== */
+
+.no-selection{
+
+    user-select:none;
+
+    -webkit-user-select:none;
+
+    -moz-user-select:none;
+
+    -ms-user-select:none;
+
+}
+
+/* ======================================================
+   ENABLED
+====================================================== */
+
+.allow-selection{
+
+    user-select:text;
+
+}
+
+/* ======================================================
+   READ ONLY
+====================================================== */
+
+.read-only{
+
+    user-select:text;
+
+    cursor:text;
+
+}
