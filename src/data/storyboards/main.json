@@ -4,7 +4,6 @@
         "title": "Gerbang Kota",
         "description": "Kabut tipis menyelimuti gerbang kota. Seorang penjaga berdiri memperhatikan setiap orang yang datang.",
         "background": "/images/backgrounds/gerbang-kota.jpg",
-        "characters": ["penjaga_tua"],
         "choices": [
             {
                 "text": "Dekati penjaga",
@@ -24,8 +23,7 @@
         "id": "SB_0002",
         "title": "Penjaga Tua",
         "description": "Penjaga itu menatapmu. 'Jarang ada orang datang ke kota ini saat kabut turun.'",
-        "background": "/images/backgrounds/gerbang-kota.jpg",
-        "characters": ["penjaga_tua"],
+        "background": "/images/backgrounds/gerbang-penjaga-tua.jpg",
         "choices": [
             {
                 "text": "Tanyakan tentang kota",
