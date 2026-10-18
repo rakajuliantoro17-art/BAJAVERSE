@@ -1,5 +1,33 @@
-const readline = require("readline");
+const Player = require("../models/Player");
 
+const MAX_NAME_LENGTH = 30;
+
+class GameError extends Error {
+
+    constructor(message, status = 400) {
+
+        super(message);
+
+        this.name = "GameError";
+        this.status = status;
+
+    }
+
+}
+
+
+/*
+ * GameEngine is stateless: it never keeps a player in memory and never
+ * reads from stdin. Every call receives the full game state and returns
+ * the new state plus the scene to show. This is what lets it run on
+ * serverless hosting (Vercel) where memory does not survive between
+ * requests, and lets the same logic drive the web UI and the CLI.
+ *
+ * state = {
+ *     player: { id, name, role, level, currentStoryboard },
+ *     flags: { [key]: any }
+ * }
+ */
 class GameEngine {
 
     constructor() {
@@ -7,11 +35,6 @@ class GameEngine {
         console.log("[GameEngine] Created");
 
         this.engineManager = null;
-
-        this.rl = readline.createInterface({
-            input: process.stdin,
-            output: process.stdout
-        });
 
     }
 
@@ -30,167 +53,176 @@ class GameEngine {
     }
 
 
-    load() {
+    getRoles() {
 
-        console.log("[GameEngine] Loading data...");
-
-    }
-
-
-    start() {
-
-        console.log("[GameEngine] Starting engine...");
-
-        this.createCharacter();
+        return this.engineManager.roleEngine.getRoles();
 
     }
 
 
-    createCharacter() {
+    start(name, roleId) {
 
-        this.rl.question(
-            "\nMasukkan nama karakter: ",
-            (name) => {
+        const cleanName =
+            typeof name === "string" ? name.trim() : "";
 
+        if (!cleanName) {
 
-                console.log("\nPilih Role:");
+            throw new GameError("Nama karakter wajib diisi");
 
-                const roles =
-                    this.engineManager.roleEngine.getRoles();
+        }
 
+        if (cleanName.length > MAX_NAME_LENGTH) {
 
-                roles.forEach((role, index) => {
+            throw new GameError(
+                `Nama karakter maksimal ${MAX_NAME_LENGTH} karakter`
+            );
 
-                    console.log(
-                        `${index + 1}. ${role.name} - ${role.description}`
-                    );
+        }
 
-                });
+        const role =
+            this.engineManager.roleEngine.getRole(roleId);
 
+        if (!role) {
 
-                this.rl.question(
-                    "\nPilih role: ",
-                    (answer) => {
+            throw new GameError("Role tidak ditemukan");
 
+        }
 
-                        const roleIndex =
-                            Number(answer) - 1;
+        const player = new Player(cleanName, role.name);
 
+        const state = {
 
-                        const selectedRole =
-                            roles[roleIndex];
+            player: {
+                id: player.id,
+                name: player.name,
+                role: player.role,
+                level: player.level,
+                currentStoryboard: player.currentStoryboard
+            },
 
+            flags: {}
 
-                        if (!selectedRole) {
+        };
 
-                            console.log("Role tidak ditemukan");
-
-                            this.rl.close();
-
-                            return;
-
-                        }
-
-
-                        this.engineManager.playerEngine.createPlayer(
-                            name,
-                            selectedRole.name
-                        );
-
-
-                        const player =
-                            this.engineManager.playerEngine.getPlayer();
-                            this.engineManager.worldEngine.setFlag(
-    "met_guard",
-    true
-);
-
-console.log(
-    this.engineManager.worldEngine.getFlag("met_guard")
-);
-
-
-                        console.log("\n--------------------");
-                        console.log("PLAYER CREATED");
-                        console.log("--------------------");
-
-                        console.log(player);
-
-
-                        console.log(
-                            "\nMemasuki dunia BAJAVERSE..."
-                        );
-
-
-                        this.playStoryboard(
-                            player.currentStoryboard
-                        );
-
-
-                    }
-                );
-
-
-            }
-        );
+        return {
+            state,
+            scene: this.getScene(state.player.currentStoryboard)
+        };
 
     }
 
 
-    playStoryboard(id) {
+    choose(state, choiceIndex) {
+
+        this.validateState(state);
+
+        const storyboard =
+            this.engineManager.storyboardEngine.getStoryboard(
+                state.player.currentStoryboard
+            );
+
+        if (!storyboard) {
+
+            throw new GameError("Storyboard tidak ditemukan");
+
+        }
+
+        if (!Number.isInteger(choiceIndex)) {
+
+            throw new GameError("Pilihan tidak valid");
+
+        }
+
+        const target =
+            this.engineManager.choiceEngine.choose(
+                storyboard,
+                choiceIndex
+            );
+
+        if (!target) {
+
+            throw new GameError("Pilihan tidak valid");
+
+        }
+
+        const scene = this.getScene(target);
+
+        const nextState = {
+
+            player: {
+                ...state.player,
+                currentStoryboard: target
+            },
+
+            flags: { ...state.flags }
+
+        };
+
+        return { state: nextState, scene };
+
+    }
+
+
+    resume(state) {
+
+        this.validateState(state);
+
+        return {
+            state,
+            scene: this.getScene(state.player.currentStoryboard)
+        };
+
+    }
+
+
+    getScene(id) {
 
         const storyboard =
             this.engineManager.storyboardEngine.getStoryboard(id);
 
-
         if (!storyboard) {
 
-            console.log("Storyboard tidak ditemukan");
-
-            return;
+            throw new GameError(
+                `Storyboard ${id} tidak ditemukan`,
+                500
+            );
 
         }
 
+        // Only the text of each choice leaves the engine; targets stay server-side.
+        return {
 
-        console.log("\n--------------------------------");
-        console.log(storyboard.title);
-        console.log(storyboard.description);
-        console.log("--------------------------------");
+            id: storyboard.id,
+            title: storyboard.title,
+            description: storyboard.description,
 
+            choices: storyboard.choices.map((choice) => ({
+                text: choice.text
+            }))
 
-        storyboard.choices.forEach((choice, index) => {
+        };
 
-            console.log(
-                `${index + 1}. ${choice.text}`
-            );
-
-        });
-
-
-        this.rl.question(
-            "\nPilih tindakan: ",
-            (answer) => {
+    }
 
 
-                const choiceIndex =
-                    Number(answer) - 1;
+    validateState(state) {
 
+        const valid =
+            state &&
+            typeof state === "object" &&
+            state.player &&
+            typeof state.player === "object" &&
+            typeof state.player.name === "string" &&
+            typeof state.player.currentStoryboard === "string" &&
+            state.flags &&
+            typeof state.flags === "object" &&
+            !Array.isArray(state.flags);
 
-                const nextStoryboard =
-                    this.engineManager.choiceEngine.choose(
-                        storyboard,
-                        choiceIndex
-                    );
+        if (!valid) {
 
+            throw new GameError("State permainan tidak valid");
 
-                if (nextStoryboard) {
-
-                    this.playStoryboard(nextStoryboard);
-
-                }
-
-            }
-        );
+        }
 
     }
 
@@ -198,3 +230,4 @@ console.log(
 
 
 module.exports = GameEngine;
+module.exports.GameError = GameError;

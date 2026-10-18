@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BAJAVERSE</title>
+<style>
+  :root {
+    --bg: #14110d;
+    --panel: #1f1a13;
+    --border: #3a3022;
+    --text: #e9dfc9;
+    --muted: #a8997a;
+    --accent: #d9a441;
+    --accent-hover: #f0bd5c;
+    --error: #e07a5f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 24px 16px;
+  }
+  main { width: 100%; max-width: 560px; }
+  h1 { margin: 0 0 4px; letter-spacing: 0.12em; color: var(--accent); font-size: 1.6rem; }
+  .tagline { margin: 0 0 24px; color: var(--muted); font-style: italic; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  h2 { margin: 0 0 8px; font-size: 1.3rem; }
+  label { display: block; margin: 16px 0 6px; color: var(--muted); font-size: 0.9rem; }
+  input, select {
+    width: 100%;
+    padding: 10px 12px;
+    font: inherit;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  .role-desc { margin: 8px 0 0; color: var(--muted); font-size: 0.9rem; min-height: 2.7em; }
+  button {
+    font: inherit;
+    cursor: pointer;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  button:hover:not(:disabled) { border-color: var(--accent-hover); background: #2a2217; }
+  button:disabled { opacity: 0.5; cursor: wait; }
+  button.primary { margin-top: 20px; width: 100%; text-align: center; background: var(--accent); color: #1a1409; font-weight: bold; }
+  button.primary:hover:not(:disabled) { background: var(--accent-hover); }
+  .choices { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+  .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 12px; }
+  .end { margin-top: 20px; color: var(--muted); font-style: italic; }
+  .error { margin-top: 12px; color: var(--error); min-height: 1.2em; font-size: 0.9rem; }
+  .link { margin-top: 16px; background: none; border: none; padding: 0; color: var(--muted); font-size: 0.85rem; text-decoration: underline; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1>BAJAVERSE</h1>
+  <p class="tagline">Setiap legenda Nusantara layak untuk dihidupkan kembali.</p>
+
+  <section id="create" class="card" hidden>
+    <h2>Buat Karakter</h2>
+    <label for="name">Nama karakter</label>
+    <input id="name" maxlength="30" autocomplete="off">
+    <label for="role">Role</label>
+    <select id="role"></select>
+    <p class="role-desc" id="role-desc"></p>
+    <button class="primary" id="start">Masuki dunia</button>
+  </section>
+
+  <section id="scene" class="card" hidden>
+    <div class="meta" id="meta"></div>
+    <h2 id="scene-title"></h2>
+    <p id="scene-desc"></p>
+    <div class="choices" id="choices"></div>
+    <p class="end" id="end" hidden>Cerita ini belum berlanjut.</p>
+    <button class="link" id="restart">Mulai ulang</button>
+  </section>
+
+  <p class="error" id="error" role="alert"></p>
+</main>
+
+<script>
+  const SAVE_KEY = "bajaverse.state";
+
+  const $ = (id) => document.getElementById(id);
+  let roles = [];
+  let state = null;
+
+  function showError(message) {
+    $("error").textContent = message || "";
+  }
+
+  function saveState() {
+    try { localStorage.setItem(SAVE_KEY, JSON.stringify(state)); } catch (e) {}
+  }
+
+  function loadState() {
+    try { return JSON.parse(localStorage.getItem(SAVE_KEY)); } catch (e) { return null; }
+  }
+
+  function clearState() {
+    try { localStorage.removeItem(SAVE_KEY); } catch (e) {}
+  }
+
+  async function api(path, body) {
+    const options = body
+      ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }
+      : {};
+    let response;
+    try {
+      response = await fetch(path, options);
+    } catch (e) {
+      throw new Error("Tidak bisa terhubung ke server");
+    }
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.error || "Terjadi kesalahan");
+    return data;
+  }
+
+  function setBusy(busy) {
+    document.querySelectorAll("button").forEach((b) => { b.disabled = busy; });
+  }
+
+  function renderScene(game) {
+    state = game.state;
+    saveState();
+
+    $("create").hidden = true;
+    $("scene").hidden = false;
+    $("meta").textContent = state.player.name + " · " + state.player.role;
+    $("scene-title").textContent = game.scene.title;
+    $("scene-desc").textContent = game.scene.description;
+
+    const box = $("choices");
+    box.replaceChildren();
+    game.scene.choices.forEach((choice, index) => {
+      const button = document.createElement("button");
+      button.textContent = choice.text;
+      button.addEventListener("click", () => choose(index));
+      box.appendChild(button);
+    });
+    $("end").hidden = game.scene.choices.length > 0;
+  }
+
+  function renderCreate() {
+    state = null;
+    $("scene").hidden = true;
+    $("create").hidden = false;
+  }
+
+  function updateRoleDesc() {
+    const role = roles.find((r) => r.id === $("role").value);
+    $("role-desc").textContent = role ? role.description : "";
+  }
+
+  async function choose(index) {
+    showError("");
+    setBusy(true);
+    try {
+      renderScene(await api("/api/choose", { state, choice: index }));
+    } catch (e) {
+      showError(e.message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function startGame() {
+    showError("");
+    setBusy(true);
+    try {
+      renderScene(await api("/api/start", { name: $("name").value, roleId: $("role").value }));
+    } catch (e) {
+      showError(e.message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  $("start").addEventListener("click", startGame);
+  $("role").addEventListener("change", updateRoleDesc);
+  $("restart").addEventListener("click", () => { clearState(); showError(""); renderCreate(); });
+
+  (async function init() {
+    try {
+      roles = (await api("/api/roles")).roles;
+      roles.forEach((role) => {
+        const option = document.createElement("option");
+        option.value = role.id;
+        option.textContent = role.name;
+        $("role").appendChild(option);
+      });
+      updateRoleDesc();
+
+      const saved = loadState();
+      if (saved) {
+        try {
+          renderScene(await api("/api/resume", { state: saved }));
+          return;
+        } catch (e) {
+          clearState();
+        }
+      }
+      renderCreate();
+    } catch (e) {
+      showError(e.message);
+    }
+  })();
+</script>
+</body>
+</html>
