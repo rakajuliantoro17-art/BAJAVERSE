@@ -30,60 +30,68 @@ function printScene(scene) {
 
     console.log("\n--------------------------------");
     console.log(scene.title);
-    console.log(scene.description);
     console.log("--------------------------------");
 
-    scene.choices.forEach((choice, index) => {
-        console.log(`${index + 1}. ${choice.text}`);
-    });
+    scene.lines.forEach((line) => console.log(`\n${line}`));
 
 }
 
 
 async function main() {
 
-    const name = await ask("\nMasukkan nama karakter: ");
-
-    const roles = gameEngine.getRoles();
-
-    console.log("\nPilih Role:");
-
-    roles.forEach((role, index) => {
-        console.log(`${index + 1}. ${role.name} - ${role.description}`);
-    });
-
-    let game = null;
-
-    while (!game) {
-
-        const answer = await ask("\nPilih role: ");
-        const role = roles[Number(answer) - 1];
-
-        try {
-            game = gameEngine.start(name, role && role.id);
-        } catch (error) {
-            console.log(error.message);
-        }
-
-    }
-
-    console.log("\nMemasuki dunia BAJAVERSE...");
+    let game = gameEngine.begin();
 
     while (true) {
 
-        printScene(game.scene);
+        const { scene, state } = game;
 
-        if (game.scene.choices.length === 0) {
-            console.log("\n(Cerita ini belum berlanjut.)");
-            break;
-        }
-
-        const answer = await ask("\nPilih tindakan: ");
+        printScene(scene);
 
         try {
-            game = gameEngine.choose(game.state, Number(answer) - 1);
+
+            if (scene.kind === "input_name") {
+
+                const name = await ask(`\n${scene.prompt}: `);
+
+                game = gameEngine.submitName(state, name);
+
+            } else if (scene.kind === "choose_role") {
+
+                console.log("");
+
+                scene.roles.forEach((role, index) => {
+                    console.log(`${index + 1}. ${role.name} - ${role.description}`);
+                });
+
+                const answer = await ask("\nPilih role: ");
+                const role = scene.roles[Number(answer) - 1];
+
+                game = gameEngine.submitRole(state, role && role.id);
+
+            } else {
+
+                if (scene.choices.length === 0) {
+                    console.log("\n(Cerita ini belum berlanjut.)");
+                    break;
+                }
+
+                console.log("");
+
+                scene.choices.forEach((choice, index) => {
+                    console.log(`${index + 1}. ${choice.text}`);
+                });
+
+                const answer = await ask("\nPilih tindakan: ");
+
+                game = gameEngine.choose(state, Number(answer) - 1);
+
+            }
+
         } catch (error) {
+
+            // Bad input: say why and show the same scene again.
             console.log(error.message);
+
         }
 
     }

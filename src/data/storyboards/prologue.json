@@ -1,0 +1,78 @@
+[
+    {
+        "id": "PR_0001",
+        "title": "Kegelapan",
+        "mood": "void",
+        "description": "Tidak ada suara. Tidak ada tubuh. Tidak ada nama.\n\nYang tersisa hanyalah serpihan ingatan tentang dunia lama, bergetar seperti nyala lilin yang hampir padam.\n\nLalu, jauh di dalam gelap, sesuatu berdenyut. Pelan. Biru. Hidup.",
+        "choices": [
+            {
+                "text": "Ikuti denyut itu",
+                "target": "PR_0002"
+            }
+        ]
+    },
+    {
+        "id": "PR_0002",
+        "title": "Terlahir Kembali",
+        "mood": "void",
+        "description": "Denyut itu membesar menjadi cahaya, dan cahaya itu menjadi suara. Tua dan dalam, seperti batu candi yang belajar berbicara.\n\n\"Kau tidak mati, wahai pendatang. Kau terlahir kembali di dalam BAJAVERSE, dunia tempat setiap legenda Nusantara disimpan.\"\n\n\"Namun dunia ini sedang terluka. Kabut Lupa merayap dari batas cakrawala, menghapus kisah demi kisah, kerajaan demi kerajaan. Yang terhapus tidak pernah ada. Yang tersisa hanyalah Kristal, serpihan legenda yang menolak padam.\"\n\n\"Aku adalah Sang Kodeks, kitab hidup dunia ini. Dan aku memanggilmu untuk mengingat.\"",
+        "choices": [
+            {
+                "text": "Apa yang harus kulakukan?",
+                "target": "PR_0003"
+            }
+        ]
+    },
+    {
+        "id": "PR_0003",
+        "type": "input_name",
+        "title": "Nama Pertama",
+        "mood": "void",
+        "description": "Cahaya itu menunggu.\n\n\"Di sini, nama adalah mantra pertama. Hanya mereka yang bernama yang sanggup melawan Kabut Lupa, sebab nama adalah jangkar yang menahanmu agar tidak ikut terhapus.\"\n\n\"Ucapkan namamu, wahai pendatang.\"",
+        "next": "PR_0004"
+    },
+    {
+        "id": "PR_0004",
+        "title": "Gema {name}",
+        "description": "\"{name}.\"\n\nNama itu bergema ke seluruh kegelapan. Retakan cahaya merambat seperti petir di atas kaca, dan dunia pun pecah terbuka.\n\nKau berdiri di tepi tembok bata merah, jauh di atas sebuah kota. Menara-menara candi menjulang di antara jembatan batu dan kanal berair biru. Kristal berpendar di setiap sudut, dan di kejauhan, gunung api mengepulkan asap ke langit senja.\n\nInilah Wilwatikta. Inilah BAJAVERSE.",
+        "background": "/images/backgrounds/bajaverse-hero.jpg",
+        "choices": [
+            {
+                "text": "Pandangi dunia ini",
+                "target": "PR_0005"
+            }
+        ]
+    },
+    {
+        "id": "PR_0005",
+        "title": "Bayangan di Langit",
+        "description": "Sebuah bayangan raksasa melintas, dan seluruh kota membeku. Seekor naga bersisik merah dengan mahkota emas membelah awan, dan auman rendahnya mengguncang menara-menara.\n\n\"Itu Sang Penjaga Langit,\" bisik Sang Kodeks. \"Ia masih mengingat. Tetapi tidak semua yang mengingat berpihak padamu.\"\n\nSebuah kristal terlepas dari tebing dan melayang ke arahmu, berdenyut seirama dengan jantungmu.\n\n\"Kristal ini memilihmu, {name}. Ia menawarkan satu jalan. Pilihlah dengan hati-hati, sebab jalan itu akan menjadi caramu mengingat.\"",
+        "background": "/images/backgrounds/bajaverse-hero.jpg",
+        "choices": [
+            {
+                "text": "Ulurkan tangan",
+                "target": "PR_0006"
+            }
+        ]
+    },
+    {
+        "id": "PR_0006",
+        "type": "choose_role",
+        "title": "Jalan yang Dipilih",
+        "description": "Kristal itu terbelah menjadi tujuh cahaya, dan masing-masing menyimpan satu jalan.\n\nJalan manakah yang akan kau tempuh?",
+        "background": "/images/backgrounds/bajaverse-hero.jpg",
+        "next": "PR_0007"
+    },
+    {
+        "id": "PR_0007",
+        "title": "Jalan {role}",
+        "description": "Cahaya yang kau pilih meresap ke dalam dadamu. Kau merasakan dirimu berubah, dan kau tahu: mulai saat ini, kau adalah seorang {role}.\n\n{roleIntro}\n\n\"Pergilah, {name}. Kota tua itu menunggu di balik kabut. Rahasia yang hilang selama ratusan tahun belum sepenuhnya terhapus.\"\n\nCahaya memudar. Udara berbau tanah basah dan dupa. Di hadapanmu, sebuah gerbang kota menjulang di tengah kabut tipis.",
+        "background": "/images/backgrounds/gerbang-kota.jpg",
+        "choices": [
+            {
+                "text": "Melangkah ke gerbang",
+                "target": "SB_0001"
+            }
+        ]
+    }
+]

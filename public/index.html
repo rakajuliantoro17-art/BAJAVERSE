@@ -41,10 +41,53 @@
     position: fixed;
     inset: 0;
     z-index: -1;
+    transition: opacity 2.4s ease;
     background:
       linear-gradient(180deg, rgba(16, 13, 11, 0.42) 0%, rgba(16, 13, 11, 0.58) 45%, rgba(16, 13, 11, 0.88) 100%),
       var(--page-bg) center / cover no-repeat;
   }
+  /* "void" mood: the artwork is hidden and a pulsing crystal glow fills the dark. */
+  body[data-mood="void"]::before { opacity: 0; }
+  #aura {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 2.4s ease;
+  }
+  body[data-mood="void"] #aura { opacity: 1; }
+  #aura::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 34%, rgba(95, 217, 255, 0.36) 0, rgba(95, 217, 255, 0.14) 28%, transparent 60%);
+    animation: pulse 5.5s ease-in-out infinite;
+  }
+  #aura::after {
+    content: "";
+    position: absolute;
+    inset: -8% 0;
+    opacity: 0.75;
+    background-image:
+      radial-gradient(2px 2px at 12% 74%, #9fe8ff, transparent),
+      radial-gradient(1.5px 1.5px at 27% 38%, #cfeeff, transparent),
+      radial-gradient(2px 2px at 41% 86%, #9fe8ff, transparent),
+      radial-gradient(1.5px 1.5px at 58% 24%, #cfeeff, transparent),
+      radial-gradient(2px 2px at 72% 68%, #9fe8ff, transparent),
+      radial-gradient(1.5px 1.5px at 86% 42%, #cfeeff, transparent),
+      radial-gradient(2px 2px at 93% 82%, #9fe8ff, transparent);
+    animation: drift 16s ease-in-out infinite alternate;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+  @keyframes drift {
+    from { transform: translateY(2%); }
+    to { transform: translateY(-4%); }
+  }
+
   main { width: 100%; max-width: 560px; }
   h1 {
     margin: 0 0 4px;
@@ -63,9 +106,9 @@
     -webkit-backdrop-filter: blur(6px);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(95, 217, 255, 0.06);
   }
-  h2 { margin: 0 0 8px; font-size: 1.3rem; }
+  h2 { margin: 0 0 12px; font-size: 1.3rem; }
   label { display: block; margin: 16px 0 6px; color: var(--muted); font-size: 0.9rem; }
-  input, select {
+  input {
     width: 100%;
     padding: 10px 12px;
     font: inherit;
@@ -74,12 +117,11 @@
     border: 1px solid var(--border);
     border-radius: 6px;
   }
-  input:focus, select:focus {
+  input:focus {
     outline: none;
     border-color: var(--glow);
     box-shadow: 0 0 0 3px var(--glow-soft);
   }
-  .role-desc { margin: 8px 0 0; color: var(--muted); font-size: 0.9rem; min-height: 2.7em; }
   button {
     font: inherit;
     cursor: pointer;
@@ -97,7 +139,7 @@
     box-shadow: 0 0 14px var(--glow-soft);
   }
   button:focus-visible { outline: 2px solid var(--glow); outline-offset: 2px; }
-  button:disabled { opacity: 0.5; cursor: wait; }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
   button.primary {
     margin-top: 20px;
     width: 100%;
@@ -116,7 +158,41 @@
   .error { margin-top: 12px; color: var(--error); min-height: 1.2em; font-size: 0.9rem; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9); }
   .link { margin-top: 16px; background: none; border: none; padding: 0; color: var(--muted); font-size: 0.85rem; text-decoration: underline; box-shadow: none; }
   .link:hover:not(:disabled) { background: none; box-shadow: none; color: var(--glow); }
-  @media (prefers-reduced-motion: reduce) { button { transition: none; } }
+
+  /* Story text */
+  .line { margin: 0 0 14px; font-size: 1.02rem; line-height: 1.75; }
+  .line.quote { font-style: italic; color: #ffe9c2; border-left: 2px solid var(--glow); padding-left: 12px; }
+  .line.big { font-size: 1.35rem; line-height: 1.5; text-align: center; color: var(--accent-hover); text-shadow: 0 0 18px var(--glow-soft); }
+
+  /* Cinematic scenes: lines fade in one after another; the controls appear last. */
+  #scene.animate .line,
+  #scene.animate .reveal {
+    opacity: 0;
+    animation: rise 0.9s ease forwards;
+    animation-delay: calc(var(--i, 0) * 1.1s);
+  }
+  #scene.animate.skip .line,
+  #scene.animate.skip .reveal {
+    animation-duration: 0.01s;
+    animation-delay: 0s;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* Role picker */
+  .role-list { display: grid; gap: 10px; margin-top: 16px; }
+  .role-card { display: block; width: 100%; text-align: left; }
+  .role-card strong { display: block; color: var(--accent-hover); }
+  .role-card span { display: block; color: var(--muted); font-size: 0.88rem; line-height: 1.45; }
+  .role-card.selected {
+    border-color: var(--glow);
+    background: rgba(95, 217, 255, 0.12);
+    box-shadow: 0 0 16px var(--glow-soft);
+  }
+
+  /* Scene image above the text. */
   .stage {
     position: relative;
     margin: -20px -20px 16px;
@@ -196,33 +272,42 @@
   }
   .figure figcaption small { display: block; color: var(--muted); font-size: 0.7rem; }
   [hidden] { display: none !important; }
+
+  @media (prefers-reduced-motion: reduce) {
+    button { transition: none; }
+    body::before, #aura { transition: none; }
+    #aura::before, #aura::after { animation: none; }
+    #scene.animate .line, #scene.animate .reveal { opacity: 1; animation: none; }
+  }
 </style>
 </head>
-<body>
+<body data-mood="world">
+<div id="aura" aria-hidden="true"></div>
 <main>
   <h1>BAJAVERSE</h1>
   <p class="tagline">Setiap legenda Nusantara layak untuk dihidupkan kembali.</p>
-
-  <section id="create" class="card" hidden>
-    <h2>Buat Karakter</h2>
-    <label for="name">Nama karakter</label>
-    <input id="name" maxlength="30" autocomplete="off">
-    <label for="role">Role</label>
-    <select id="role"></select>
-    <p class="role-desc" id="role-desc"></p>
-    <button class="primary" id="start">Masuki dunia</button>
-  </section>
 
   <section id="scene" class="card" hidden>
     <div class="stage" id="stage" hidden>
       <div class="figures" id="figures"></div>
     </div>
-    <div class="meta" id="meta"></div>
+    <div class="meta" id="meta" hidden></div>
     <h2 id="scene-title"></h2>
-    <p id="scene-desc"></p>
-    <div class="choices" id="choices"></div>
+    <div id="lines"></div>
+
+    <div id="name-box" class="reveal" hidden>
+      <label for="name" id="name-label"></label>
+      <input id="name" autocomplete="off" autocapitalize="words" spellcheck="false">
+    </div>
+
+    <div id="role-box" class="reveal" hidden>
+      <div class="role-list" id="role-list" role="radiogroup" aria-label="Pilih role"></div>
+    </div>
+
+    <div class="choices reveal" id="choices" hidden></div>
+    <button class="primary reveal" id="advance" hidden></button>
     <p class="end" id="end" hidden>Cerita ini belum berlanjut.</p>
-    <button class="link" id="restart">Mulai ulang</button>
+    <button class="link" id="restart" hidden>Mulai ulang dari awal</button>
   </section>
 
   <p class="error" id="error" role="alert"></p>
@@ -230,10 +315,19 @@
 
 <script>
   const SAVE_KEY = "bajaverse.state";
+  // Scenes that use the page artwork as their picture don't also need the stage image.
+  const PAGE_ART = "/images/backgrounds/bajaverse-hero.jpg";
+  // Must match the 1.1s step in the CSS (animation-delay: calc(var(--i) * 1.1s)).
+  const STEP_MS = 1100;
+  const reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
 
   const $ = (id) => document.getElementById(id);
-  let roles = [];
   let state = null;
+  let scene = null;
+  let selectedRole = null;
+  let busy = false;
+  let revealing = false;
+  let revealTimer = null;
 
   function showError(message) {
     $("error").textContent = message || "";
@@ -266,8 +360,14 @@
     return data;
   }
 
-  function setBusy(busy) {
-    document.querySelectorAll("button").forEach((b) => { b.disabled = busy; });
+  function refreshControls() {
+    document.querySelectorAll("#scene button").forEach((b) => { b.disabled = busy; });
+    if (scene && scene.kind === "choose_role") $("advance").disabled = busy || !selectedRole;
+  }
+
+  function setBusy(value) {
+    busy = value;
+    refreshControls();
   }
 
   // Resolves true if the image file exists and loads, false otherwise.
@@ -311,7 +411,7 @@
 
   let stageToken = 0;
 
-  function renderStage(scene) {
+  function renderStage(data) {
     const token = ++stageToken;
     const stage = $("stage");
     const figures = $("figures");
@@ -319,58 +419,149 @@
     figures.replaceChildren();
     stage.style.backgroundImage = "";
 
-    const characters = scene.characters || [];
-    stage.hidden = !scene.background && characters.length === 0;
+    const background = data.background && data.background !== PAGE_ART ? data.background : null;
+    const characters = data.characters || [];
+    stage.hidden = !background && characters.length === 0;
     if (stage.hidden) return;
 
-    if (scene.background) {
-      probeImage(scene.background).then((ok) => {
+    if (background) {
+      probeImage(background).then((ok) => {
         if (ok && token === stageToken) {
-          stage.style.backgroundImage = 'url("' + encodeURI(scene.background) + '")';
+          stage.style.backgroundImage = 'url("' + encodeURI(background) + '")';
         }
       });
     }
     characters.forEach((character) => figures.appendChild(makeFigure(character, token)));
   }
 
-  function renderScene(game) {
+  function renderLines(lines, cinematic) {
+    const box = $("lines");
+    box.replaceChildren();
+    lines.forEach((text, index) => {
+      const p = document.createElement("p");
+      p.className = "line";
+      p.style.setProperty("--i", index);
+      // Short lines in cinematic scenes are the dramatic beats; longer quotes are speech.
+      if (cinematic && text.length <= 56) p.classList.add("big");
+      else if (/^["“]/.test(text)) p.classList.add("quote");
+      p.textContent = text;
+      box.appendChild(p);
+    });
+  }
+
+  function skipReveal() {
+    clearTimeout(revealTimer);
+    revealing = false;
+    $("scene").classList.add("skip");
+  }
+
+  function startReveal(lineCount, animate) {
+    clearTimeout(revealTimer);
+    revealing = animate;
+    $("scene").classList.toggle("animate", animate);
+    $("scene").classList.remove("skip");
+    if (animate) {
+      revealTimer = setTimeout(() => { revealing = false; }, (lineCount * STEP_MS) + 900);
+    }
+  }
+
+  function render(game) {
     state = game.state;
+    scene = game.scene;
+    selectedRole = null;
     saveState();
-    renderStage(game.scene);
+    showError("");
 
-    $("create").hidden = true;
+    document.body.dataset.mood = scene.mood || "world";
+    renderStage(scene);
+
     $("scene").hidden = false;
-    $("meta").textContent = state.player.name + " · " + state.player.role;
-    $("scene-title").textContent = game.scene.title;
-    $("scene-desc").textContent = game.scene.description;
 
+    const who = [state.player.name, state.player.role].filter(Boolean).join(" · ");
+    $("meta").textContent = who;
+    $("meta").hidden = !who;
+    $("scene-title").textContent = scene.title;
+
+    const animate = !!scene.cinematic && !reduceMotion;
+    renderLines(scene.lines, !!scene.cinematic);
+
+    const after = scene.lines.length;
+    const reveals = [$("name-box"), $("role-box"), $("choices"), $("advance")];
+    reveals.forEach((el) => { el.hidden = true; el.style.setProperty("--i", after); });
+
+    if (scene.kind === "input_name") {
+      $("name-label").textContent = scene.prompt;
+      $("name").value = "";
+      $("name").placeholder = scene.placeholder || "";
+      $("name").maxLength = scene.maxLength || 30;
+      $("name-box").hidden = false;
+      $("advance").textContent = scene.button;
+      $("advance").hidden = false;
+    } else if (scene.kind === "choose_role") {
+      renderRoles(scene.roles);
+      $("role-box").hidden = false;
+      $("advance").textContent = scene.button;
+      $("advance").hidden = false;
+    } else {
+      renderChoices(scene.choices);
+      $("choices").hidden = scene.choices.length === 0;
+    }
+
+    $("end").hidden = scene.kind !== "story" || scene.choices.length > 0;
+    $("restart").hidden = !!scene.cinematic;
+
+    startReveal(after, animate);
+    refreshControls();
+    window.scrollTo({ top: 0 });
+    if (scene.kind === "input_name" && !animate) $("name").focus();
+    if (scene.kind === "input_name" && animate) {
+      setTimeout(() => { if (scene && scene.kind === "input_name") $("name").focus(); }, (after * STEP_MS) + 900);
+    }
+  }
+
+  function renderChoices(choices) {
     const box = $("choices");
     box.replaceChildren();
-    game.scene.choices.forEach((choice, index) => {
+    choices.forEach((choice, index) => {
       const button = document.createElement("button");
       button.textContent = choice.text;
-      button.addEventListener("click", () => choose(index));
+      button.addEventListener("click", () => submit("/api/choose", { choice: index }));
       box.appendChild(button);
     });
-    $("end").hidden = game.scene.choices.length > 0;
   }
 
-  function renderCreate() {
-    state = null;
-    $("scene").hidden = true;
-    $("create").hidden = false;
+  function renderRoles(roles) {
+    const list = $("role-list");
+    list.replaceChildren();
+    roles.forEach((role) => {
+      const card = document.createElement("button");
+      card.className = "role-card";
+      card.setAttribute("role", "radio");
+      card.setAttribute("aria-checked", "false");
+      card.dataset.id = role.id;
+      const name = document.createElement("strong");
+      name.textContent = role.name;
+      const desc = document.createElement("span");
+      desc.textContent = role.description;
+      card.append(name, desc);
+      card.addEventListener("click", () => {
+        selectedRole = role.id;
+        list.querySelectorAll(".role-card").forEach((c) => {
+          const on = c.dataset.id === selectedRole;
+          c.classList.toggle("selected", on);
+          c.setAttribute("aria-checked", on ? "true" : "false");
+        });
+        refreshControls();
+      });
+      list.appendChild(card);
+    });
   }
 
-  function updateRoleDesc() {
-    const role = roles.find((r) => r.id === $("role").value);
-    $("role-desc").textContent = role ? role.description : "";
-  }
-
-  async function choose(index) {
+  async function submit(path, extra) {
     showError("");
     setBusy(true);
     try {
-      renderScene(await api("/api/choose", { state, choice: index }));
+      render(await api(path, Object.assign({ state: state }, extra)));
     } catch (e) {
       showError(e.message);
     } finally {
@@ -378,11 +569,11 @@
     }
   }
 
-  async function startGame() {
+  async function begin() {
     showError("");
     setBusy(true);
     try {
-      renderScene(await api("/api/start", { name: $("name").value, roleId: $("role").value }));
+      render(await api("/api/begin", {}));
     } catch (e) {
       showError(e.message);
     } finally {
@@ -390,34 +581,44 @@
     }
   }
 
-  $("start").addEventListener("click", startGame);
-  $("role").addEventListener("change", updateRoleDesc);
-  $("restart").addEventListener("click", () => { clearState(); showError(""); renderCreate(); });
+  // While a cinematic scene is still revealing, any click only skips ahead
+  // (it never triggers a hidden button). Capture phase so it runs first.
+  $("scene").addEventListener("click", (event) => {
+    if (!revealing) return;
+    event.preventDefault();
+    event.stopPropagation();
+    skipReveal();
+  }, true);
+
+  $("advance").addEventListener("click", () => {
+    if (!scene) return;
+    if (scene.kind === "input_name") submit("/api/name", { name: $("name").value });
+    else if (scene.kind === "choose_role" && selectedRole) submit("/api/role", { roleId: selectedRole });
+  });
+
+  $("name").addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      if (!revealing && !busy) $("advance").click();
+    }
+  });
+
+  $("restart").addEventListener("click", () => {
+    clearState();
+    begin();
+  });
 
   (async function init() {
-    try {
-      roles = (await api("/api/roles")).roles;
-      roles.forEach((role) => {
-        const option = document.createElement("option");
-        option.value = role.id;
-        option.textContent = role.name;
-        $("role").appendChild(option);
-      });
-      updateRoleDesc();
-
-      const saved = loadState();
-      if (saved) {
-        try {
-          renderScene(await api("/api/resume", { state: saved }));
-          return;
-        } catch (e) {
-          clearState();
-        }
+    const saved = loadState();
+    if (saved) {
+      try {
+        render(await api("/api/resume", { state: saved }));
+        return;
+      } catch (e) {
+        clearState();
       }
-      renderCreate();
-    } catch (e) {
-      showError(e.message);
     }
+    begin();
   })();
 </script>
 </body>

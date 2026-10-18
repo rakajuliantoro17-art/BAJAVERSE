@@ -36,11 +36,9 @@ app.get("/api/roles", (req, res) => {
 });
 
 
-app.post("/api/start", (req, res) => {
+app.post("/api/begin", (req, res) => {
 
-    const { name, roleId } = req.body || {};
-
-    res.json(gameEngine.start(name, roleId));
+    res.json(gameEngine.begin());
 
 });
 
@@ -50,6 +48,24 @@ app.post("/api/choose", (req, res) => {
     const { state, choice } = req.body || {};
 
     res.json(gameEngine.choose(state, choice));
+
+});
+
+
+app.post("/api/name", (req, res) => {
+
+    const { state, name } = req.body || {};
+
+    res.json(gameEngine.submitName(state, name));
+
+});
+
+
+app.post("/api/role", (req, res) => {
+
+    const { state, roleId } = req.body || {};
+
+    res.json(gameEngine.submitRole(state, roleId));
 
 });
 

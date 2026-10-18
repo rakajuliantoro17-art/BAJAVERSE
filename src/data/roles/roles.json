@@ -2,36 +2,43 @@
     {
         "id": "vanguard",
         "name": "Vanguard",
-        "description": "Petarung garis depan yang kuat dalam bertahan dan menghadapi ancaman langsung."
+        "description": "Petarung garis depan yang kuat dalam bertahan dan menghadapi ancaman langsung.",
+        "intro": "Tanganmu mengepal dengan sendirinya. Tanah di bawah kakimu terasa lebih padat, seolah Bajaverse sendiri bersandar padamu. Kau adalah dinding pertama yang akan berdiri ketika bahaya datang."
     },
     {
         "id": "ranger",
         "name": "Ranger",
-        "description": "Pengintai yang ahli membaca lingkungan dan menemukan jalur tersembunyi."
+        "description": "Pengintai yang ahli membaca lingkungan dan menemukan jalur tersembunyi.",
+        "intro": "Matamu menangkap hal-hal yang luput dari orang lain: jejak angin di rerumputan, sinar kristal yang bergeser, jalan sempit di antara kabut. Bajaverse berbisik, dan kau mengerti bahasanya."
     },
     {
         "id": "scholar",
         "name": "Scholar",
-        "description": "Peneliti yang memiliki kemampuan analisis, sejarah, dan pemecahan misteri."
+        "description": "Peneliti yang memiliki kemampuan analisis, sejarah, dan pemecahan misteri.",
+        "intro": "Ribuan kisah berlompatan di kepalamu: nama raja, bunyi mantra, tahun yang terlupa. Di dunia yang sedang lupa, ingatanmu adalah senjata paling tajam."
     },
     {
         "id": "artificer",
         "name": "Artificer",
-        "description": "Pencipta alat yang memahami teknologi dan mekanisme kuno."
+        "description": "Pencipta alat yang memahami teknologi dan mekanisme kuno.",
+        "intro": "Jarimu gatal ingin membongkar. Setiap ukiran di batu candi tampak seperti mekanisme yang menunggu dipahami, dan kristal di dadamu berdenyut mengikuti irama cara kerjanya."
     },
     {
         "id": "mystic",
         "name": "Mystic",
-        "description": "Pengguna energi misterius yang mampu memahami fenomena tidak biasa."
+        "description": "Pengguna energi misterius yang mampu memahami fenomena tidak biasa.",
+        "intro": "Kristal di dadamu bergetar selaras dengan kristal-kristal di kejauhan. Kau mendengar sesuatu di balik keheningan, bukan suara, melainkan perasaan sebuah dunia yang sedang ketakutan."
     },
     {
         "id": "diplomat",
         "name": "Diplomat",
-        "description": "Ahli komunikasi yang mampu membuka jalan melalui interaksi sosial."
+        "description": "Ahli komunikasi yang mampu membuka jalan melalui interaksi sosial.",
+        "intro": "Kau merasakan apa yang tak terucap: kecemasan para penjaga, harapan yang tersembunyi di balik wajah tenang. Di dunia yang retak, kata yang tepat bisa membuka lebih banyak pintu daripada sebilah pedang."
     },
     {
         "id": "medic",
         "name": "Medic",
-        "description": "Pendukung yang memahami penyembuhan dan kondisi pemain."
+        "description": "Pendukung yang memahami penyembuhan dan kondisi pemain.",
+        "intro": "Tanganmu hangat. Di mana pun ada luka, pada manusia, pada tanah, pada kristal yang meredup, kau merasakannya seperti denyut kedua di dadamu. Bajaverse membutuhkan seseorang yang menyembuhkan, bukan hanya yang bertarung."
     }
 ]

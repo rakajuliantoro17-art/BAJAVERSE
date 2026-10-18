@@ -24,9 +24,19 @@ class GameError extends Error {
  * requests, and lets the same logic drive the web UI and the CLI.
  *
  * state = {
- *     player: { id, name, role, level, currentStoryboard },
+ *     player: { id, name, role, roleId, level, currentStoryboard },
  *     flags: { [key]: any }
  * }
+ *
+ * The prologue and the main story are the same storyboard graph. What the
+ * player does in a scene depends on its `type` (see StoryboardEngine):
+ *   story        -> choose(state, index)
+ *   input_name   -> submitName(state, name)
+ *   choose_role  -> submitRole(state, roleId)
+ *
+ * Text may use {name}, {role} and {roleIntro}; they are filled in here.
+ * Scenes with ids starting "PR_" (prologue) or `"cinematic": true` are
+ * shown as slow, line-by-line reveals; `"cinematic": false` turns it off.
  */
 class GameEngine {
 
@@ -55,40 +65,18 @@ class GameEngine {
 
     getRoles() {
 
-        return this.engineManager.roleEngine.getRoles();
+        return this.engineManager.roleEngine.getRoles().map((role) => ({
+            id: role.id,
+            name: role.name,
+            description: role.description
+        }));
 
     }
 
 
-    start(name, roleId) {
+    begin() {
 
-        const cleanName =
-            typeof name === "string" ? name.trim() : "";
-
-        if (!cleanName) {
-
-            throw new GameError("Nama karakter wajib diisi");
-
-        }
-
-        if (cleanName.length > MAX_NAME_LENGTH) {
-
-            throw new GameError(
-                `Nama karakter maksimal ${MAX_NAME_LENGTH} karakter`
-            );
-
-        }
-
-        const role =
-            this.engineManager.roleEngine.getRole(roleId);
-
-        if (!role) {
-
-            throw new GameError("Role tidak ditemukan");
-
-        }
-
-        const player = new Player(cleanName, role.name);
+        const player = new Player();
 
         const state = {
 
@@ -96,6 +84,7 @@ class GameEngine {
                 id: player.id,
                 name: player.name,
                 role: player.role,
+                roleId: null,
                 level: player.level,
                 currentStoryboard: player.currentStoryboard
             },
@@ -104,10 +93,7 @@ class GameEngine {
 
         };
 
-        return {
-            state,
-            scene: this.getScene(state.player.currentStoryboard)
-        };
+        return { state, scene: this.getScene(state) };
 
     }
 
@@ -116,14 +102,11 @@ class GameEngine {
 
         this.validateState(state);
 
-        const storyboard =
-            this.engineManager.storyboardEngine.getStoryboard(
-                state.player.currentStoryboard
-            );
+        const storyboard = this.currentStoryboard(state);
 
-        if (!storyboard) {
+        if (this.typeOf(storyboard) !== "story") {
 
-            throw new GameError("Storyboard tidak ditemukan");
+            throw new GameError("Adegan ini tidak memakai pilihan");
 
         }
 
@@ -145,20 +128,54 @@ class GameEngine {
 
         }
 
-        const scene = this.getScene(target);
+        return this.moveTo(state, target);
 
-        const nextState = {
+    }
 
-            player: {
-                ...state.player,
-                currentStoryboard: target
-            },
 
-            flags: { ...state.flags }
+    submitName(state, name) {
 
-        };
+        this.validateState(state);
 
-        return { state: nextState, scene };
+        const storyboard = this.currentStoryboard(state);
+
+        if (this.typeOf(storyboard) !== "input_name") {
+
+            throw new GameError("Adegan ini tidak meminta nama");
+
+        }
+
+        return this.moveTo(state, storyboard.next, {
+            name: this.cleanName(name)
+        });
+
+    }
+
+
+    submitRole(state, roleId) {
+
+        this.validateState(state);
+
+        const storyboard = this.currentStoryboard(state);
+
+        if (this.typeOf(storyboard) !== "choose_role") {
+
+            throw new GameError("Adegan ini tidak meminta role");
+
+        }
+
+        const role = this.engineManager.roleEngine.getRole(roleId);
+
+        if (!role) {
+
+            throw new GameError("Role tidak ditemukan");
+
+        }
+
+        return this.moveTo(state, storyboard.next, {
+            role: role.name,
+            roleId: role.id
+        });
 
     }
 
@@ -167,27 +184,123 @@ class GameEngine {
 
         this.validateState(state);
 
-        return {
-            state,
-            scene: this.getScene(state.player.currentStoryboard)
-        };
+        return { state, scene: this.getScene(state) };
 
     }
 
 
-    getScene(id) {
+    moveTo(state, target, playerChanges = {}) {
+
+        if (!this.engineManager.storyboardEngine.getStoryboard(target)) {
+
+            throw new GameError(`Storyboard ${target} tidak ditemukan`, 500);
+
+        }
+
+        const nextState = {
+
+            player: {
+                ...state.player,
+                ...playerChanges,
+                currentStoryboard: target
+            },
+
+            flags: { ...state.flags }
+
+        };
+
+        return { state: nextState, scene: this.getScene(nextState) };
+
+    }
+
+
+    currentStoryboard(state) {
 
         const storyboard =
-            this.engineManager.storyboardEngine.getStoryboard(id);
+            this.engineManager.storyboardEngine.getStoryboard(
+                state.player.currentStoryboard
+            );
 
         if (!storyboard) {
 
+            throw new GameError("Storyboard tidak ditemukan");
+
+        }
+
+        return storyboard;
+
+    }
+
+
+    typeOf(storyboard) {
+
+        return storyboard.type || "story";
+
+    }
+
+
+    cleanName(name) {
+
+        const clean =
+            typeof name === "string"
+                ? name.replace(/[\u0000-\u001f\u007f]/g, " ")
+                      .replace(/\s+/g, " ")
+                      .trim()
+                : "";
+
+        if (!clean) {
+
+            throw new GameError("Nama karakter wajib diisi");
+
+        }
+
+        if (clean.length > MAX_NAME_LENGTH) {
+
             throw new GameError(
-                `Storyboard ${id} tidak ditemukan`,
-                500
+                `Nama karakter maksimal ${MAX_NAME_LENGTH} karakter`
             );
 
         }
+
+        return clean;
+
+    }
+
+
+    // Fills {name}, {role}, {roleIntro}. One pass only, so a player name
+    // that happens to contain braces is never treated as a template.
+    fill(template, player) {
+
+        if (typeof template !== "string") {
+
+            return template;
+
+        }
+
+        const role = this.engineManager.roleEngine.getRole(player.roleId);
+
+        const values = {
+            name: player.name || "Pendatang",
+            role: player.role || "Pengembara",
+            roleIntro: (role && role.intro) || ""
+        };
+
+        return template.replace(/\{(\w+)\}/g, (match, key) =>
+            Object.prototype.hasOwnProperty.call(values, key)
+                ? values[key]
+                : match
+        );
+
+    }
+
+
+    getScene(state) {
+
+        const storyboard = this.currentStoryboard(state);
+
+        const type = this.typeOf(storyboard);
+
+        const fill = (text) => this.fill(text, state.player);
 
         const characters = [];
 
@@ -217,34 +330,71 @@ class GameEngine {
 
         }
 
-        // Only the text of each choice leaves the engine; targets stay server-side.
-        return {
+        const cinematic =
+            typeof storyboard.cinematic === "boolean"
+                ? storyboard.cinematic
+                : storyboard.id.startsWith("PR_");
 
+        const scene = {
+
+            kind: type,
             id: storyboard.id,
-            title: storyboard.title,
-            description: storyboard.description,
+            title: fill(storyboard.title),
+
+            lines: fill(storyboard.description || "")
+                .split(/\n\s*\n/)
+                .map((line) => line.trim())
+                .filter(Boolean),
+
+            mood: storyboard.mood || "world",
+            cinematic,
 
             background: storyboard.background || null,
-            characters,
-
-            choices: storyboard.choices.map((choice) => ({
-                text: choice.text
-            }))
+            characters
 
         };
+
+        if (type === "story") {
+
+            // Only the text of each choice leaves the engine; targets stay server-side.
+            scene.choices = (storyboard.choices || []).map((choice) => ({
+                text: fill(choice.text)
+            }));
+
+        }
+
+        if (type === "input_name") {
+
+            scene.prompt = storyboard.prompt || "Namamu";
+            scene.placeholder = storyboard.placeholder || "Tuliskan namamu";
+            scene.maxLength = MAX_NAME_LENGTH;
+            scene.button = storyboard.button || "Ukirkan namaku";
+
+        }
+
+        if (type === "choose_role") {
+
+            scene.roles = this.getRoles();
+            scene.button = storyboard.button || "Tempuh jalan ini";
+
+        }
+
+        return scene;
 
     }
 
 
     validateState(state) {
 
+        const player = state && state.player;
+
         const valid =
             state &&
             typeof state === "object" &&
-            state.player &&
-            typeof state.player === "object" &&
-            typeof state.player.name === "string" &&
-            typeof state.player.currentStoryboard === "string" &&
+            player &&
+            typeof player === "object" &&
+            (player.name === null || typeof player.name === "string") &&
+            typeof player.currentStoryboard === "string" &&
             state.flags &&
             typeof state.flags === "object" &&
             !Array.isArray(state.flags);
