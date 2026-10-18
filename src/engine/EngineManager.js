@@ -3,6 +3,7 @@ const ChoiceEngine = require("./ChoiceEngine");
 const PlayerEngine = require("./PlayerEngine");
 const RoleEngine = require("./RoleEngine");
 const WorldEngine = require("./WorldEngine");
+const CharacterEngine = require("./CharacterEngine");
 
 class EngineManager {
 
@@ -15,6 +16,7 @@ class EngineManager {
         this.playerEngine = new PlayerEngine();
         this.roleEngine = new RoleEngine();
         this.worldEngine = new WorldEngine();
+        this.characterEngine = new CharacterEngine();
 
     }
 
@@ -25,6 +27,7 @@ class EngineManager {
         this.storyboardEngine.initialize();
         this.roleEngine.initialize();
         this.worldEngine.initialize();
+        this.characterEngine.initialize();
 
     }
 

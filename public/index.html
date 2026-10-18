@@ -67,6 +67,84 @@
   .end { margin-top: 20px; color: var(--muted); font-style: italic; }
   .error { margin-top: 12px; color: var(--error); min-height: 1.2em; font-size: 0.9rem; }
   .link { margin-top: 16px; background: none; border: none; padding: 0; color: var(--muted); font-size: 0.85rem; text-decoration: underline; }
+  .stage {
+    position: relative;
+    margin: -20px -20px 16px;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* Fallback shown until a background image loads (or if the file is missing). */
+    background: linear-gradient(180deg, #2b2a2e 0%, #3a3328 62%, #1b1610 100%) center / cover no-repeat;
+  }
+  .stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent 55%, rgba(20, 17, 13, 0.75) 100%);
+  }
+  .figures {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    padding: 0 12px;
+  }
+  .figure { margin: 0; text-align: center; max-width: 45%; }
+  .figure img {
+    display: block;
+    margin: 0 auto;
+    height: clamp(100px, 28vw, 210px);
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  /* Placeholder silhouette used while a character image is missing. */
+  .silhouette {
+    position: relative;
+    margin: 0 auto;
+    width: 90px;
+    height: clamp(100px, 28vw, 200px);
+    opacity: 0.55;
+  }
+  .silhouette::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    width: 38px;
+    height: 38px;
+    margin-left: -19px;
+    border-radius: 50%;
+    background: #8a7a5c;
+  }
+  .silhouette::after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 50%;
+    width: 80px;
+    margin-left: -40px;
+    border-radius: 40px 40px 0 0;
+    background: #8a7a5c;
+  }
+  .figure figcaption {
+    display: inline-block;
+    margin: 6px 0 10px;
+    padding: 2px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    background: rgba(20, 17, 13, 0.8);
+    border: 1px solid var(--border);
+  }
+  .figure figcaption small { display: block; color: var(--muted); font-size: 0.7rem; }
   [hidden] { display: none !important; }
 </style>
 </head>
@@ -86,6 +164,9 @@
   </section>
 
   <section id="scene" class="card" hidden>
+    <div class="stage" id="stage" hidden>
+      <div class="figures" id="figures"></div>
+    </div>
     <div class="meta" id="meta"></div>
     <h2 id="scene-title"></h2>
     <p id="scene-desc"></p>
@@ -139,9 +220,73 @@
     document.querySelectorAll("button").forEach((b) => { b.disabled = busy; });
   }
 
+  // Resolves true if the image file exists and loads, false otherwise.
+  function probeImage(src) {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve(true);
+      img.onerror = () => resolve(false);
+      img.src = src;
+    });
+  }
+
+  function makeFigure(character, token) {
+    const figure = document.createElement("figure");
+    figure.className = "figure";
+
+    const slot = document.createElement("div");
+    slot.className = "silhouette";
+    figure.appendChild(slot);
+
+    const caption = document.createElement("figcaption");
+    caption.textContent = character.name;
+    if (character.title) {
+      const small = document.createElement("small");
+      small.textContent = character.title;
+      caption.appendChild(small);
+    }
+    figure.appendChild(caption);
+
+    if (character.image) {
+      probeImage(character.image).then((ok) => {
+        if (!ok || token !== stageToken) return;
+        const img = document.createElement("img");
+        img.alt = character.name;
+        img.src = character.image;
+        slot.replaceWith(img);
+      });
+    }
+    return figure;
+  }
+
+  let stageToken = 0;
+
+  function renderStage(scene) {
+    const token = ++stageToken;
+    const stage = $("stage");
+    const figures = $("figures");
+
+    figures.replaceChildren();
+    stage.style.backgroundImage = "";
+
+    const characters = scene.characters || [];
+    stage.hidden = !scene.background && characters.length === 0;
+    if (stage.hidden) return;
+
+    if (scene.background) {
+      probeImage(scene.background).then((ok) => {
+        if (ok && token === stageToken) {
+          stage.style.backgroundImage = 'url("' + encodeURI(scene.background) + '")';
+        }
+      });
+    }
+    characters.forEach((character) => figures.appendChild(makeFigure(character, token)));
+  }
+
   function renderScene(game) {
     state = game.state;
     saveState();
+    renderStage(game.scene);
 
     $("create").hidden = true;
     $("scene").hidden = false;

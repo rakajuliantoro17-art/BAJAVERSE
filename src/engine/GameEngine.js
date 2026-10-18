@@ -189,12 +189,43 @@ class GameEngine {
 
         }
 
+        const characters = [];
+
+        for (const characterId of storyboard.characters || []) {
+
+            const character =
+                this.engineManager.characterEngine.getCharacter(
+                    characterId
+                );
+
+            if (!character) {
+
+                console.warn(
+                    `[GameEngine] ${storyboard.id}: unknown character "${characterId}"`
+                );
+
+                continue;
+
+            }
+
+            characters.push({
+                id: character.id,
+                name: character.name,
+                title: character.title || null,
+                image: character.image || null
+            });
+
+        }
+
         // Only the text of each choice leaves the engine; targets stay server-side.
         return {
 
             id: storyboard.id,
             title: storyboard.title,
             description: storyboard.description,
+
+            background: storyboard.background || null,
+            characters,
 
             choices: storyboard.choices.map((choice) => ({
                 text: choice.text
