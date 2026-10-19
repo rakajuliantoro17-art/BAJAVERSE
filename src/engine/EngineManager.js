@@ -33,7 +33,10 @@ class EngineManager {
         this.skillEngine.initialize();
 
         this.skillEngine
-            .validate(this.roleEngine.getRoles())
+            .validate(
+                this.roleEngine.getRoles(),
+                (id) => Boolean(this.characterEngine.getCharacter(id))
+            )
             .forEach((problem) => {
                 console.warn(`[SkillEngine] ${problem}`);
             });

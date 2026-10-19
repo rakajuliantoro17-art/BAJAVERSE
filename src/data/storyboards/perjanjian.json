@@ -47,12 +47,17 @@
         "choices": [
             {
                 "text": "Terima ikatan itu",
-                "setFlags": { "aruna_pact": true },
+                "setFlags": {
+                    "aruna_pact": true
+                },
                 "target": "PJ_0005"
             },
             {
                 "text": "Terima, dengan satu syarat: tak ada lagi persembahan",
-                "setFlags": { "aruna_pact": true, "aruna_vow": true },
+                "setFlags": {
+                    "aruna_pact": true,
+                    "aruna_vow": true
+                },
                 "target": "PJ_0005"
             }
         ]
@@ -85,15 +90,15 @@
     },
     {
         "id": "PJ_0007",
-        "title": "Gerbang yang Menyala",
+        "title": "Pagi di Bukit Abu",
         "cinematic": true,
-        "background": "/images/backgrounds/gerbang-kota.jpg",
-        "description": "Kau terbangun dengan pipi menempel pada batu yang hangat. Bukan tanah retak Lemah Wangkal, melainkan bata merah yang menyimpan sisa matahari.\n\nDi sampingmu tergeletak selembar kain tenun kecil, dan sehelai kertas daluang yang diikat benang: \"Untuk {name}, yang namanya menahan kabut.\" Para Danawa pasti menggotongmu semalam suntuk, lalu pergi sebelum kau sempat berterima kasih.\n\n\"Kita sampai,\" gumam Aruna dari dalam kristal, mengantuk. \"Itu Wilwatikta.\"\n\nDi depanmu, di tengah kabut yang merayap, sebuah gerbang masih berdiri tegak dan menyala.\n\nPerjalananmu yang sesungguhnya baru dimulai.",
+        "description": "Kau terbangun dengan pipi menempel pada lantai anyaman, di bawah atap ilalang yang bocor. Bau asap dan getah pinus. Pondok Danawa, dua kali lebih besar dari pondok manusia.\n\nLaras duduk bersila di sampingmu. \"Tiga hari kau tidur,\" katanya. \"Namamu menahan kabut itu, {name}. Separuh desa kami tetap ada karena itu.\"\n\nSeparuh lagi tidak. Di luar, di tempat sepuluh pondok semestinya berdiri, hanya ada tanah rata, dan tak seorang pun ingat pernah ada rumah di sana, kecuali Laras, yang diam-diam menghitungnya.\n\n\"Desa ini harus dibangun kembali,\" bisik Aruna dari dalam kristal, mengantuk. \"Bukan dengan batu, melainkan dengan orang-orang yang bersedia saling mengingat.\"\n\nLaras menunjuk ke luar. \"Ada tiga orang yang tak mau pergi. Temuilah mereka.\"",
         "choices": [
             {
-                "text": "Berjalan menuju gerbang kota",
-                "target": "SB_0001"
+                "text": "Keluar menemui mereka",
+                "target": "BA_0001"
             }
-        ]
+        ],
+        "mood": "void"
     }
 ]

@@ -21,7 +21,10 @@ PR_0001 Kegelapan -> PR_0002 Terlahir Kembali -> PR_0003 (isi nama)
  -> SK_0006 Jerit di Balik Kabut
  -> perjanjian.json: PJ_0001 selamatkan Laras -> PJ_0002 -> PJ_0003 ilusi kabut
       -> PJ_0004 Naga Aruna (dua pilihan, set flag aruna_pact / aruna_vow)
-      -> PJ_0005 ikatan -> PJ_0006 Pelahap Nama -> PJ_0007 gerbang
+      -> PJ_0005 ikatan -> PJ_0006 Pelahap Nama -> PJ_0007 Pagi di Bukit Abu
+ -> bukit-abu.json (bagian 2): BA_0001 desa (hub, urutan bebas)
+      BA_0002 Gandar | BA_0003 Wulan | BA_0004 Darpa  (masing-masing kembali ke BA_0001, teman masuk party)
+ -> BA_0005 Perapian Malam (belajar skill kedua) -> BA_0006 Kita Berjalan -> BA_0007 gerbang
  -> SB_0001 (cerita gerbang)
 ```
 
@@ -64,6 +67,8 @@ Dapat dipakai di `title`, `description`, dan `text` pilihan:
 - `{role}` nama role yang dipilih
 - `{roleIntro}` paragraf pembuka khusus role (isi di `src/data/roles/roles.json`, field `intro`)
 - `{skill}` nama berkah awal pemain, `{skillDesc}` deskripsinya
+- `{skill2}`, `{skill2Desc}`, `{skill2Learn}` skill kedua role, `{teacher}` nama temannya yang mengajar
+- `{bondGandar}`, `{bondWulan}`, `{bondDarpa}` paragraf relasi sesuai role (isi di `roles.json`, field `bonds`)
 - `{skillStatue}`, `{skillCrystal}`, `{skillWater}`, `{skillRescue}` teks berkah pada patung, kristal, genangan, dan saat menyelamatkan Laras (lihat bagian Skill)
 
 ## Pilihan bersyarat dan flag
@@ -92,6 +97,11 @@ Sebuah pilihan dapat mengatur flag dan dapat disembunyikan berdasarkan flag:
 - `ifFlags` pilihan tampil hanya jika semua flag itu sudah diatur.
 - `unlessFlags` pilihan disembunyikan jika salah satu flag itu sudah diatur.
 
+Pilihan juga dapat memberi hadiah:
+
+- `"addSkill": "@second"` memberi skill kedua role pemain (atau isi dengan id skill tertentu).
+- `"addParty": "gandar"` memasukkan karakter (id dari `characters.json`) ke party. Party tampil di Jendela Status.
+
 Awas: pastikan selalu ada pilihan yang tampil di setiap adegan. Adegan yang semua pilihannya
 tersembunyi akan menjadi jalan buntu.
 
@@ -104,6 +114,9 @@ Setiap role punya satu berkah awal. Datanya ada di dua tempat:
 - `src/data/skills/skills.json`: `id`, `name`, `type`, `description`, dan `trials`
   (`statue`, `crystal`, `water`, `rescue`) yaitu satu atau dua kalimat tentang apa yang terjadi saat
   skill dipakai pada tiga benda di Pelataran Batu dan saat melawan serigala berkepala dua.
+
+Skill kedua: `roles.json` punya `secondSkill` (id skill) dan `bonds` (tiga paragraf: gandar, wulan, darpa).
+Di `skills.json`, skill kedua butuh `teacher` (id karakter) dan `learn` (adegan belajarnya).
 
 Saat server menyala, `SkillEngine` memeriksa data ini dan mencetak peringatan jika ada
 role tanpa skill, skill yang tidak dikenal, atau teks percobaan yang hilang.

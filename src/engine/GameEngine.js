@@ -87,6 +87,7 @@ class GameEngine {
                 roleId: null,
                 level: player.level,
                 skills: [...player.skills],
+                party: [],
                 currentStoryboard: player.currentStoryboard
             },
 
@@ -133,12 +134,59 @@ class GameEngine {
 
         }
 
+        const picked = visible[choiceIndex];
+
         return this.moveTo(
             state,
             target,
-            {},
-            visible[choiceIndex].setFlags
+            this.choiceEffects(state, picked),
+            picked.setFlags
         );
+
+    }
+
+
+    // Changes a choice makes to the player besides flags:
+    //   addSkill  a skill id, or "@second" for the role's second skill
+    //   addParty  a character id that joins the party
+    choiceEffects(state, choice) {
+
+        const changes = {};
+
+        if (choice.addSkill) {
+
+            const role = this.engineManager.roleEngine.getRole(
+                state.player.roleId
+            );
+
+            const id =
+                choice.addSkill === "@second"
+                    ? role && role.secondSkill
+                    : choice.addSkill;
+
+            const skills = state.player.skills || [];
+
+            if (id && !skills.includes(id)) {
+
+                changes.skills = [...skills, id];
+
+            }
+
+        }
+
+        if (choice.addParty) {
+
+            const party = state.player.party || [];
+
+            if (!party.includes(choice.addParty)) {
+
+                changes.party = [...party, choice.addParty];
+
+            }
+
+        }
+
+        return changes;
 
     }
 
@@ -298,7 +346,26 @@ class GameEngine {
 
         const trials = (skill && skill.trials) || {};
 
+        // The role's second skill, who teaches it, and how the player bonds
+        // with each companion (all written per role in roles.json).
+        const skill2 = role
+            ? this.engineManager.skillEngine.getSkill(role.secondSkill)
+            : null;
+
+        const teacher = skill2
+            ? this.engineManager.characterEngine.getCharacter(skill2.teacher)
+            : null;
+
+        const bonds = (role && role.bonds) || {};
+
         const values = {
+            skill2: skill2 ? skill2.name : "keahlian baru",
+            skill2Desc: skill2 ? skill2.description : "",
+            skill2Learn: skill2 ? skill2.learn || "" : "",
+            teacher: teacher ? teacher.name : "Seorang kawan",
+            bondGandar: bonds.gandar || "",
+            bondWulan: bonds.wulan || "",
+            bondDarpa: bonds.darpa || "",
             name: player.name || "Pendatang",
             role: player.role || "Pengembara",
             roleIntro: (role && role.intro) || "",
@@ -440,18 +507,29 @@ class GameEngine {
         const skills = (player.skills || [])
             .map((id) => this.engineManager.skillEngine.getSkill(id))
             .filter(Boolean)
-            .map((skill) => ({
+            .map((skill, index) => ({
                 id: skill.id,
                 name: skill.name,
                 type: skill.type || null,
-                description: skill.description
+                description: skill.description,
+                label: index === 0 ? "Berkah Awal" : "Skill Baru"
+            }));
+
+        const party = (player.party || [])
+            .map((id) => this.engineManager.characterEngine.getCharacter(id))
+            .filter(Boolean)
+            .map((member) => ({
+                id: member.id,
+                name: member.name,
+                title: member.title || null
             }));
 
         return {
             name: player.name || "???",
             role: player.role || "???",
             level: player.level || 1,
-            skills
+            skills,
+            party
         };
 
     }
@@ -470,6 +548,9 @@ class GameEngine {
             (player.skills === undefined ||
                 (Array.isArray(player.skills) &&
                     player.skills.every((id) => typeof id === "string"))) &&
+            (player.party === undefined ||
+                (Array.isArray(player.party) &&
+                    player.party.every((id) => typeof id === "string"))) &&
             typeof player.currentStoryboard === "string" &&
             state.flags &&
             typeof state.flags === "object" &&

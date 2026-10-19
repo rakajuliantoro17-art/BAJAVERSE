@@ -4,48 +4,90 @@
         "name": "Vanguard",
         "description": "Petarung garis depan yang kuat dalam bertahan dan menghadapi ancaman langsung.",
         "intro": "Tanganmu mengepal dengan sendirinya. Tanah di bawah kakimu terasa lebih padat, seolah Bajaverse sendiri bersandar padamu. Kau adalah dinding pertama yang akan berdiri ketika bahaya datang.",
-        "startingSkill": "raga_baja"
+        "startingSkill": "raga_baja",
+        "secondSkill": "tameng_tanah",
+        "bonds": {
+            "gandar": "Kau menahan palu raksasanya dengan satu tangan ketika ia menguji tungku, dan untuk pertama kalinya Gandar tertawa. \"Akhirnya ada yang tidak patah.\"",
+            "wulan": "Kau membiarkan Wulan memeriksa luka-lukamu tanpa mengeluh sedikit pun. \"Dinding hidup yang tahu kapan harus dirawat,\" katanya, setengah mengejek, setengah lega.",
+            "darpa": "Kau berdiri di sisinya semalaman saat ia menembangkan kidung, menjaga api tetap menyala. \"Pelindung bagi pendongeng,\" katanya. \"Baru kali ini ada.\""
+        }
     },
     {
         "id": "ranger",
         "name": "Ranger",
         "description": "Pengintai yang ahli membaca lingkungan dan menemukan jalur tersembunyi.",
         "intro": "Matamu menangkap hal-hal yang luput dari orang lain: jejak angin di rerumputan, sinar kristal yang bergeser, jalan sempit di antara kabut. Bajaverse berbisik, dan kau mengerti bahasanya.",
-        "startingSkill": "jejak_angin"
+        "startingSkill": "jejak_angin",
+        "secondSkill": "kidung_jejak",
+        "bonds": {
+            "gandar": "Kau menunjukkan pada Gandar jalur kabut yang tak pernah ia lihat selama bertahun-tahun, termasuk jalan pintas ke sumber air. Raksasa itu terdiam lama, lalu menepuk bahumu pelan-pelan supaya tak meremukkannya.",
+            "wulan": "Kau menemukan tumbuhan penawar yang sudah berbulan-bulan Wulan cari, tumbuh di celah batu yang hanya dikenal angin. \"Kau tahu ini bisa menyelamatkan sepuluh nyawa?\" bisiknya.",
+            "darpa": "Darpa melantunkan kidung jalan, dan kau menunjuk bait mana yang cocok dengan jejak angin sebenarnya. Mata sang juru kidung berbinar. \"Lagu ini ternyata peta.\""
+        }
     },
     {
         "id": "scholar",
         "name": "Scholar",
         "description": "Peneliti yang memiliki kemampuan analisis, sejarah, dan pemecahan misteri.",
         "intro": "Ribuan kisah berlompatan di kepalamu: nama raja, bunyi mantra, tahun yang terlupa. Di dunia yang sedang lupa, ingatanmu adalah senjata paling tajam.",
-        "startingSkill": "mata_kodeks"
+        "startingSkill": "mata_kodeks",
+        "secondSkill": "hafalan_abadi",
+        "bonds": {
+            "gandar": "Kau membaca ukiran di palu tua Gandar dan menerjemahkan nama pandai besi leluhurnya. Raksasa itu mengusap ukiran itu seakan baru pertama kali melihat tangan ayahnya.",
+            "wulan": "Kau membaca catatan ramuan Wulan, lalu menunjuk satu kekeliruan yang selama ini menggagalkan ramuannya. Ia mendengus, tetapi sudah mengubah catatannya sebelum kau selesai bicara.",
+            "darpa": "Kau mencatat bait-bait kidungnya satu per satu, dan Darpa menangis ketika kau membacakan kembali sebuah kerajaan yang hanya hidup di dalam lagu. \"Akhirnya ada yang mengingat bersamaku.\""
+        }
     },
     {
         "id": "artificer",
         "name": "Artificer",
         "description": "Pencipta alat yang memahami teknologi dan mekanisme kuno.",
         "intro": "Jarimu gatal ingin membongkar. Setiap ukiran di batu candi tampak seperti mekanisme yang menunggu dipahami, dan kristal di dadamu berdenyut mengikuti irama cara kerjanya.",
-        "startingSkill": "tangan_empu"
+        "startingSkill": "tangan_empu",
+        "secondSkill": "tempa_kilat",
+        "bonds": {
+            "gandar": "Kau dan Gandar membongkar tungku tua lalu memasangnya kembali dengan sambungan baru. Raksasa itu terdiam melihat api bernyala dua kali lebih lama, lalu berkata pelan, \"Ajari aku itu.\"",
+            "wulan": "Kau merakit penyuling kecil dari kuali pecah dan pipa bambu, dan embun ramuan Wulan menetes jernih. \"Kau bukan tukang,\" katanya. \"Kau penyihir tanpa tongkat.\"",
+            "darpa": "Kau memperbaiki gamelan kecil milik Darpa yang retak, dan nadanya kembali utuh. Ia memainkannya sampai fajar tanpa berhenti."
+        }
     },
     {
         "id": "mystic",
         "name": "Mystic",
         "description": "Pengguna energi misterius yang mampu memahami fenomena tidak biasa.",
         "intro": "Kristal di dadamu bergetar selaras dengan kristal-kristal di kejauhan. Kau mendengar sesuatu di balik keheningan, bukan suara, melainkan perasaan sebuah dunia yang sedang ketakutan.",
-        "startingSkill": "napas_kristal"
+        "startingSkill": "napas_kristal",
+        "secondSkill": "jangkar_nama",
+        "bonds": {
+            "gandar": "Kristalmu bergetar saat Gandar menempa, dan baja di tungku ikut bernyanyi mengikuti denyutmu. Ia memandangmu lama. \"Besi tak pernah mau berbicara padaku.\"",
+            "wulan": "Wulan mengaku ada luka yang tak sanggup ia sembuhkan, luka yang tidak berdarah. Kau meletakkan tangan di dadanya dan merasakan ketakutan yang tua. Napasmu menenangkannya sebelum ia sadar bahwa ia menangis.",
+            "darpa": "Kidung Darpa dan denyut kristalmu bertemu pada satu nada, dan udara di sekitar kalian berpendar biru. \"Itu nada yang kulupakan puluhan tahun,\" bisiknya."
+        }
     },
     {
         "id": "diplomat",
         "name": "Diplomat",
         "description": "Ahli komunikasi yang mampu membuka jalan melalui interaksi sosial.",
         "intro": "Kau merasakan apa yang tak terucap: kecemasan para penjaga, harapan yang tersembunyi di balik wajah tenang. Di dunia yang retak, kata yang tepat bisa membuka lebih banyak pintu daripada sebilah pedang.",
-        "startingSkill": "suara_sabda"
+        "startingSkill": "suara_sabda",
+        "secondSkill": "janji_sejajar",
+        "bonds": {
+            "gandar": "Gandar tak pernah sanggup menyampaikan terima kasihnya pada Laras. Kau membantunya menyusun kata, dan raksasa itu berjalan ke arah adiknya dengan wajah paling gugup yang pernah kau lihat.",
+            "wulan": "Kau mendengar apa yang tak Wulan ucapkan: ia lelah dikecewakan oleh dewa dan manusia. Kau tak menjanjikan apa pun selain kejujuran, dan itu cukup untuk membuatnya duduk di sampingmu.",
+            "darpa": "Kau menengahi pertengkaran Darpa dengan para Danawa soal nyanyian tengah malam, dan keduanya menyadari mereka menginginkan hal yang sama: tidak dilupakan."
+        }
     },
     {
         "id": "medic",
         "name": "Medic",
         "description": "Pendukung yang memahami penyembuhan dan kondisi pemain.",
         "intro": "Tanganmu hangat. Di mana pun ada luka, pada manusia, pada tanah, pada kristal yang meredup, kau merasakannya seperti denyut kedua di dadamu. Bajaverse membutuhkan seseorang yang menyembuhkan, bukan hanya yang bertarung.",
-        "startingSkill": "embun_kehidupan"
+        "startingSkill": "embun_kehidupan",
+        "secondSkill": "jamu_penawar",
+        "bonds": {
+            "gandar": "Tangan Gandar penuh luka bakar lama yang tak pernah ia ceritakan. Kau menyembuhkannya tanpa bertanya, dan raksasa itu menatap kulit barunya seperti anak kecil.",
+            "wulan": "Kau dan Wulan bekerja berdampingan sepanjang malam merawat korban kabut. Menjelang fajar ia berkata, \"Aku tak pernah punya rekan seprofesi.\" Itu pengakuan terdekat yang pernah ia ucapkan.",
+            "darpa": "Suara Darpa serak, rusak oleh puluhan tahun bernyanyi sendirian. Embun cahayamu menyembuhkannya, dan kidung pertamanya sesudah itu terdengar seperti suara orang yang baru bisa bernapas."
+        }
     }
 ]

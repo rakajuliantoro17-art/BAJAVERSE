@@ -82,5 +82,61 @@
             "water": "Genangan itu keruh oleh debu lama. Setetes cahaya dari ujung jarimu, dan air menjernih sampai kau melihat dasar batu yang diukir bunga teratai.",
             "rescue": "Gadis itu penuh luka lama, dan tanganmu bergerak sendiri. Cahaya hangat menyapu lukanya, lalu menyelimutimu ketika serigala menerkam. Cakar yang seharusnya menyobekmu hanya meninggalkan goresan yang menutup seketika, dan binatang itu mundur, gentar pada sesuatu yang tak bisa dilukai."
         }
+    },
+    {
+        "id": "tameng_tanah",
+        "name": "Tameng Tanah",
+        "type": "Aktif",
+        "description": "Memanggil lempeng tanah dan batu untuk menahan serangan, melindungi dirimu dan orang di belakangmu.",
+        "teacher": "gandar",
+        "learn": "Gandar mengajarkan cara menanamkan telapak kaki. \"Jangan melawan tanah,\" katanya. \"Pinjam darinya.\" Puluhan kali kau gagal. Lalu, pada percobaan yang entah ke berapa, tanah naik di depanmu seperti perisai dan menahan ayunan palu raksasa itu tanpa retak."
+    },
+    {
+        "id": "kidung_jejak",
+        "name": "Kidung Jejak",
+        "type": "Aktif",
+        "description": "Menyanyikan kidung penunjuk arah yang membuat rekan-rekanmu tidak tersesat di kabut sepekat apa pun.",
+        "teacher": "darpa",
+        "learn": "Darpa mengajarimu menahan nada pada napas terakhir, bukan pada suara. Kau bersenandung, dan benang cahaya tipis terulur dari bibirmu menembus kabut, menunjuk arah yang sudah kau rasakan lewat angin. \"Itulah kidung jalan,\" katanya, bangga seperti guru yang melihat muridnya melampauinya."
+    },
+    {
+        "id": "hafalan_abadi",
+        "name": "Hafalan Abadi",
+        "type": "Aktif",
+        "description": "Mengikat sebuah fakta atau nama sehingga tak dapat dihapus Kabut Lupa, selama kau sendiri masih mengingatnya.",
+        "teacher": "darpa",
+        "learn": "Darpa mengajarimu cara menyimpan ingatan di dalam irama, bukan di dalam kepala. Kau melafalkan satu bait sampai ia menjadi bagian dari napasmu, lalu Wulan sengaja menyebut kabut dan menyuruhmu mengulang. Bait itu tidak goyah. Darpa menutup mulut dengan telapak tangan, menahan tangis yang tak ingin ia akui."
+    },
+    {
+        "id": "tempa_kilat",
+        "name": "Tempa Kilat",
+        "type": "Aktif",
+        "description": "Menempa atau memperbaiki benda sederhana hanya dalam beberapa tarikan napas dengan bahan seadanya.",
+        "teacher": "gandar",
+        "learn": "Gandar menyodorkan sepotong besi kasar dan sepasang penjepit. \"Panas bukan musuh,\" katanya, \"ia hanya perlu diajak bicara.\" Kau meniru ritme palunya, lalu menemukan ritme milikmu sendiri, dan besi itu menjadi mata pisau yang bersih sebelum percik terakhir padam. Gandar mengangkat alis. \"Itu tidak mungkin,\" katanya, tersenyum untuk pertama kali."
+    },
+    {
+        "id": "jangkar_nama",
+        "name": "Jangkar Nama",
+        "type": "Aktif",
+        "description": "Menyalurkan energi kristal untuk menahan nama seseorang dari terhapus oleh Kabut Lupa, sebentar saja.",
+        "teacher": "wulan",
+        "learn": "Wulan membaringkan seorang Danawa yang nyaris terhapus di hadapanmu. \"Namanya Bantala. Panggil dia dengan kristalmu, bukan dengan suaramu.\" Kau mencoba berkali-kali. Akhirnya kristal di dadamu berdenyut sekali, dan kelopak mata Danawa itu bergetar. \"Wulan...?\" bisiknya. Wulan memalingkan wajah cepat-cepat. \"Ya, ya. Tidurlah.\""
+    },
+    {
+        "id": "janji_sejajar",
+        "name": "Janji Sejajar",
+        "type": "Aktif",
+        "description": "Mengikat rekan dalam kepercayaan. Selama janji itu terjaga, mereka bertarung lebih berani dan tidak mudah goyah.",
+        "teacher": "wulan",
+        "learn": "\"Ini bukan sihir,\" kata Wulan, kesal mengakuinya. \"Ini cuma satu hal yang jarang dilakukan orang: bicara jujur lalu menepatinya.\" Ia menyuruhmu mengucapkan satu janji kecil kepada Gandar dan satu lagi kepada Darpa, lalu menepatinya sebelum fajar. Ketika kau melakukannya, kristalmu berdenyut hangat, dan kau merasakan keduanya berdiri sedikit lebih tegak."
+    },
+    {
+        "id": "jamu_penawar",
+        "name": "Jamu Penawar",
+        "type": "Aktif",
+        "description": "Menyiapkan ramuan penawar bagi korban Kabut Lupa dan racun di tanah gersang.",
+        "teacher": "wulan",
+        "learn": "Wulan menyodorkan lumpang dan segenggam daun pahit. \"Tumbuk searah jarum jam. Jangan tanya kenapa, itu cuma kebiasaanku.\" Kau menumbuk, mencampur, dan menyaring embun cahaya ke dalamnya. Seorang Danawa yang menggigil meneguknya, dan wajahnya kembali berwarna. Wulan menatap ramuan itu lama, lalu menatapmu. \"Baik. Kau boleh tinggal.\""
     }
 ]

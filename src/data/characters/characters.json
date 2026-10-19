@@ -4,5 +4,23 @@
         "name": "Penjaga Tua",
         "title": "Penjaga Gerbang",
         "image": "/images/characters/penjaga-tua.png"
+    },
+    {
+        "id": "gandar",
+        "name": "Gandar",
+        "title": "Penempa Danawa",
+        "image": null
+    },
+    {
+        "id": "wulan",
+        "name": "Wulan",
+        "title": "Tabib Pendatang",
+        "image": null
+    },
+    {
+        "id": "darpa",
+        "name": "Darpa",
+        "title": "Juru Kidung Sarwa",
+        "image": null
     }
 ]

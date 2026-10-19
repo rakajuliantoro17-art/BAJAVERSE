@@ -571,7 +571,7 @@
       wrap.className = "status-skill";
       const label = document.createElement("span");
       label.className = "label";
-      label.textContent = "Berkah Awal";
+      label.textContent = skill.label || "Berkah Awal";
       const name = document.createElement("strong");
       name.textContent = skill.name;
       wrap.append(label, name);
@@ -585,6 +585,24 @@
       wrap.append(desc);
       box.append(wrap);
     });
+
+    if (status.party && status.party.length) {
+      const wrap = document.createElement("div");
+      wrap.className = "status-skill";
+      const label = document.createElement("span");
+      label.className = "label";
+      label.textContent = "Party";
+      wrap.append(label);
+      status.party.forEach((member) => {
+        const row = document.createElement("p");
+        const name = document.createElement("strong");
+        name.textContent = member.name;
+        row.append(name);
+        if (member.title) row.append(" · " + member.title);
+        wrap.append(row);
+      });
+      box.append(wrap);
+    }
 
     box.hidden = false;
   }

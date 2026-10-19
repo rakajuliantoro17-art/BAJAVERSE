@@ -1,0 +1,113 @@
+[
+    {
+        "id": "BA_0001",
+        "title": "Bukit Abu",
+        "mood": "void",
+        "description": "Matahari pagi menyingkap tanah rata tempat desa itu dahulu berdiri. Di antara sisa-sisanya, tiga orang masih bertahan.\n\nDi tungku batu di tepi tebing, seorang Danawa dua kali tinggi manusia memukul besi tanpa henti, seolah berhenti berarti ikut terhapus. Di bawah naungan terpal, seorang perempuan muda berbaju asing merawat deretan orang yang pucat. Dan di akar beringin yang hangus, seorang lelaki kurus bernyanyi sendirian pada pagi yang kosong.\n\n\"Mereka bukan pengikutmu, {name},\" bisik Sang Kodeks. \"Mereka kawan, atau belum. Itu bergantung pada caramu mendekat.\"",
+        "choices": [
+            {
+                "text": "Hampiri Danawa di tungku",
+                "unlessFlags": ["met_gandar"],
+                "target": "BA_0002"
+            },
+            {
+                "text": "Hampiri perempuan di tenda perawatan",
+                "unlessFlags": ["met_wulan"],
+                "target": "BA_0003"
+            },
+            {
+                "text": "Hampiri lelaki di bawah beringin",
+                "unlessFlags": ["met_darpa"],
+                "target": "BA_0004"
+            },
+            {
+                "text": "Duduk bersama mereka di perapian",
+                "ifFlags": ["met_gandar", "met_wulan", "met_darpa"],
+                "target": "BA_0005"
+            }
+        ]
+    },
+    {
+        "id": "BA_0002",
+        "title": "Gandar",
+        "mood": "void",
+        "description": "Danawa itu tidak menoleh ketika kau mendekat. Palunya naik dan turun, dan setiap pukulan membuat percik oranye menari di wajahnya yang lebar dan penuh bekas luka bakar.\n\n\"Kau yang menyelamatkan adikku,\" katanya akhirnya, tanpa berbalik. Suaranya seperti batu menggelinding. \"Laras. Dia adikku. Seharusnya aku yang berdiri di sana, bukan kau. Aku hanya berdiri di balik pohon dan gemetar.\"\n\nIa meletakkan palu. Tangannya yang besar bergetar.\n\n{bondGandar}\n\n\"Namaku Gandar,\" katanya. \"Aku tak mau punya tuan, dan aku tak mau jadi tuan. Kalau kau berjalan, aku ikut berjalan. Sejajar.\"",
+        "choices": [
+            {
+                "text": "Ulurkan tangan: \"Sejajar.\"",
+                "setFlags": { "met_gandar": true },
+                "addParty": "gandar",
+                "target": "BA_0001"
+            }
+        ]
+    },
+    {
+        "id": "BA_0003",
+        "title": "Wulan",
+        "mood": "void",
+        "description": "Perempuan itu sedang menumbuk daun pahit dalam lumpang kecil ketika kau tiba, dan ia tidak berhenti. Kulitnya pucat karena kurang tidur, dan pakaiannya bukan pakaian Danawa maupun pakaian Wilwatikta, kain dari zaman yang entah.\n\n\"Pendatang juga, ya,\" katanya sambil melirik. \"Dua musim sebelum kau. Sang Dewi bilang aku 'tidak cukup berkilau' juga. Kuduga kita satu golongan.\" Ia menunjuk deretan Danawa yang terbaring pucat dengan dagunya. \"Kabut itu tidak membunuh. Ia hanya membuat mereka lupa cara bernapas. Aku menahan mereka sebisaku, sendirian.\"\n\n{bondWulan}\n\n\"Wulan,\" katanya, setengah mendengus. \"Jangan panggil aku tabib. Dan jangan harap aku patuh. Kalau kau butuh seseorang yang berani bilang kau salah, aku orangnya.\"",
+        "choices": [
+            {
+                "text": "Ulurkan tangan: \"Itu yang kubutuhkan.\"",
+                "setFlags": { "met_wulan": true },
+                "addParty": "wulan",
+                "target": "BA_0001"
+            }
+        ]
+    },
+    {
+        "id": "BA_0004",
+        "title": "Darpa",
+        "mood": "void",
+        "description": "Lelaki kurus itu bernyanyi tanpa jeda, suaranya serak, matanya merah. Ia berhenti hanya ketika menyadari ada yang mendengarkan, dan seluruh wajahnya berubah seperti orang yang baru ditemukan.\n\n\"Ada yang mendengarkan!\" serunya. \"Puluhan tahun, dan akhirnya ada yang mendengarkan!\" Ia tertawa, lalu cepat-cepat terbatuk. \"Maaf. Aku Darpa, juru kidung dari Kerajaan Sarwa. Kerajaan itu sudah dihapus Kabut: tak ada di peta mana pun, tak ada di ingatan siapa pun. Kecuali dalam lagu ini. Selama aku bernyanyi, Sarwa masih ada.\"\n\n{bondDarpa}\n\n\"Aku tak ingin jadi bawahan siapa pun,\" katanya, tiba-tiba serius. \"Tetapi aku ingin berjalan bersama orang yang mau mendengarkan.\"",
+        "choices": [
+            {
+                "text": "Ulurkan tangan: \"Aku mendengarkan.\"",
+                "setFlags": { "met_darpa": true },
+                "addParty": "darpa",
+                "target": "BA_0001"
+            }
+        ]
+    },
+    {
+        "id": "BA_0005",
+        "title": "Perapian Malam",
+        "mood": "void",
+        "cinematic": true,
+        "description": "Malam itu kalian duduk melingkar di sekitar perapian di tanah rata Bukit Abu: Gandar, Wulan, Darpa, Laras yang mengantuk bersandar pada kakaknya, dan kau.\n\nTak ada yang bicara tentang pemimpin. Tak ada yang bicara tentang tuan dan hamba. Hanya orang-orang yang ingin tetap ada.\n\n{teacher} bergeser mendekatimu. \"Kau seperti menyimpan sesuatu yang belum selesai kau pahami,\" katanya. \"Biar kuajarkan satu hal, supaya kau tak berjalan sendirian.\"\n\n{skill2Learn}\n\nKeahlian barumu: {skill2}. {skill2Desc}",
+        "choices": [
+            {
+                "text": "Terima pelajaran itu",
+                "addSkill": "@second",
+                "target": "BA_0006"
+            }
+        ]
+    },
+    {
+        "id": "BA_0006",
+        "title": "Kita Berjalan",
+        "mood": "void",
+        "cinematic": true,
+        "showStatus": true,
+        "description": "Jendela cahaya biru terbuka lagi di depanmu, kali ini dengan dua baris yang berpendar, dan tiga nama baru di bawahnya. Bukan nama yang ditulis Sang Kodeks, melainkan nama yang menulis diri mereka sendiri dengan memilih.\n\n\"Kabut Lupa akan kembali,\" kata Sang Kodeks. \"Catatan terakhir dunia ini tersimpan di Wilwatikta. Di sana kau akan menemukan jawaban, sekutu, atau musuh baru.\"\n\nLaras menyerahkan kain tenun kecil ke tanganmu, dan sehelai daluang yang diikat benang: \"Untuk {name}, yang namanya menahan kabut. Kembalilah, supaya desa ini ingat siapa yang menahannya.\"\n\nPagi berikutnya, kalian berempat berangkat.",
+        "choices": [
+            {
+                "text": "Berangkat menuju Wilwatikta",
+                "target": "BA_0007"
+            }
+        ]
+    },
+    {
+        "id": "BA_0007",
+        "title": "Gerbang yang Menyala",
+        "cinematic": true,
+        "background": "/images/backgrounds/gerbang-kota.jpg",
+        "description": "Tiga hari menembus Lemah Wangkal. Gandar membuka jalan dengan bahunya, Wulan menimbang setiap tegukan air, dan Darpa menyanyikan lagu yang tak pernah sama dua kali. Kau mendapati dirimu menyimak ketiganya, dan itu terasa seperti rumah.\n\nLalu, di ujung kabut yang merayap, sebuah gerbang masih berdiri tegak dan menyala.\n\n\"Itu Wilwatikta,\" gumam Aruna dari dalam kristal, mengantuk.\n\nGandar menelan ludah. \"Aku belum pernah melihat kota manusia.\" Wulan mendengus. \"Kau akan menyesal.\" Darpa menyanyikan satu bait pendek, seolah menyapa tembok-tembok itu.\n\nPerjalananmu yang sesungguhnya baru dimulai, dan kali ini kau tidak sendirian.",
+        "choices": [
+            {
+                "text": "Berjalan menuju gerbang kota",
+                "target": "SB_0001"
+            }
+        ]
+    }
+]

@@ -50,6 +50,12 @@ function printScene(scene) {
             console.log(`  ${skill.description}`);
         });
 
+        if (status.party && status.party.length) {
+            console.log(
+                `Party: ${status.party.map((m) => m.name).join(", ")}`
+            );
+        }
+
     }
 
 }

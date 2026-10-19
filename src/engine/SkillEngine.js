@@ -40,9 +40,13 @@ class SkillEngine {
 
 
     // Returns a list of problems in the skill data (empty when it is sound).
-    validate(roles) {
+    // `hasCharacter(id)` is optional; when given, teachers are checked too.
+    validate(roles, hasCharacter) {
 
         const problems = [];
+
+        const starting = new Set(roles.map((role) => role.startingSkill));
+        const seconds = new Set(roles.map((role) => role.secondSkill));
 
         for (const skill of this.skills.values()) {
 
@@ -52,11 +56,37 @@ class SkillEngine {
 
             }
 
-            for (const key of TRIAL_KEYS) {
+            if (starting.has(skill.id)) {
 
-                if (!skill.trials || !skill.trials[key]) {
+                for (const key of TRIAL_KEYS) {
 
-                    problems.push(`${skill.id}: missing trials.${key}`);
+                    if (!skill.trials || !skill.trials[key]) {
+
+                        problems.push(`${skill.id}: missing trials.${key}`);
+
+                    }
+
+                }
+
+            }
+
+            if (seconds.has(skill.id)) {
+
+                if (!skill.learn) {
+
+                    problems.push(`${skill.id}: missing learn text`);
+
+                }
+
+                if (!skill.teacher) {
+
+                    problems.push(`${skill.id}: missing teacher`);
+
+                } else if (hasCharacter && !hasCharacter(skill.teacher)) {
+
+                    problems.push(
+                        `${skill.id}: unknown teacher "${skill.teacher}"`
+                    );
 
                 }
 
@@ -75,6 +105,28 @@ class SkillEngine {
                 problems.push(
                     `role ${role.id}: unknown startingSkill "${role.startingSkill}"`
                 );
+
+            }
+
+            if (!role.secondSkill) {
+
+                problems.push(`role ${role.id}: no secondSkill`);
+
+            } else if (!this.skills.has(role.secondSkill)) {
+
+                problems.push(
+                    `role ${role.id}: unknown secondSkill "${role.secondSkill}"`
+                );
+
+            }
+
+            for (const friend of ["gandar", "wulan", "darpa"]) {
+
+                if (!role.bonds || !role.bonds[friend]) {
+
+                    problems.push(`role ${role.id}: missing bonds.${friend}`);
+
+                }
 
             }
 
