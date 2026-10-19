@@ -306,7 +306,8 @@ class GameEngine {
             skillDesc: skill ? skill.description : "",
             skillStatue: trials.statue || "",
             skillCrystal: trials.crystal || "",
-            skillWater: trials.water || ""
+            skillWater: trials.water || "",
+            skillRescue: trials.rescue || ""
         };
 
         return template.replace(/\{(\w+)\}/g, (match, key) =>

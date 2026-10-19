@@ -1,0 +1,99 @@
+[
+    {
+        "id": "PJ_0001",
+        "title": "Taring di Balik Kabut",
+        "mood": "void",
+        "cinematic": true,
+        "description": "Di balik batu hitam, seorang gadis kecil terpojok dengan kaki terikat tali rotan. Di hadapannya, seekor serigala berkepala dua sebesar kerbau menyeringai dengan empat baris taring.\n\nTubuhmu bergerak sebelum pikiranmu menyusul. {skill} menyala di dalam dirimu, dan kali ini ia tidak menunggu izin.\n\n{skillRescue}\n\nBinatang itu pergi, atau tumbang, atau lenyap. Kau tak sempat peduli. Tanganmu gemetar, bukan karena takut, melainkan karena kekuatan sebesar itu ternyata selama ini tinggal di dalam tubuh yang sama.",
+        "choices": [
+            {
+                "text": "Hampiri gadis itu",
+                "target": "PJ_0002"
+            }
+        ]
+    },
+    {
+        "id": "PJ_0002",
+        "title": "Laras",
+        "mood": "void",
+        "cinematic": true,
+        "description": "Kau memotong tali rotan di kakinya. Gadis itu menatapmu dengan mata lebar, lalu berbicara cepat dalam bahasa yang tak pernah kau dengar, dan kau mengerti setiap katanya.\n\nIni gunanya Aksara Sejuta Lidah. Satu-satunya pemberian Sang Dewi ternyata berguna juga.\n\n\"Namaku Laras, dari kaum Danawa di Bukit Abu,\" katanya, terisak. \"Mereka mengikatku di sini. Kami harus mempersembahkan satu anak setiap purnama kepada Naga Aruna, supaya kabut tidak memakan desa kami.\"\n\n\"Aruna,\" bisik Sang Kodeks, lirih. \"Sang Penjaga Langit yang kau lihat dari atas tembok.\"\n\n\"Antar aku ke desamu,\" katamu. \"Aku ingin bicara dengan naga itu.\"",
+        "choices": [
+            {
+                "text": "Ikuti Laras menembus kabut",
+                "target": "PJ_0003"
+            }
+        ]
+    },
+    {
+        "id": "PJ_0003",
+        "title": "Kabut yang Berbicara",
+        "mood": "void",
+        "cinematic": true,
+        "description": "Kabut menebal di tengah jalan, lalu berubah.\n\nKau mencium aroma masakan yang kau kenal. Dinding kamar lamamu muncul di antara batu hitam, lengkap dengan lampu meja yang selalu lupa kau matikan. Seseorang memanggilmu dengan nama dari dunia yang lama, dan suaranya begitu rindu.\n\nLaras menarik ujung bajumu, ketakutan. Ia tidak melihat apa-apa selain kabut. Ilusi itu hanya untukmu.\n\n\"Nama adalah jangkar,\" bisik Sang Kodeks, samar tetapi hadir.\n\nKau menggenggam tangan Laras dan mengucapkan namamu keras-keras.\n\n\"{name}!\"\n\nIlusi itu retak seperti kaca. Dan di baliknya, sepasang mata emas sebesar pintu gerbang membuka.",
+        "choices": [
+            {
+                "text": "Tatap mata itu",
+                "target": "PJ_0004"
+            }
+        ]
+    },
+    {
+        "id": "PJ_0004",
+        "title": "Sang Penjaga Langit",
+        "mood": "void",
+        "cinematic": true,
+        "description": "Naga itu bersisik merah, bermahkota emas, sama seperti yang kau lihat membelah awan dari atas tembok kota. Hanya saja sisiknya kini kusam dan sorot matanya letih.\n\n\"Seratus tahun lamanya aku bertahan,\" katanya, suaranya gemuruh yang pelan. \"Setiap kenangan yang kumakan memperlambat Lupa. Para Danawa memberiku anak-anak mereka karena kuminta. Aku malu, tetapi aku takut.\"\n\nIa mendekatkan wajahnya padamu. \"Namun kenanganmu tidak berbau kabut. Kenangan dari dunia yang jauh, dan aku ingin menyimpannya. Bukan memakannya. Berbagilah denganku, pendatang, dan aku akan mengingat bersamamu. Ketika aku lupa, ingatkan aku. Ketika kau goyah, apiku adalah milikmu.\"\n\nDi dadamu, kristal berdenyut menunggu jawaban.",
+        "choices": [
+            {
+                "text": "Terima ikatan itu",
+                "setFlags": { "aruna_pact": true },
+                "target": "PJ_0005"
+            },
+            {
+                "text": "Terima, dengan satu syarat: tak ada lagi persembahan",
+                "setFlags": { "aruna_pact": true, "aruna_vow": true },
+                "target": "PJ_0005"
+            }
+        ]
+    },
+    {
+        "id": "PJ_0005",
+        "title": "Ikatan",
+        "mood": "void",
+        "cinematic": true,
+        "description": "Naga itu terdiam sangat lama. Kemudian ia menunduk, dan mahkota emasnya menyentuh tanah di hadapanmu.\n\n\"Baik.\"\n\nTubuh raksasanya mengurai menjadi ribuan serpihan cahaya merah, mengalir ke dadamu, dan meresap ke dalam kristal. Hangat. Berat. Seperti menerima janji yang sangat tua.\n\n\"Aku tidur dulu,\" bisik suara Aruna dari dalam dirimu, jauh lebih kecil dari sebelumnya. \"Jangan lupa memanggilku.\"\n\nLaras menangis dan tertawa sekaligus. Kabut di sekeliling kalian menipis untuk pertama kalinya setelah seratus tahun.",
+        "choices": [
+            {
+                "text": "Antar Laras pulang ke Bukit Abu",
+                "target": "PJ_0006"
+            }
+        ]
+    },
+    {
+        "id": "PJ_0006",
+        "title": "Pelahap Nama",
+        "mood": "void",
+        "cinematic": true,
+        "description": "Desa Bukit Abu menyambut kalian dengan tangis dan sorak. Namun sorak itu belum selesai ketika langit menggelap.\n\nDari kabut yang menipis merayap sesuatu yang jauh lebih tua dari Aruna: laba-laba hitam sebesar bukit, delapan kakinya menapak tanpa suara. Di mana ia melangkah, pondok-pondok lenyap, bukan runtuh, melainkan seolah tak pernah ada.\n\n\"Pelahap Nama,\" bisik Sang Kodeks, gemetar. \"Kabut Lupa yang telah berwujud.\"\n\nKau berdiri di depan Laras dan seluruh desa, mengangkat tangan, dan memanggil {skill} tanpa ragu. {skillDesc}\n\nTubuh laba-laba itu retak, pecah, lalu menyambung kembali. Kabut Lupa tak bisa dibunuh, hanya ditunda. Lututmu menyentuh tanah. Pandanganmu menyempit.\n\nDi ujung kesadaran, Laras berteriak, dan yang ia teriakkan adalah namamu. Suara itu menahanmu, cukup lama. Kabut mundur. Lalu gelap.",
+        "choices": [
+            {
+                "text": "Tenggelam dalam gelap",
+                "target": "PJ_0007"
+            }
+        ]
+    },
+    {
+        "id": "PJ_0007",
+        "title": "Gerbang yang Menyala",
+        "cinematic": true,
+        "background": "/images/backgrounds/gerbang-kota.jpg",
+        "description": "Kau terbangun dengan pipi menempel pada batu yang hangat. Bukan tanah retak Lemah Wangkal, melainkan bata merah yang menyimpan sisa matahari.\n\nDi sampingmu tergeletak selembar kain tenun kecil, dan sehelai kertas daluang yang diikat benang: \"Untuk {name}, yang namanya menahan kabut.\" Para Danawa pasti menggotongmu semalam suntuk, lalu pergi sebelum kau sempat berterima kasih.\n\n\"Kita sampai,\" gumam Aruna dari dalam kristal, mengantuk. \"Itu Wilwatikta.\"\n\nDi depanmu, di tengah kabut yang merayap, sebuah gerbang masih berdiri tegak dan menyala.\n\nPerjalananmu yang sesungguhnya baru dimulai.",
+        "choices": [
+            {
+                "text": "Berjalan menuju gerbang kota",
+                "target": "SB_0001"
+            }
+        ]
+    }
+]

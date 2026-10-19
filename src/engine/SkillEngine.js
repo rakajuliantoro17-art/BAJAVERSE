@@ -1,7 +1,7 @@
 const skills = require("../data/skills/skills.json");
 
 
-const TRIAL_KEYS = ["statue", "crystal", "water"];
+const TRIAL_KEYS = ["statue", "crystal", "water", "rescue"];
 
 
 class SkillEngine {

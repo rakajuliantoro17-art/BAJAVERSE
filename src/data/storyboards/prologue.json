@@ -66,10 +66,74 @@
     {
         "id": "PR_0007",
         "title": "Jalan {role}",
-        "description": "Cahaya yang kau pilih meresap ke dalam dadamu. Kau merasakan dirimu berubah, dan kau tahu: mulai saat ini, kau adalah seorang {role}.\n\n{roleIntro}\n\n\"Jalanmu telah dipilih, {name}. Sebelum kau melangkah, terimalah dulu bekalmu, selagi Kabut Lupa belum tiba.\"\n\nKristal di dadamu berdenyut sekali, lalu dua kali. Di udara di depan matamu, sesuatu mulai terbentuk.",
+        "description": "Cahaya yang kau pilih meresap ke dalam dadamu. Kau merasakan dirimu berubah, dan kau tahu: mulai saat ini, kau adalah seorang {role}.\n\n{roleIntro}\n\nNamun suara Sang Kodeks mendadak merendah, seperti orang yang menyadari ada yang mendengarkan.\n\n\"Dengarkan, {name}. Kau bukan satu-satunya yang dipanggil. Dan sebelum dunia ini menerimamu, ia akan menimbangmu.\"\n\nLangit di atas kota merekah. Sesuatu yang sangat terang turun perlahan.",
         "choices": [
             {
-                "text": "Lihat apa yang terbentuk",
+                "text": "Tengadah menatap cahaya itu",
+                "target": "PR_0008"
+            }
+        ]
+    },
+    {
+        "id": "PR_0008",
+        "title": "Penimbangan",
+        "mood": "void",
+        "description": "Ratusan jiwa muncul di sekelilingmu. Ribuan, mungkin. Mereka juga pendatang: berseragam, berjubah, berpakaian dari zaman yang tak pernah kau kenal. Tak seorang pun tahu cara berdiri di tempat ini.\n\nCahaya itu menjelma sosok perempuan agung berselendang awan dan bermahkota kristal. Wilwatikta menunduk di kakinya.\n\n\"Akulah Sang Dewi, penjaga tatanan dunia ini,\" katanya. \"Kalian dipanggil untuk menjadi pahlawan. Kalian akan kutimbang, dan setiap yang layak akan kuberkati.\"\n\nSatu demi satu pendatang maju. Setiap kali, kristal di tangan Sang Dewi menyala: api, badai, cahaya, tombak langit. Mereka bersorak, menangis, bersujud mengucap syukur.\n\nLalu namamu dipanggil.",
+        "choices": [
+            {
+                "text": "Melangkah maju",
+                "target": "PR_0009"
+            }
+        ]
+    },
+    {
+        "id": "PR_0009",
+        "title": "Timbangan Kosong",
+        "mood": "void",
+        "description": "Sang Dewi menatapmu lama sekali. Kristal di tangannya tidak menyala. Bahkan tidak berkedip.\n\n\"Aku tidak melihat cahaya apa pun padamu, {name}.\" Keningnya berkerut, seolah menemukan noda pada kain suci. \"Jiwamu kusam. Kau tidak layak berdiri di antara para pahlawan.\"\n\nDi dadamu, kristal yang baru saja memilihmu berdenyut ketakutan, lalu meredup, seperti dibungkam sesuatu yang tak kau lihat.\n\n\"Satu hal kuberikan supaya kau tak mati bisu: Aksara Sejuta Lidah. Kau akan memahami setiap bahasa. Hanya itu.\"\n\n\"Tempatmu bukan di sini. Pergilah ke Lemah Wangkal, tanah yang tak kuberi perlindungan.\"\n\nPara pahlawan menoleh sebentar, lalu berpaling. Tak seorang pun membelamu.",
+        "choices": [
+            {
+                "text": "Menolak keputusan itu",
+                "target": "PR_0010"
+            },
+            {
+                "text": "Menerimanya dalam diam",
+                "target": "PR_0011"
+            }
+        ]
+    },
+    {
+        "id": "PR_0010",
+        "title": "Kata yang Tertahan",
+        "mood": "void",
+        "description": "\"Tatanan yang menilai jiwa dari kilaunya,\" katamu, \"bukan tatanan yang pantas kujaga.\"\n\nAula cahaya itu hening. Senyum Sang Dewi tipis dan dingin.\n\n\"Berani sekali. Buktikan itu di tempat yang tak punya pelindung.\"\n\nLantai cahaya di bawah kakimu lenyap.",
+        "choices": [
+            {
+                "text": "Jatuh",
+                "target": "PR_0012"
+            }
+        ]
+    },
+    {
+        "id": "PR_0011",
+        "title": "Diam yang Menyimpan",
+        "mood": "void",
+        "description": "Kau tidak membela diri. Entah mengapa kau tahu itu sia-sia, sebab yang menimbang tak pernah ingin tahu isi timbangannya.\n\n\"Bagus,\" kata Sang Dewi, dan itu bukan pujian.\n\nIa menjentikkan jari. Lantai cahaya di bawah kakimu lenyap.",
+        "choices": [
+            {
+                "text": "Jatuh",
+                "target": "PR_0012"
+            }
+        ]
+    },
+    {
+        "id": "PR_0012",
+        "title": "Lemah Wangkal",
+        "mood": "void",
+        "description": "Kau jatuh lama sekali. Lalu tanah.\n\nLemah Wangkal membentang sejauh mata memandang: tanah retak berwarna darah kering, batu hitam setajam taring, dan kabut kelabu yang bergerak seperti sesuatu yang bernapas. Tak ada kota. Tak ada jalan. Bahkan angin seakan lupa cara berbisik.\n\nKau berjalan. Sehari tanpa air. Dua hari dengan lidah mengelupas. Pada hari ketiga, kau mendengar suara tipis di dalam dadamu.\n\n\"{name}... masih di sana?\"\n\nSang Kodeks, lirih seperti benang. \"Maafkan aku. Kabut ini memutus suaraku. Dengar baik-baik: Sang Dewi keliru. Kristalmu tidak kosong. Di dunia lamamu, kekuatanmu ditekan, dibungkus, disembunyikan. Di sini bungkus itu retak. Yang ia sebut kusam hanyalah cahaya yang belum dibuka.\"\n\nDi balik kabut, siluet reruntuhan muncul: pelataran batu tua, patung, dan kilau samar sebutir kristal.",
+        "choices": [
+            {
+                "text": "Berjalan menuju reruntuhan",
                 "target": "SK_0001"
             }
         ]

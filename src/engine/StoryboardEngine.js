@@ -2,6 +2,7 @@
 const sources = [
     require("../data/storyboards/prologue.json"),
     require("../data/storyboards/berkah.json"),
+    require("../data/storyboards/perjanjian.json"),
     require("../data/storyboards/main.json")
 ];
 

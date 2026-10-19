@@ -2,18 +2,31 @@
 
 Semua adegan ada di file JSON di folder ini. Cerita tidak ditulis di halaman web;
 engine membaca data ini. Urutan file dimuat diatur di `src/engine/StoryboardEngine.js`
-(`prologue.json`, `berkah.json`, lalu `main.json`).
+(`prologue.json`, `berkah.json`, `perjanjian.json`, lalu `main.json`).
 
 ## Alur saat ini
+
+Prolog mengikuti napas Tsukimichi musim 1 episode 1-2 (dipanggil sebagai pahlawan, ditolak
+dewi, dibuang ke tanah gersang, kekuatan tersembunyi bangkit, ikatan dengan naga, ancaman besar).
+Karakter, nama, dan teksnya asli untuk BAJAVERSE.
 
 ```
 PR_0001 Kegelapan -> PR_0002 Terlahir Kembali -> PR_0003 (isi nama)
  -> PR_0004 -> PR_0005 -> PR_0006 (pilih role) -> PR_0007
- -> SK_0001 Jendela Berkah (berkah awal sesuai role diberikan)
- -> SK_0002 Pelataran Batu (pilih 3 percobaan, urutan bebas)
-      SK_0003 patung | SK_0004 kristal | SK_0005 genangan  (masing-masing kembali ke SK_0002)
- -> SK_0006 Awal Perjalanan -> SB_0001 (cerita gerbang)
+ -> PR_0008 Penimbangan -> PR_0009 Timbangan Kosong (Dewi menolak)
+      PR_0010 menolak | PR_0011 diam (dua cabang pendek, bertemu lagi)
+ -> PR_0012 Lemah Wangkal (tanah gersang)
+ -> SK_0001 Jendela Berkah (kekuatan role terbuka)
+ -> SK_0002 Pelataran Batu (3 percobaan, urutan bebas: SK_0003 | SK_0004 | SK_0005)
+ -> SK_0006 Jerit di Balik Kabut
+ -> perjanjian.json: PJ_0001 selamatkan Laras -> PJ_0002 -> PJ_0003 ilusi kabut
+      -> PJ_0004 Naga Aruna (dua pilihan, set flag aruna_pact / aruna_vow)
+      -> PJ_0005 ikatan -> PJ_0006 Pelahap Nama -> PJ_0007 gerbang
+ -> SB_0001 (cerita gerbang)
 ```
+
+Flag yang sudah diisi tetapi belum dipakai cerita lanjutan: `aruna_pact` (selalu true setelah
+PJ_0004) dan `aruna_vow` (true jika pemain meminta Aruna berhenti menuntut persembahan).
 
 ## Satu adegan
 
@@ -51,7 +64,7 @@ Dapat dipakai di `title`, `description`, dan `text` pilihan:
 - `{role}` nama role yang dipilih
 - `{roleIntro}` paragraf pembuka khusus role (isi di `src/data/roles/roles.json`, field `intro`)
 - `{skill}` nama berkah awal pemain, `{skillDesc}` deskripsinya
-- `{skillStatue}`, `{skillCrystal}`, `{skillWater}` teks percobaan berkah pada patung, kristal, dan genangan (lihat bagian Skill)
+- `{skillStatue}`, `{skillCrystal}`, `{skillWater}`, `{skillRescue}` teks berkah pada patung, kristal, genangan, dan saat menyelamatkan Laras (lihat bagian Skill)
 
 ## Pilihan bersyarat dan flag
 
@@ -89,8 +102,8 @@ Setiap role punya satu berkah awal. Datanya ada di dua tempat:
 - `src/data/roles/roles.json`: field `startingSkill` berisi id skill. Skill ini otomatis
   diberikan saat pemain memilih role.
 - `src/data/skills/skills.json`: `id`, `name`, `type`, `description`, dan `trials`
-  (`statue`, `crystal`, `water`) yaitu satu atau dua kalimat tentang apa yang terjadi saat
-  skill dipakai pada tiga benda di Pelataran Batu.
+  (`statue`, `crystal`, `water`, `rescue`) yaitu satu atau dua kalimat tentang apa yang terjadi saat
+  skill dipakai pada tiga benda di Pelataran Batu dan saat melawan serigala berkepala dua.
 
 Saat server menyala, `SkillEngine` memeriksa data ini dan mencetak peringatan jika ada
 role tanpa skill, skill yang tidak dikenal, atau teks percobaan yang hilang.

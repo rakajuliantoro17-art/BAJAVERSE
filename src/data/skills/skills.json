@@ -7,7 +7,8 @@
         "trials": {
             "statue": "Kau menghantamkan bahu ke patung itu. Tubuhmu mengeras seperti baja, dan batu yang retak itu justru mundur selangkah, bukan kau.",
             "crystal": "Kau menahan kristal padam itu dengan telapak tangan. Denyutnya menekan balik, tetapi ragamu bergeming, dan kristal itu menyala sedikit seolah menghormati tekadmu.",
-            "water": "Pantulanmu di genangan tampak lebih besar dari tubuhmu: sosok berbaju baja yang bercahaya. Berkah ini rupanya tidak hanya mengeraskan kulit, tetapi juga keteguhan hatimu."
+            "water": "Pantulanmu di genangan tampak lebih besar dari tubuhmu: sosok berbaju baja yang bercahaya. Berkah ini rupanya tidak hanya mengeraskan kulit, tetapi juga keteguhan hatimu.",
+            "rescue": "Kau menyongsong terkaman itu dengan dada. Tubuhmu mengeras, dan taring yang sanggup meremukkan tulang kerbau patah berderak di kulitmu. Satu pukulan, dan serigala itu terpelanting menabrak batu."
         }
     },
     {
@@ -18,7 +19,8 @@
         "trials": {
             "statue": "Kau mengitari patung itu tanpa menimbulkan bunyi sedikit pun. Angin menunjukkan retak mana yang paling rapuh, dan satu sentuhan di sana membuat patung itu berdengung.",
             "crystal": "Angin membawa bisikan dari kristal padam: arah ia dahulu menyala. Kau menunjuk ke selatan, ke tempat gerbang kota berdiri, dan kristal itu berkedip membenarkan.",
-            "water": "Riak air membentuk jalan setapak yang tidak ada di tanah, jalur tersembunyi menuju gerbang. Angin hanya menunjukkan; kaulah yang memilih mengikutinya."
+            "water": "Riak air membentuk jalan setapak yang tidak ada di tanah, jalur tersembunyi menuju gerbang. Angin hanya menunjukkan; kaulah yang memilih mengikutinya.",
+            "rescue": "Angin membisikkan ke mana ia akan melompat, dan kau sudah berada di sisinya tanpa suara. Dua kepala itu menerkam udara kosong. Kau menyelinap, memutus tali rotan di kaki gadis itu, dan menariknya menjauh sebelum taring-taring itu sempat mencari lagi."
         }
     },
     {
@@ -29,7 +31,8 @@
         "trials": {
             "statue": "Satu tatapan, dan aksara halus bermunculan di permukaan patung: ia dipahat seorang penjaga untuk melatih murid-muridnya. Namanya hilang, tetapi tangannya masih terasa di batu.",
             "crystal": "Kristal padam itu menceritakan dirinya: legenda seorang pelaut yang dilupakan. Kisahnya terbaca di matamu, dan satu kilau tipis kembali di intinya.",
-            "water": "Di genangan itu kau melihat bukan wajahmu, melainkan halaman-halaman: ingatan dunia lama yang kau bawa, tersusun rapi. Berkah ini memperlihatkan bahwa kau sendiri adalah sebuah kitab."
+            "water": "Di genangan itu kau melihat bukan wajahmu, melainkan halaman-halaman: ingatan dunia lama yang kau bawa, tersusun rapi. Berkah ini memperlihatkan bahwa kau sendiri adalah sebuah kitab.",
+            "rescue": "Satu tatapan, dan tubuh binatang itu terbaca seperti halaman: sendi kiri yang pincang, sisi leher yang tak terlindung. Kau menunjuk titiknya, memukul tepat di sana, dan serigala itu rubuh."
         }
     },
     {
@@ -40,7 +43,8 @@
         "trials": {
             "statue": "Jemarimu menemukan sambungan tersembunyi di punggung patung. Satu putaran, dan lengan batu itu bergerak seperti pegas yang lama tertidur.",
             "crystal": "Kau menyingkap kristal padam itu dan melihat ia terpasang pada rangka kecil dari tembaga. Kau meluruskan satu kaitan, dan cahaya kembali mengalir.",
-            "water": "Genangan itu ternyata bukan air biasa: ada katup tersembunyi di dasarnya, bagian dari sistem kanal kuno. Begitu kau memutarnya, riak berubah arah menuju kota."
+            "water": "Genangan itu ternyata bukan air biasa: ada katup tersembunyi di dasarnya, bagian dari sistem kanal kuno. Begitu kau memutarnya, riak berubah arah menuju kota.",
+            "rescue": "Kau memungut tali rotan dan pecahan batu runcing, dan dalam beberapa tarikan napas keduanya menjadi jerat berpegas. Serigala itu menerkam, lalu terlilit sendiri oleh perangkap yang bahkan belum selesai kau pikirkan."
         }
     },
     {
@@ -51,7 +55,8 @@
         "trials": {
             "statue": "Kau menarik napas dalam-dalam, dan denyut kristal di dadamu mengalir ke patung. Retakan batu itu berpendar biru, lalu perlahan mengatup seperti luka yang sembuh.",
             "crystal": "Kau meniup lembut ke arah kristal padam. Napasmu menjadi cahaya, dan kristal itu bergetar hendak berbicara, tetapi hanya sempat membisikkan satu kata: \"ingat.\"",
-            "water": "Permukaan air bergetar mengikuti napasmu. Di kedalamannya, sesuatu yang besar dan tua membuka mata, memandangimu sejenak, lalu kembali tidur."
+            "water": "Permukaan air bergetar mengikuti napasmu. Di kedalamannya, sesuatu yang besar dan tua membuka mata, memandangimu sejenak, lalu kembali tidur.",
+            "rescue": "Denyut kristal di dadamu melebar ke luar, dan udara berpendar biru. Serigala itu mengaum, tetapi cahaya menekannya ke tanah seperti telapak raksasa yang tak terlihat, sampai kedua kepalanya tertunduk."
         }
     },
     {
@@ -62,7 +67,8 @@
         "trials": {
             "statue": "Kau berbicara kepada patung latihan itu seperti kepada murid yang putus asa. Retakannya tidak hilang, tetapi patung itu seolah berdiri sedikit lebih tegak.",
             "crystal": "Kata-katamu mengalir pelan ke arah kristal padam, dan kristal itu menjawab dengan cahaya hangat. Rupanya bahkan batu pun ingin didengarkan.",
-            "water": "Pantulanmu tersenyum lebih dulu sebelum kau melakukannya. Kau paham: berkah ini bukan membuat orang percaya, melainkan membuatmu mampu mendengar apa yang mereka takutkan."
+            "water": "Pantulanmu tersenyum lebih dulu sebelum kau melakukannya. Kau paham: berkah ini bukan membuat orang percaya, melainkan membuatmu mampu mendengar apa yang mereka takutkan.",
+            "rescue": "Kau melangkah maju dan berbicara pelan. Bukan ancaman, melainkan kata-kata yang menyentuh rasa lapar dan takut di balik taringnya. Dua kepala itu merendah, dan binatang itu mundur lalu lenyap ke dalam kabut."
         }
     },
     {
@@ -73,7 +79,8 @@
         "trials": {
             "statue": "Telapak tanganmu hangat saat menyentuh retakan di patung itu. Cahaya lembut merembes ke celah batu, dan retak yang panjang itu menutup sedikit demi sedikit.",
             "crystal": "Kristal padam itu seperti makhluk yang kelelahan. Kau mengusapnya, dan embun cahaya menetes ke dalamnya hingga kristal itu berdenyut kembali, pelan namun hidup.",
-            "water": "Genangan itu keruh oleh debu lama. Setetes cahaya dari ujung jarimu, dan air menjernih sampai kau melihat dasar batu yang diukir bunga teratai."
+            "water": "Genangan itu keruh oleh debu lama. Setetes cahaya dari ujung jarimu, dan air menjernih sampai kau melihat dasar batu yang diukir bunga teratai.",
+            "rescue": "Gadis itu penuh luka lama, dan tanganmu bergerak sendiri. Cahaya hangat menyapu lukanya, lalu menyelimutimu ketika serigala menerkam. Cakar yang seharusnya menyobekmu hanya meninggalkan goresan yang menutup seketika, dan binatang itu mundur, gentar pada sesuatu yang tak bisa dilukai."
         }
     }
 ]
