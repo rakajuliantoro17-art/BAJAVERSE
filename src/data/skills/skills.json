@@ -1,0 +1,79 @@
+[
+    {
+        "id": "raga_baja",
+        "name": "Raga Baja",
+        "type": "Aktif",
+        "description": "Mengeraskan tubuhmu seperti baja selama beberapa tarikan napas, menahan pukulan yang akan meremukkan orang biasa.",
+        "trials": {
+            "statue": "Kau menghantamkan bahu ke patung itu. Tubuhmu mengeras seperti baja, dan batu yang retak itu justru mundur selangkah, bukan kau.",
+            "crystal": "Kau menahan kristal padam itu dengan telapak tangan. Denyutnya menekan balik, tetapi ragamu bergeming, dan kristal itu menyala sedikit seolah menghormati tekadmu.",
+            "water": "Pantulanmu di genangan tampak lebih besar dari tubuhmu: sosok berbaju baja yang bercahaya. Berkah ini rupanya tidak hanya mengeraskan kulit, tetapi juga keteguhan hatimu."
+        }
+    },
+    {
+        "id": "jejak_angin",
+        "name": "Jejak Angin",
+        "type": "Aktif",
+        "description": "Merasakan jejak angin dan arah tersembunyi, serta melangkah tanpa suara di tempat yang paling sunyi.",
+        "trials": {
+            "statue": "Kau mengitari patung itu tanpa menimbulkan bunyi sedikit pun. Angin menunjukkan retak mana yang paling rapuh, dan satu sentuhan di sana membuat patung itu berdengung.",
+            "crystal": "Angin membawa bisikan dari kristal padam: arah ia dahulu menyala. Kau menunjuk ke selatan, ke tempat gerbang kota berdiri, dan kristal itu berkedip membenarkan.",
+            "water": "Riak air membentuk jalan setapak yang tidak ada di tanah, jalur tersembunyi menuju gerbang. Angin hanya menunjukkan; kaulah yang memilih mengikutinya."
+        }
+    },
+    {
+        "id": "mata_kodeks",
+        "name": "Mata Kodeks",
+        "type": "Aktif",
+        "description": "Membaca asal-usul, sejarah, dan arti sebuah benda hanya dengan menatapnya.",
+        "trials": {
+            "statue": "Satu tatapan, dan aksara halus bermunculan di permukaan patung: ia dipahat seorang penjaga untuk melatih murid-muridnya. Namanya hilang, tetapi tangannya masih terasa di batu.",
+            "crystal": "Kristal padam itu menceritakan dirinya: legenda seorang pelaut yang dilupakan. Kisahnya terbaca di matamu, dan satu kilau tipis kembali di intinya.",
+            "water": "Di genangan itu kau melihat bukan wajahmu, melainkan halaman-halaman: ingatan dunia lama yang kau bawa, tersusun rapi. Berkah ini memperlihatkan bahwa kau sendiri adalah sebuah kitab."
+        }
+    },
+    {
+        "id": "tangan_empu",
+        "name": "Tangan Empu",
+        "type": "Aktif",
+        "description": "Memahami cara kerja mekanisme kuno, lalu membongkar, memperbaiki, atau menggerakkannya.",
+        "trials": {
+            "statue": "Jemarimu menemukan sambungan tersembunyi di punggung patung. Satu putaran, dan lengan batu itu bergerak seperti pegas yang lama tertidur.",
+            "crystal": "Kau menyingkap kristal padam itu dan melihat ia terpasang pada rangka kecil dari tembaga. Kau meluruskan satu kaitan, dan cahaya kembali mengalir.",
+            "water": "Genangan itu ternyata bukan air biasa: ada katup tersembunyi di dasarnya, bagian dari sistem kanal kuno. Begitu kau memutarnya, riak berubah arah menuju kota."
+        }
+    },
+    {
+        "id": "napas_kristal",
+        "name": "Napas Kristal",
+        "type": "Aktif",
+        "description": "Merasakan dan menyalurkan energi kristal, serta mendengar suara dunia di balik keheningan.",
+        "trials": {
+            "statue": "Kau menarik napas dalam-dalam, dan denyut kristal di dadamu mengalir ke patung. Retakan batu itu berpendar biru, lalu perlahan mengatup seperti luka yang sembuh.",
+            "crystal": "Kau meniup lembut ke arah kristal padam. Napasmu menjadi cahaya, dan kristal itu bergetar hendak berbicara, tetapi hanya sempat membisikkan satu kata: \"ingat.\"",
+            "water": "Permukaan air bergetar mengikuti napasmu. Di kedalamannya, sesuatu yang besar dan tua membuka mata, memandangimu sejenak, lalu kembali tidur."
+        }
+    },
+    {
+        "id": "suara_sabda",
+        "name": "Suara Sabda",
+        "type": "Aktif",
+        "description": "Membuat kata-katamu didengar, membuka hati yang tertutup, dan meredakan amarah yang hampir meledak.",
+        "trials": {
+            "statue": "Kau berbicara kepada patung latihan itu seperti kepada murid yang putus asa. Retakannya tidak hilang, tetapi patung itu seolah berdiri sedikit lebih tegak.",
+            "crystal": "Kata-katamu mengalir pelan ke arah kristal padam, dan kristal itu menjawab dengan cahaya hangat. Rupanya bahkan batu pun ingin didengarkan.",
+            "water": "Pantulanmu tersenyum lebih dulu sebelum kau melakukannya. Kau paham: berkah ini bukan membuat orang percaya, melainkan membuatmu mampu mendengar apa yang mereka takutkan."
+        }
+    },
+    {
+        "id": "embun_kehidupan",
+        "name": "Embun Kehidupan",
+        "type": "Aktif",
+        "description": "Mengalirkan cahaya lembut yang menyembuhkan luka pada tubuh, tanah, dan benda-benda yang meredup.",
+        "trials": {
+            "statue": "Telapak tanganmu hangat saat menyentuh retakan di patung itu. Cahaya lembut merembes ke celah batu, dan retak yang panjang itu menutup sedikit demi sedikit.",
+            "crystal": "Kristal padam itu seperti makhluk yang kelelahan. Kau mengusapnya, dan embun cahaya menetes ke dalamnya hingga kristal itu berdenyut kembali, pelan namun hidup.",
+            "water": "Genangan itu keruh oleh debu lama. Setetes cahaya dari ujung jarimu, dan air menjernih sampai kau melihat dasar batu yang diukir bunga teratai."
+        }
+    }
+]

@@ -1,6 +1,7 @@
 // Story files are loaded in this order. Add new chapters here.
 const sources = [
     require("../data/storyboards/prologue.json"),
+    require("../data/storyboards/berkah.json"),
     require("../data/storyboards/main.json")
 ];
 
@@ -67,6 +68,14 @@ class StoryboardEngine {
                         problems.push(
                             `${storyboard.id}: choice "${choice.text}" targets missing scene ${choice.target}`
                         );
+                    }
+
+                    for (const key of ["ifFlags", "unlessFlags"]) {
+                        if (choice[key] !== undefined && !Array.isArray(choice[key])) {
+                            problems.push(
+                                `${storyboard.id}: choice "${choice.text}" ${key} must be a list`
+                            );
+                        }
                     }
 
                 }

@@ -12,6 +12,9 @@ class Player {
 
         this.level = 1;
 
+        // Skill ids. The starting skill is granted when the role is chosen.
+        this.skills = [];
+
         this.currentStoryboard = START_STORYBOARD;
 
     }

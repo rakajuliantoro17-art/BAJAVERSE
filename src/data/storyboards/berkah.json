@@ -1,0 +1,91 @@
+[
+    {
+        "id": "SK_0001",
+        "title": "Jendela Berkah",
+        "cinematic": true,
+        "showStatus": true,
+        "description": "Udara di depanmu beriak seperti permukaan air, lalu mengeras menjadi selembar cahaya biru setipis kaca.\n\nAksara di atasnya asing, tetapi entah bagaimana kau memahaminya. Namamu ada di sana. Jalanmu ada di sana. Dan satu baris lagi yang berpendar paling terang.\n\n\"Itu Jendela Berkah,\" kata Sang Kodeks. \"Setiap pendatang menerima satu benih kekuatan sesuai jalan yang ia pilih. Bukan kekuatan tanpa batas, melainkan awal. Tumbuh atau layunya, tergantung seberapa kuat kau mengingat.\"",
+        "choices": [
+            {
+                "text": "Pelajari berkah itu",
+                "target": "SK_0002"
+            }
+        ]
+    },
+    {
+        "id": "SK_0002",
+        "title": "Pelataran Batu",
+        "description": "Di bawah tembok tempatmu berdiri terhampar pelataran batu yang ditumbuhi lumut, tempat para penjaga pertama dahulu berlatih sebelum Kabut Lupa mengikis nama mereka.\n\nTiga hal menarik perhatianmu: patung latihan yang retak, kristal padam di antara reruntuhan, dan genangan air yang memantulkan langit senja.\n\n\"Berkah tidak dipahami lewat kata,\" bisik Sang Kodeks. \"Ia dipahami lewat percobaan.\"",
+        "choices": [
+            {
+                "text": "Uji {skill} pada patung latihan",
+                "unlessFlags": ["trial_statue"],
+                "target": "SK_0003"
+            },
+            {
+                "text": "Hadapkan {skill} pada kristal yang padam",
+                "unlessFlags": ["trial_crystal"],
+                "target": "SK_0004"
+            },
+            {
+                "text": "Tatap genangan air itu dengan {skill}",
+                "unlessFlags": ["trial_water"],
+                "target": "SK_0005"
+            },
+            {
+                "text": "Aku sudah memahami berkahku",
+                "ifFlags": ["trial_statue", "trial_crystal", "trial_water"],
+                "target": "SK_0006"
+            }
+        ]
+    },
+    {
+        "id": "SK_0003",
+        "title": "Patung Latihan",
+        "description": "Patung batu setinggi dua depa itu berdiri miring, tubuhnya dipenuhi retak. Di kakinya terukir deretan nama yang tak lagi terbaca, murid-murid yang dahulu berlatih di sini.\n\n{skillStatue}\n\nDari dalam patung terdengar dengung rendah, seperti sesuatu yang lama tertidur lalu mengenali tamunya.\n\n\"{skill} menjawab ketika kau memercayainya,\" kata Sang Kodeks.",
+        "choices": [
+            {
+                "text": "Kembali ke pelataran",
+                "setFlags": { "trial_statue": true },
+                "target": "SK_0002"
+            }
+        ]
+    },
+    {
+        "id": "SK_0004",
+        "title": "Kristal yang Padam",
+        "description": "Di antara reruntuhan, sebutir kristal sebesar kepalan tergeletak tanpa cahaya. Hanya garis tipis di dalamnya yang masih mengingat warna biru.\n\n{skillCrystal}\n\nKristal itu kembali tenang, tetapi kini terasa hangat. Kau mengerti: kristal tidak mati, ia hanya menunggu seseorang yang mau mengingat.",
+        "choices": [
+            {
+                "text": "Kembali ke pelataran",
+                "setFlags": { "trial_crystal": true },
+                "target": "SK_0002"
+            }
+        ]
+    },
+    {
+        "id": "SK_0005",
+        "title": "Genangan Senja",
+        "description": "Genangan itu tenang sekali. Langit senja dan menara-menara candi terpantul sempurna di dalamnya, seolah ada kota kedua di bawah permukaan.\n\n{skillWater}\n\nRiak terakhir memudar. Untuk pertama kalinya sejak terlahir kembali, kau merasa utuh.",
+        "choices": [
+            {
+                "text": "Kembali ke pelataran",
+                "setFlags": { "trial_water": true },
+                "target": "SK_0002"
+            }
+        ]
+    },
+    {
+        "id": "SK_0006",
+        "title": "Awal Perjalanan",
+        "cinematic": true,
+        "background": "/images/backgrounds/gerbang-kota.jpg",
+        "description": "Ketiga percobaan itu meninggalkan getar yang sama di dadamu: berkah ini bukan hadiah, melainkan janji.\n\n\"Kau sudah mengenal {skill},\" kata Sang Kodeks. Suaranya mulai terdengar jauh. \"Tetapi dunia tidak menunggu pendatang yang sudah siap.\"\n\nDi cakrawala, kabut kelabu merayap pelan. Menara-menara di tepi kota memudar satu per satu, seperti tinta yang dihapus dari halaman.\n\nNamun di tengah kabut itu, sebuah gerbang masih berdiri tegak dan menyala: gerbang kota Wilwatikta.\n\n\"Pergilah, {name}. Ingatlah apa yang bisa kau ingat.\"",
+        "choices": [
+            {
+                "text": "Berjalan menuju gerbang kota",
+                "target": "SB_0001"
+            }
+        ]
+    }
+]

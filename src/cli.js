@@ -34,6 +34,24 @@ function printScene(scene) {
 
     scene.lines.forEach((line) => console.log(`\n${line}`));
 
+    if (scene.status) {
+
+        const status = scene.status;
+
+        console.log("\n[ JENDELA STATUS ]");
+        console.log(`Nama  : ${status.name}`);
+        console.log(`Role  : ${status.role}`);
+        console.log(`Level : ${status.level}`);
+
+        status.skills.forEach((skill) => {
+            console.log(
+                `Berkah Awal: ${skill.name}${skill.type ? ` (${skill.type})` : ""}`
+            );
+            console.log(`  ${skill.description}`);
+        });
+
+    }
+
 }
 
 

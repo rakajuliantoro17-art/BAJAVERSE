@@ -86,6 +86,7 @@ class GameEngine {
                 role: player.role,
                 roleId: null,
                 level: player.level,
+                skills: [...player.skills],
                 currentStoryboard: player.currentStoryboard
             },
 
@@ -116,9 +117,13 @@ class GameEngine {
 
         }
 
+        // The index the player sees refers to the choices visible for their
+        // flags, not to the raw list in the data file.
+        const visible = this.visibleChoices(storyboard, state.flags);
+
         const target =
             this.engineManager.choiceEngine.choose(
-                storyboard,
+                { choices: visible },
                 choiceIndex
             );
 
@@ -128,7 +133,12 @@ class GameEngine {
 
         }
 
-        return this.moveTo(state, target);
+        return this.moveTo(
+            state,
+            target,
+            {},
+            visible[choiceIndex].setFlags
+        );
 
     }
 
@@ -172,9 +182,11 @@ class GameEngine {
 
         }
 
+        // The role's starting skill ("berkah awal") is granted here.
         return this.moveTo(state, storyboard.next, {
             role: role.name,
-            roleId: role.id
+            roleId: role.id,
+            skills: role.startingSkill ? [role.startingSkill] : []
         });
 
     }
@@ -189,7 +201,8 @@ class GameEngine {
     }
 
 
-    moveTo(state, target, playerChanges = {}) {
+    // flagChanges comes from the story data (a choice's `setFlags`).
+    moveTo(state, target, playerChanges = {}, flagChanges = null) {
 
         if (!this.engineManager.storyboardEngine.getStoryboard(target)) {
 
@@ -205,7 +218,7 @@ class GameEngine {
                 currentStoryboard: target
             },
 
-            flags: { ...state.flags }
+            flags: { ...state.flags, ...(flagChanges || {}) }
 
         };
 
@@ -279,10 +292,21 @@ class GameEngine {
 
         const role = this.engineManager.roleEngine.getRole(player.roleId);
 
+        const skill = this.engineManager.skillEngine.getSkill(
+            (player.skills || [])[0]
+        );
+
+        const trials = (skill && skill.trials) || {};
+
         const values = {
             name: player.name || "Pendatang",
             role: player.role || "Pengembara",
-            roleIntro: (role && role.intro) || ""
+            roleIntro: (role && role.intro) || "",
+            skill: skill ? skill.name : "berkahmu",
+            skillDesc: skill ? skill.description : "",
+            skillStatue: trials.statue || "",
+            skillCrystal: trials.crystal || "",
+            skillWater: trials.water || ""
         };
 
         return template.replace(/\{(\w+)\}/g, (match, key) =>
@@ -357,9 +381,15 @@ class GameEngine {
         if (type === "story") {
 
             // Only the text of each choice leaves the engine; targets stay server-side.
-            scene.choices = (storyboard.choices || []).map((choice) => ({
-                text: fill(choice.text)
-            }));
+            scene.choices = this.visibleChoices(storyboard, state.flags).map(
+                (choice) => ({ text: fill(choice.text) })
+            );
+
+        }
+
+        if (storyboard.showStatus) {
+
+            scene.status = this.buildStatus(state.player);
 
         }
 
@@ -384,6 +414,48 @@ class GameEngine {
     }
 
 
+    // A choice can be hidden until flags are set (`ifFlags`, all required)
+    // or once they are set (`unlessFlags`, any one hides it).
+    visibleChoices(storyboard, flags) {
+
+        return (storyboard.choices || []).filter((choice) => {
+
+            const needs = choice.ifFlags || [];
+            const blocks = choice.unlessFlags || [];
+
+            return (
+                needs.every((key) => Boolean(flags[key])) &&
+                !blocks.some((key) => Boolean(flags[key]))
+            );
+
+        });
+
+    }
+
+
+    // Data for the "Jendela Status" panel (scenes with `showStatus`).
+    buildStatus(player) {
+
+        const skills = (player.skills || [])
+            .map((id) => this.engineManager.skillEngine.getSkill(id))
+            .filter(Boolean)
+            .map((skill) => ({
+                id: skill.id,
+                name: skill.name,
+                type: skill.type || null,
+                description: skill.description
+            }));
+
+        return {
+            name: player.name || "???",
+            role: player.role || "???",
+            level: player.level || 1,
+            skills
+        };
+
+    }
+
+
     validateState(state) {
 
         const player = state && state.player;
@@ -394,6 +466,9 @@ class GameEngine {
             player &&
             typeof player === "object" &&
             (player.name === null || typeof player.name === "string") &&
+            (player.skills === undefined ||
+                (Array.isArray(player.skills) &&
+                    player.skills.every((id) => typeof id === "string"))) &&
             typeof player.currentStoryboard === "string" &&
             state.flags &&
             typeof state.flags === "object" &&

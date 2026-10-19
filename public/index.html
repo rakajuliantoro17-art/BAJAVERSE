@@ -181,6 +181,31 @@
     to { opacity: 1; transform: none; }
   }
 
+  /* "Jendela Status": the isekai-style status window shown in some scenes. */
+  .status-window {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border: 1px solid var(--glow);
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(10, 28, 38, 0.84), rgba(8, 18, 26, 0.84));
+    box-shadow: 0 0 24px var(--glow-soft), inset 0 0 20px rgba(95, 217, 255, 0.08);
+  }
+  .status-window h3 {
+    margin: 0 0 10px;
+    font-size: 0.8rem;
+    letter-spacing: 0.22em;
+    color: var(--glow);
+    text-shadow: 0 0 10px var(--glow-soft);
+  }
+  .status-grid { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; margin: 0 0 12px; font-size: 0.95rem; }
+  .status-grid dt { color: var(--muted); }
+  .status-grid dd { margin: 0; }
+  .status-skill { border-top: 1px solid rgba(95, 217, 255, 0.25); padding-top: 10px; margin-top: 6px; }
+  .status-skill .label { display: block; margin-bottom: 4px; color: var(--muted); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
+  .status-skill strong { color: var(--accent-hover); font-size: 1.08rem; text-shadow: 0 0 12px rgba(240, 180, 90, 0.35); }
+  .status-skill em { margin-left: 8px; padding: 0 6px; font-style: normal; font-size: 0.72rem; color: var(--glow); border: 1px solid rgba(95, 217, 255, 0.4); border-radius: 4px; }
+  .status-skill p { margin: 6px 0 0; font-size: 0.92rem; line-height: 1.55; }
+
   /* Role picker */
   .role-list { display: grid; gap: 10px; margin-top: 16px; }
   .role-card { display: block; width: 100%; text-align: left; }
@@ -294,6 +319,8 @@
     <div class="meta" id="meta" hidden></div>
     <h2 id="scene-title"></h2>
     <div id="lines"></div>
+
+    <div id="status-box" class="status-window reveal" hidden></div>
 
     <div id="name-box" class="reveal" hidden>
       <label for="name" id="name-label"></label>
@@ -486,7 +513,7 @@
     renderLines(scene.lines, !!scene.cinematic);
 
     const after = scene.lines.length;
-    const reveals = [$("name-box"), $("role-box"), $("choices"), $("advance")];
+    const reveals = [$("status-box"), $("name-box"), $("role-box"), $("choices"), $("advance")];
     reveals.forEach((el) => { el.hidden = true; el.style.setProperty("--i", after); });
 
     if (scene.kind === "input_name") {
@@ -507,6 +534,8 @@
       $("choices").hidden = scene.choices.length === 0;
     }
 
+    if (scene.status) renderStatus(scene.status);
+
     $("end").hidden = scene.kind !== "story" || scene.choices.length > 0;
     $("restart").hidden = !!scene.cinematic;
 
@@ -517,6 +546,47 @@
     if (scene.kind === "input_name" && animate) {
       setTimeout(() => { if (scene && scene.kind === "input_name") $("name").focus(); }, (after * STEP_MS) + 900);
     }
+  }
+
+  function renderStatus(status) {
+    const box = $("status-box");
+    box.replaceChildren();
+
+    const title = document.createElement("h3");
+    title.textContent = "JENDELA STATUS";
+
+    const grid = document.createElement("dl");
+    grid.className = "status-grid";
+    [["Nama", status.name], ["Role", status.role], ["Level", String(status.level)]].forEach((row) => {
+      const dt = document.createElement("dt");
+      dt.textContent = row[0];
+      const dd = document.createElement("dd");
+      dd.textContent = row[1];
+      grid.append(dt, dd);
+    });
+    box.append(title, grid);
+
+    status.skills.forEach((skill) => {
+      const wrap = document.createElement("div");
+      wrap.className = "status-skill";
+      const label = document.createElement("span");
+      label.className = "label";
+      label.textContent = "Berkah Awal";
+      const name = document.createElement("strong");
+      name.textContent = skill.name;
+      wrap.append(label, name);
+      if (skill.type) {
+        const type = document.createElement("em");
+        type.textContent = skill.type;
+        wrap.append(type);
+      }
+      const desc = document.createElement("p");
+      desc.textContent = skill.description;
+      wrap.append(desc);
+      box.append(wrap);
+    });
+
+    box.hidden = false;
   }
 
   function renderChoices(choices) {

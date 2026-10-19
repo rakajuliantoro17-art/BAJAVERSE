@@ -4,6 +4,7 @@ const PlayerEngine = require("./PlayerEngine");
 const RoleEngine = require("./RoleEngine");
 const WorldEngine = require("./WorldEngine");
 const CharacterEngine = require("./CharacterEngine");
+const SkillEngine = require("./SkillEngine");
 
 class EngineManager {
 
@@ -17,6 +18,7 @@ class EngineManager {
         this.roleEngine = new RoleEngine();
         this.worldEngine = new WorldEngine();
         this.characterEngine = new CharacterEngine();
+        this.skillEngine = new SkillEngine();
 
     }
 
@@ -28,6 +30,13 @@ class EngineManager {
         this.roleEngine.initialize();
         this.worldEngine.initialize();
         this.characterEngine.initialize();
+        this.skillEngine.initialize();
+
+        this.skillEngine
+            .validate(this.roleEngine.getRoles())
+            .forEach((problem) => {
+                console.warn(`[SkillEngine] ${problem}`);
+            });
 
     }
 

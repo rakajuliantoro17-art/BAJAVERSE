@@ -66,12 +66,11 @@
     {
         "id": "PR_0007",
         "title": "Jalan {role}",
-        "description": "Cahaya yang kau pilih meresap ke dalam dadamu. Kau merasakan dirimu berubah, dan kau tahu: mulai saat ini, kau adalah seorang {role}.\n\n{roleIntro}\n\n\"Pergilah, {name}. Kota tua itu menunggu di balik kabut. Rahasia yang hilang selama ratusan tahun belum sepenuhnya terhapus.\"\n\nCahaya memudar. Udara berbau tanah basah dan dupa. Di hadapanmu, sebuah gerbang kota menjulang di tengah kabut tipis.",
-        "background": "/images/backgrounds/gerbang-kota.jpg",
+        "description": "Cahaya yang kau pilih meresap ke dalam dadamu. Kau merasakan dirimu berubah, dan kau tahu: mulai saat ini, kau adalah seorang {role}.\n\n{roleIntro}\n\n\"Jalanmu telah dipilih, {name}. Sebelum kau melangkah, terimalah dulu bekalmu, selagi Kabut Lupa belum tiba.\"\n\nKristal di dadamu berdenyut sekali, lalu dua kali. Di udara di depan matamu, sesuatu mulai terbentuk.",
         "choices": [
             {
-                "text": "Melangkah ke gerbang",
-                "target": "SB_0001"
+                "text": "Lihat apa yang terbentuk",
+                "target": "SK_0001"
             }
         ]
     }

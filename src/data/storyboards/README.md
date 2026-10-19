@@ -2,13 +2,17 @@
 
 Semua adegan ada di file JSON di folder ini. Cerita tidak ditulis di halaman web;
 engine membaca data ini. Urutan file dimuat diatur di `src/engine/StoryboardEngine.js`
-(`prologue.json` dulu, lalu `main.json`).
+(`prologue.json`, `berkah.json`, lalu `main.json`).
 
 ## Alur saat ini
 
 ```
 PR_0001 Kegelapan -> PR_0002 Terlahir Kembali -> PR_0003 (isi nama)
- -> PR_0004 -> PR_0005 -> PR_0006 (pilih role) -> PR_0007 -> SB_0001 (cerita gerbang)
+ -> PR_0004 -> PR_0005 -> PR_0006 (pilih role) -> PR_0007
+ -> SK_0001 Jendela Berkah (berkah awal sesuai role diberikan)
+ -> SK_0002 Pelataran Batu (pilih 3 percobaan, urutan bebas)
+      SK_0003 patung | SK_0004 kristal | SK_0005 genangan  (masing-masing kembali ke SK_0002)
+ -> SK_0006 Awal Perjalanan -> SB_0001 (cerita gerbang)
 ```
 
 ## Satu adegan
@@ -35,6 +39,7 @@ PR_0001 Kegelapan -> PR_0002 Terlahir Kembali -> PR_0003 (isi nama)
 | `background` | Gambar adegan di atas teks. Jika sama dengan gambar latar halaman (`bajaverse-hero.jpg`), tidak ditampilkan dua kali. |
 | `mood` | `void` = layar gelap dengan cahaya biru berdenyut. Kosong = dunia dengan gambar latar. |
 | `cinematic` | Opsional. `true` atau `false` untuk memaksa efek muncul perlahan. |
+| `showStatus` | Opsional. `true` menampilkan "Jendela Status" (nama, role, level, skill pemain) di bawah teks. |
 | `characters` | Opsional. Daftar id dari `src/data/characters/characters.json`. |
 | `prompt`, `placeholder`, `button` | Opsional. Teks formulir pada adegan `input_name` dan `choose_role`. |
 
@@ -45,6 +50,50 @@ Dapat dipakai di `title`, `description`, dan `text` pilihan:
 - `{name}` nama pemain
 - `{role}` nama role yang dipilih
 - `{roleIntro}` paragraf pembuka khusus role (isi di `src/data/roles/roles.json`, field `intro`)
+- `{skill}` nama berkah awal pemain, `{skillDesc}` deskripsinya
+- `{skillStatue}`, `{skillCrystal}`, `{skillWater}` teks percobaan berkah pada patung, kristal, dan genangan (lihat bagian Skill)
+
+## Pilihan bersyarat dan flag
+
+Sebuah pilihan dapat mengatur flag dan dapat disembunyikan berdasarkan flag:
+
+```json
+{
+    "text": "Kembali ke pelataran",
+    "setFlags": { "trial_statue": true },
+    "target": "SK_0002"
+},
+{
+    "text": "Uji berkahmu pada patung",
+    "unlessFlags": ["trial_statue"],
+    "target": "SK_0003"
+},
+{
+    "text": "Aku sudah memahami berkahku",
+    "ifFlags": ["trial_statue", "trial_crystal", "trial_water"],
+    "target": "SK_0006"
+}
+```
+
+- `setFlags` diatur saat pilihan dipilih.
+- `ifFlags` pilihan tampil hanya jika semua flag itu sudah diatur.
+- `unlessFlags` pilihan disembunyikan jika salah satu flag itu sudah diatur.
+
+Awas: pastikan selalu ada pilihan yang tampil di setiap adegan. Adegan yang semua pilihannya
+tersembunyi akan menjadi jalan buntu.
+
+## Skill dan berkah awal
+
+Setiap role punya satu berkah awal. Datanya ada di dua tempat:
+
+- `src/data/roles/roles.json`: field `startingSkill` berisi id skill. Skill ini otomatis
+  diberikan saat pemain memilih role.
+- `src/data/skills/skills.json`: `id`, `name`, `type`, `description`, dan `trials`
+  (`statue`, `crystal`, `water`) yaitu satu atau dua kalimat tentang apa yang terjadi saat
+  skill dipakai pada tiga benda di Pelataran Batu.
+
+Saat server menyala, `SkillEngine` memeriksa data ini dan mencetak peringatan jika ada
+role tanpa skill, skill yang tidak dikenal, atau teks percobaan yang hilang.
 
 ## Memeriksa cerita
 
