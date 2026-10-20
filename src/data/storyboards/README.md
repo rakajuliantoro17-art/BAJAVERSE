@@ -125,3 +125,16 @@ role tanpa skill, skill yang tidak dikenal, atau teks percobaan yang hilang.
 
 Saat server menyala, `StoryboardEngine` memeriksa semua adegan dan mencetak peringatan
 di terminal jika ada pilihan yang menuju adegan yang tidak ada, atau `next` yang hilang.
+
+## Sejarah dan mitologi yang tersirat
+
+Cerita sengaja tidak menjelaskan sejarah secara langsung. Petunjuknya diselipkan lewat detail
+tempat dan ucapan tokoh, supaya pemain yang mengenalnya merasa "oh, itu ...".
+
+| Tempat di game | Rujukan (tidak disebut namanya) |
+| --- | --- |
+| Bukit Abu | Gunung Pawitra (Penanggungan): "suci"; kisah puncak Mahameru yang terlepas (Tantu Panggelaran); teras batu berundak; delapan bukit sekeliling; ratusan situs pertapaan |
+| Wilwatikta | Majapahit |
+| Kabut Lupa | Kerajaan dan nama yang hilang dari ingatan, seperti banyak naskah yang tak sampai kepada kita |
+
+Rujukan harus dicek ke sumber sebelum ditambah (lihat daftar sumber di pesan commit atau tanyakan ke penulis).
