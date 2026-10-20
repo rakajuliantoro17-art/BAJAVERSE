@@ -23,8 +23,8 @@ PR_0001 Kegelapan -> PR_0002 Terlahir Kembali -> PR_0003 (isi nama)
       -> PJ_0004 Naga Aruna (dua pilihan, set flag aruna_pact / aruna_vow)
       -> PJ_0005 ikatan -> PJ_0006 Pelahap Nama -> PJ_0007 Pagi di Bukit Abu
  -> bukit-abu.json (bagian 2): BA_0001 desa (hub, urutan bebas)
-      BA_0002 Gandar | BA_0003 Wulan | BA_0004 Darpa  (masing-masing kembali ke BA_0001, teman masuk party)
- -> BA_0005 Perapian Malam (belajar skill kedua) -> BA_0006 Kita Berjalan -> BA_0007 gerbang
+      BA_0002 Gandar | BA_0003 Wulan | BA_0004 Darpa  (masing-masing kembali ke BA_0001; mereka tetap di desa, hanya flag met_* yang diisi)
+ -> BA_0005 Perapian Malam (belajar skill kedua) -> BA_0006 Sampai Bertemu Lagi -> BA_0007 gerbang (pemain masih sendirian)
  -> SB_0001 (cerita gerbang)
 ```
 
@@ -100,7 +100,7 @@ Sebuah pilihan dapat mengatur flag dan dapat disembunyikan berdasarkan flag:
 Pilihan juga dapat memberi hadiah:
 
 - `"addSkill": "@second"` memberi skill kedua role pemain (atau isi dengan id skill tertentu).
-- `"addParty": "gandar"` memasukkan karakter (id dari `characters.json`) ke party. Party tampil di Jendela Status.
+- `"addParty": "gandar"` memasukkan karakter (id dari `characters.json`) ke party. Party tampil di Jendela Status. Belum dipakai cerita mana pun: sampai gerbang pemain masih solo, party dibentuk bertahap di bab berikutnya.
 
 Awas: pastikan selalu ada pilihan yang tampil di setiap adegan. Adegan yang semua pilihannya
 tersembunyi akan menjadi jalan buntu.
