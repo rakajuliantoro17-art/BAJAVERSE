@@ -102,6 +102,9 @@ Pilihan juga dapat memberi hadiah:
 - `"addSkill": "@second"` memberi skill kedua role pemain (atau isi dengan id skill tertentu).
 - `"addParty": "gandar"` memasukkan karakter (id dari `characters.json`) ke party. Party tampil di Jendela Status. Belum dipakai cerita mana pun: sampai gerbang pemain masih solo, party dibentuk bertahap di bab berikutnya.
 
+- `"setLevel": 2` menaikkan pemain ke level itu (tidak pernah menurunkan, maksimal 10). Pada langkah yang menaikkan level, UI menampilkan penanda "Naik level".
+- Party maksimal 10 orang. Karakter di `characters.json` boleh punya `roles` berisi satu atau dua id role (anggota ber-role ganda); tampil di Jendela Status.
+
 Awas: pastikan selalu ada pilihan yang tampil di setiap adegan. Adegan yang semua pilihannya
 tersembunyi akan menjadi jalan buntu.
 

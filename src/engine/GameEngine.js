@@ -1,6 +1,8 @@
 const Player = require("../models/Player");
 
 const MAX_NAME_LENGTH = 30;
+const MAX_LEVEL = 10;
+const MAX_PARTY = 10;
 
 class GameError extends Error {
 
@@ -148,10 +150,24 @@ class GameEngine {
 
     // Changes a choice makes to the player besides flags:
     //   addSkill  a skill id, or "@second" for the role's second skill
-    //   addParty  a character id that joins the party
+    //   addParty  a character id that joins the party (at most MAX_PARTY)
+    //   setLevel  raise the player to this level (never lowers, capped at MAX_LEVEL)
     choiceEffects(state, choice) {
 
         const changes = {};
+
+        if (Number.isInteger(choice.setLevel)) {
+
+            const current = state.player.level || 1;
+            const target = Math.min(MAX_LEVEL, choice.setLevel);
+
+            if (target > current) {
+
+                changes.level = target;
+
+            }
+
+        }
 
         if (choice.addSkill) {
 
@@ -178,7 +194,13 @@ class GameEngine {
 
             const party = state.player.party || [];
 
-            if (!party.includes(choice.addParty)) {
+            if (party.length >= MAX_PARTY) {
+
+                console.warn(
+                    `[GameEngine] Party is full (${MAX_PARTY}); "${choice.addParty}" was not added`
+                );
+
+            } else if (!party.includes(choice.addParty)) {
 
                 changes.party = [...party, choice.addParty];
 
@@ -270,7 +292,19 @@ class GameEngine {
 
         };
 
-        return { state: nextState, scene: this.getScene(nextState) };
+        const scene = this.getScene(nextState);
+
+        // Tells the UI to celebrate; only set on the move that raised the level.
+        const from = state.player.level || 1;
+        const to = nextState.player.level || 1;
+
+        if (to > from) {
+
+            scene.levelUp = { from, to };
+
+        }
+
+        return { state: nextState, scene };
 
     }
 
@@ -521,7 +555,11 @@ class GameEngine {
             .map((member) => ({
                 id: member.id,
                 name: member.name,
-                title: member.title || null
+                title: member.title || null,
+                roles: (member.roles || [])
+                    .map((id) => this.engineManager.roleEngine.getRole(id))
+                    .filter(Boolean)
+                    .map((role) => role.name)
             }));
 
         return {
@@ -529,7 +567,8 @@ class GameEngine {
             role: player.role || "???",
             level: player.level || 1,
             skills,
-            party
+            party,
+            partyMax: MAX_PARTY
         };
 
     }
@@ -548,8 +587,13 @@ class GameEngine {
             (player.skills === undefined ||
                 (Array.isArray(player.skills) &&
                     player.skills.every((id) => typeof id === "string"))) &&
+            (player.level === undefined ||
+                (Number.isInteger(player.level) &&
+                    player.level >= 1 &&
+                    player.level <= MAX_LEVEL)) &&
             (player.party === undefined ||
                 (Array.isArray(player.party) &&
+                    player.party.length <= MAX_PARTY &&
                     player.party.every((id) => typeof id === "string"))) &&
             typeof player.currentStoryboard === "string" &&
             state.flags &&

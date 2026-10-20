@@ -206,6 +206,27 @@
   .status-skill em { margin-left: 8px; padding: 0 6px; font-style: normal; font-size: 0.72rem; color: var(--glow); border: 1px solid rgba(95, 217, 255, 0.4); border-radius: 4px; }
   .status-skill p { margin: 6px 0 0; font-size: 0.92rem; line-height: 1.55; }
 
+  /* Shown on the move that raised the player's level. */
+  .levelup {
+    margin: 0 0 16px;
+    padding: 10px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    color: var(--accent-hover);
+    text-align: center;
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: rgba(240, 180, 90, 0.1);
+    box-shadow: 0 0 22px rgba(240, 180, 90, 0.25);
+    animation: levelup-pulse 2.4s ease-in-out 2;
+  }
+  .levelup strong { font-size: 1.05rem; letter-spacing: 0.12em; }
+  @keyframes levelup-pulse {
+    0%, 100% { box-shadow: 0 0 14px rgba(240, 180, 90, 0.2); }
+    50% { box-shadow: 0 0 30px rgba(240, 180, 90, 0.55); }
+  }
+
   /* Role picker */
   .role-list { display: grid; gap: 10px; margin-top: 16px; }
   .role-card { display: block; width: 100%; text-align: left; }
@@ -302,6 +323,7 @@
     button { transition: none; }
     body::before, #aura { transition: none; }
     #aura::before, #aura::after { animation: none; }
+    .levelup { animation: none; }
     #scene.animate .line, #scene.animate .reveal { opacity: 1; animation: none; }
   }
 </style>
@@ -318,6 +340,7 @@
     </div>
     <div class="meta" id="meta" hidden></div>
     <h2 id="scene-title"></h2>
+    <div class="levelup" id="levelup" role="status" hidden></div>
     <div id="lines"></div>
 
     <div id="status-box" class="status-window reveal" hidden></div>
@@ -509,6 +532,12 @@
     $("meta").hidden = !who;
     $("scene-title").textContent = scene.title;
 
+    const up = scene.levelUp;
+    $("levelup").hidden = !up;
+    if (up) {
+      $("levelup").replaceChildren("Naik level ", Object.assign(document.createElement("strong"), { textContent: up.from + " \u2192 " + up.to }));
+    }
+
     const animate = !!scene.cinematic && !reduceMotion;
     renderLines(scene.lines, !!scene.cinematic);
 
@@ -591,14 +620,15 @@
       wrap.className = "status-skill";
       const label = document.createElement("span");
       label.className = "label";
-      label.textContent = "Party";
+      label.textContent = "Party (" + status.party.length + "/" + (status.partyMax || 10) + ")";
       wrap.append(label);
       status.party.forEach((member) => {
         const row = document.createElement("p");
         const name = document.createElement("strong");
         name.textContent = member.name;
         row.append(name);
-        if (member.title) row.append(" · " + member.title);
+        const detail = [member.title].concat(member.roles && member.roles.length ? [member.roles.join(" + ")] : []).filter(Boolean).join(" · ");
+        if (detail) row.append(" · " + detail);
         wrap.append(row);
       });
       box.append(wrap);

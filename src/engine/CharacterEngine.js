@@ -35,6 +35,38 @@ class CharacterEngine {
 
     }
 
+
+    // A character may have one role or two (a dual-role companion).
+    validate(hasRole) {
+
+        const problems = [];
+
+        for (const character of this.characters.values()) {
+
+            const roles = character.roles || [];
+
+            if (roles.length > 2) {
+
+                problems.push(`${character.id}: at most 2 roles`);
+
+            }
+
+            for (const id of roles) {
+
+                if (!hasRole(id)) {
+
+                    problems.push(`${character.id}: unknown role "${id}"`);
+
+                }
+
+            }
+
+        }
+
+        return problems;
+
+    }
+
 }
 
 

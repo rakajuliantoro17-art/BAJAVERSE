@@ -9,18 +9,29 @@
         "id": "gandar",
         "name": "Gandar",
         "title": "Penempa Danawa",
-        "image": null
+        "image": null,
+        "roles": [
+            "vanguard",
+            "artificer"
+        ]
     },
     {
         "id": "wulan",
         "name": "Wulan",
         "title": "Tabib Pendatang",
-        "image": null
+        "image": null,
+        "roles": [
+            "medic"
+        ]
     },
     {
         "id": "darpa",
         "name": "Darpa",
         "title": "Juru Kidung Sarwa",
-        "image": null
+        "image": null,
+        "roles": [
+            "scholar",
+            "ranger"
+        ]
     }
 ]
