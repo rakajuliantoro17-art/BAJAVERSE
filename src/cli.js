@@ -32,6 +32,12 @@ function printScene(scene) {
     console.log(scene.title);
     console.log("--------------------------------");
 
+    if (scene.levelUp) {
+        console.log(
+            `\n*** NAIK LEVEL ${scene.levelUp.from} -> ${scene.levelUp.to} ***`
+        );
+    }
+
     scene.lines.forEach((line) => console.log(`\n${line}`));
 
     if (scene.status) {

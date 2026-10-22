@@ -25,7 +25,7 @@ PR_0001 Kegelapan -> PR_0002 Terlahir Kembali -> PR_0003 (isi nama)
  -> bukit-abu.json (bagian 2): BA_0001 desa (hub, urutan bebas)
       BA_0002 Gandar | BA_0003 Wulan | BA_0004 Darpa  (masing-masing kembali ke BA_0001; mereka tetap di desa, hanya flag met_* yang diisi)
  -> BA_0005 Perapian Malam (belajar skill kedua) -> BA_0006 Sampai Bertemu Lagi -> BA_0007 gerbang (pemain masih sendirian)
- -> SB_0001 (cerita gerbang)
+ -> SB_0001 (cerita gerbang; level 1 -> 2 saat pemain "Masuk ke kota" di SB_0002)
 ```
 
 Flag yang sudah diisi tetapi belum dipakai cerita lanjutan: `aruna_pact` (selalu true setelah
