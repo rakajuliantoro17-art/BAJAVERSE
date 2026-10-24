@@ -122,7 +122,11 @@ class GameEngine {
 
         // The index the player sees refers to the choices visible for their
         // flags, not to the raw list in the data file.
-        const visible = this.visibleChoices(storyboard, state.flags);
+        const visible = this.visibleChoices(
+            storyboard,
+            state.flags,
+            state.player
+        );
 
         const target =
             this.engineManager.choiceEngine.choose(
@@ -483,7 +487,11 @@ class GameEngine {
         if (type === "story") {
 
             // Only the text of each choice leaves the engine; targets stay server-side.
-            scene.choices = this.visibleChoices(storyboard, state.flags).map(
+            scene.choices = this.visibleChoices(
+                storyboard,
+                state.flags,
+                state.player
+            ).map(
                 (choice) => ({ text: fill(choice.text) })
             );
 
@@ -517,17 +525,20 @@ class GameEngine {
 
 
     // A choice can be hidden until flags are set (`ifFlags`, all required)
-    // or once they are set (`unlessFlags`, any one hides it).
-    visibleChoices(storyboard, flags) {
+    // or once they are set (`unlessFlags`, any one hides it). `ifRole` shows
+    // it only to players whose role id is in the list.
+    visibleChoices(storyboard, flags, player = {}) {
 
         return (storyboard.choices || []).filter((choice) => {
 
             const needs = choice.ifFlags || [];
             const blocks = choice.unlessFlags || [];
+            const roles = choice.ifRole;
 
             return (
                 needs.every((key) => Boolean(flags[key])) &&
-                !blocks.some((key) => Boolean(flags[key]))
+                !blocks.some((key) => Boolean(flags[key])) &&
+                (!roles || roles.includes(player.roleId))
             );
 
         });

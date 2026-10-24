@@ -1,0 +1,947 @@
+[
+    {
+        "id": "PW_0001",
+        "title": "Jalan ke Timur",
+        "description": "Kau berangkat saat fajar. Ratih menyelipkan bekal ke tanganmu: tiga bungkus nasi jagung dan sepotong gula aren. \"Supaya tubuhmu tidak lupa makan,\" katanya, setengah bercanda.\n\nJalan ke timur melewati sawah-sawah yang separuh menghilang dan sungai kecil yang airnya masih ingat arah. Kabut tipis berkali-kali mengejarmu, lalu mundur seperti anjing yang tak berani menggigit.\n\nDi dadamu, Aruna bergumam sekali, setengah terjaga: \"Ada yang... akrab. Bau tanah, batu, dan doa.\" Lalu ia terlelap lagi.\n\nMenjelang sore, hutan membuka. Dan kau melihatnya.",
+        "choices": [
+            {
+                "text": "Menengadah",
+                "target": "PW_0002"
+            }
+        ]
+    },
+    {
+        "id": "PW_0002",
+        "title": "Gunung Tanpa Nama",
+        "cinematic": true,
+        "description": "Satu puncak tinggi berdiri sendirian di tengah, tajam, berselubung kabut tebal seperti kerudung. Di sekelilingnya melingkar delapan bukit kecil, seperti pengawal yang berlutut mengelilingi raja.\n\nKau sudah pernah melihat susunan itu: di ambang pintu serikat, dan di candi kecil di pojok alun-alun. Tetapi di sana ia hanya sketsa. Di sini ia raksasa, dan ia terasa mendengarkan.\n\n\"Mandala,\" bisik Sang Kodeks. \"Istana para dewa, ditata di atas bumi. Gunung ini namanya...\" Suaranya tersendat. \"Aku tak bisa. Kabut mengambilnya dari catatanku juga.\"\n\nKau menarik napas. Pendakian kuno dimulai dari kaki barat.",
+        "choices": [
+            {
+                "text": "Mulai dari kaki barat",
+                "target": "PW_0003"
+            }
+        ]
+    },
+    {
+        "id": "PW_0003",
+        "title": "Kaki Barat",
+        "description": "Jalan setapak kuno masih ada di kaki barat gunung. Batu-batunya disusun rapi oleh tangan yang sudah lama tiada. Di sini menunggu dua tempat: sebuah pemandian suci yang disebut-sebut sebagai gerbang pertama sebelum pendakian, dan di atasnya, sebuah punden kecil tempat para pemula beristirahat.\n\nTak seorang pun boleh naik sebelum membersihkan diri lebih dulu.",
+        "choices": [
+            {
+                "text": "Menuju pemandian suci",
+                "unlessFlags": [
+                    "jolo_done"
+                ],
+                "target": "PW_0004"
+            },
+            {
+                "text": "Naik ke punden kecil di atas pemandian",
+                "ifFlags": [
+                    "jolo_done"
+                ],
+                "unlessFlags": [
+                    "bayi_done"
+                ],
+                "target": "PW_0008"
+            },
+            {
+                "text": "Dengarkan keluhan air di pemandian",
+                "ifRole": [
+                    "medic"
+                ],
+                "ifFlags": [
+                    "jolo_done"
+                ],
+                "unlessFlags": [
+                    "ins_medic"
+                ],
+                "target": "PW_0010"
+            },
+            {
+                "text": "Cari jejak peziarah di antara akar pohon",
+                "ifRole": [
+                    "ranger"
+                ],
+                "ifFlags": [
+                    "jolo_done"
+                ],
+                "unlessFlags": [
+                    "ins_ranger"
+                ],
+                "target": "PW_0011"
+            },
+            {
+                "text": "Mendaki ke lereng barat",
+                "ifFlags": [
+                    "jolo_done",
+                    "bayi_done"
+                ],
+                "setLevel": 3,
+                "target": "PW_0012"
+            }
+        ]
+    },
+    {
+        "id": "PW_0004",
+        "title": "Pemandian Para Peziarah",
+        "description": "Kau menuruni undakan batu ke lembah kecil, dan air menyambutmu lebih dulu daripada pandangan: gemericik banyak pancuran, jernih, dingin, berbau lumut dan tanah basah.\n\nPemandian itu bertingkat. Tiang-tiang batu menopang pancuran, dan dari puncaknya air jatuh ke kolam-kolam di bawahnya seperti doa yang diturunkan satu per satu. Kau merasa tahu, tanpa ada yang mengatakannya, bahwa tempat ini dibangun untuk seorang anak raja yang kelak akan memerintah, supaya hidupnya dimulai dalam kesucian.\n\n\"Di sini orang dahulu membasuh diri sebelum naik,\" kata Sang Kodeks. \"Air ini lebih tua daripada kota.\"",
+        "choices": [
+            {
+                "text": "Mendekati kolam paling bawah",
+                "target": "PW_0005"
+            }
+        ]
+    },
+    {
+        "id": "PW_0005",
+        "title": "Air yang Mengingat",
+        "description": "Permukaan kolam bergetar. Dan di dalamnya, samar, muncul bayangan orang-orang: peziarah berkain putih berbaris menuruni undakan, perempuan menjunjung kendi, lelaki tua membawa bunga. Mereka tak berbicara. Mereka menunduk dan membasuh wajah satu per satu, lalu memudar sebelum mencapai ujung kolam.\n\nPeziarah yang dilupakan. Ratusan tahun mereka datang, dan kini hanya tinggal bayang di air karena tak ada yang lagi mengingat mereka pernah ada.\n\nSeorang bayangan, perempuan kurus berkain putih, menoleh ke arahmu. Ia mengulurkan kendi kosong. Matanya memohon.",
+        "choices": [
+            {
+                "text": "Membasuh wajah dengan hormat, seperti mereka",
+                "target": "PW_0006"
+            },
+            {
+                "text": "Mengucapkan nama mereka, meski kau tak tahu",
+                "target": "PW_0007"
+            }
+        ]
+    },
+    {
+        "id": "PW_0006",
+        "title": "Basuhan Hormat",
+        "description": "Kau membungkuk, menyauk air dengan kedua telapak, dan membasuh wajah pelan-pelan seperti yang mereka lakukan. Airnya sedingin pagi, tetapi anehnya hangat di bawah kulit.\n\nBayangan perempuan itu tersenyum untuk pertama kalinya. Ia mengangguk, mengisi kendinya dengan air kolam, lalu menuangkannya ke tanganmu. Setelah itu ia berubah menjadi uap tipis dan menghilang.\n\nDi dasar kolam, sebaris aksara menyala sekilas, dan Sang Kodeks menyalinnya: satu halaman catatan gunung ini kembali.\n\n\"Mereka tak butuh kata-kata,\" bisiknya. \"Mereka hanya butuh dihormati.\"",
+        "choices": [
+            {
+                "text": "Kembali ke jalan setapak",
+                "setFlags": {
+                    "jolo_done": true,
+                    "path_hormat": true
+                },
+                "target": "PW_0003"
+            }
+        ]
+    },
+    {
+        "id": "PW_0007",
+        "title": "Memanggil Tanpa Tahu",
+        "description": "\"Aku tak tahu nama kalian,\" katamu pelan ke arah kolam, \"tetapi aku tahu kalian pernah ada.\"\n\nSunyi. Lalu satu per satu bayangan menoleh. Perempuan berkendi mulai menangis tanpa suara, dan setiap air matanya menetes menjadi riak cahaya kecil. Satu riak, satu nama. Kau tak mendengarnya, tetapi Sang Kodeks mencatat semuanya, terbata-bata seperti orang membaca surat lama.\n\n\"Dipanggil adalah hadiah terbesar bagi yang dilupakan,\" katanya. \"Satu halaman kembali.\"\n\nPara bayangan menghilang satu per satu, tersenyum.",
+        "choices": [
+            {
+                "text": "Kembali ke jalan setapak",
+                "setFlags": {
+                    "jolo_done": true,
+                    "path_panggil": true
+                },
+                "target": "PW_0003"
+            }
+        ]
+    },
+    {
+        "id": "PW_0008",
+        "title": "Punden Kecil di Atas Air",
+        "description": "Di atas pemandian, jalan setapak menanjak ke punden berundak sederhana: tiga teras andesit yang tebal oleh lumut. Tak ada arca, tak ada relief, hanya batu dan hening.\n\nKau mengerti bahwa tempat ini untuk para pemula. Pendeta-pendeta muda dan pertapa baru, yang belum diizinkan naik lebih tinggi, menunggu di sini dan belajar diam.\n\n\"Tak ada ujian di sini,\" kata Sang Kodeks, \"kecuali kau tahu cara duduk tanpa melakukan apa-apa.\"\n\nMatahari mulai tenggelam. Kabut menebal.",
+        "choices": [
+            {
+                "text": "Duduk di teras paling bawah dan menunggu",
+                "target": "PW_0009"
+            }
+        ]
+    },
+    {
+        "id": "PW_0009",
+        "title": "Malam yang Panjang",
+        "description": "Kau duduk. Satu jam. Dua jam. Pikiranmu mencoba lari: ke Bukit Abu, ke Gandar dan palunya, ke Wulan dengan wedangnya, ke Darpa dan kidungnya, ke dunia lamamu dan nama lamamu.\n\nSemakin lama kau duduk, semakin jernih kau mendengar: di antara batu, napas para pendeta yang dulu duduk di tempat yang sama. Mereka tak menyuruhmu apa pun. Mereka hanya menemanimu.\n\nMenjelang fajar kau menyadari bahwa kau tak lagi merasa sendirian, meski tak seorang pun ada di sana.\n\n\"Halaman berikutnya,\" bisik Sang Kodeks, dengan nada haru. \"Menunggu juga cara mengingat.\"",
+        "choices": [
+            {
+                "text": "Berkemas dan turun ke jalan",
+                "setFlags": {
+                    "bayi_done": true
+                },
+                "target": "PW_0003"
+            }
+        ]
+    },
+    {
+        "id": "PW_0010",
+        "title": "Air yang Sakit",
+        "description": "Dari tepi kolam, {skill} bergetar di ujung jarimu. Air di kolam paling bawah keruh oleh sesuatu yang tak terlihat, seperti luka yang tak pernah tertutup.\n\nKau meletakkan telapak tangan di permukaannya dan mengalirkan cahaya lembut. {skill2} menyempurnakannya: seolah ada ramuan dalam air itu, penawar yang menenangkan dan menjernihkan.\n\nAir menjernih sampai ke dasar. Di batu dasar terukir bunga teratai dan sebaris tulisan kecil: \"Siapa yang menjernihkan air akan dijernihkan olehnya.\" Kau merasa lukamu sendiri ikut menutup.\n\nSang Kodeks mencatatnya sebagai halaman tambahan.",
+        "choices": [
+            {
+                "text": "Kembali ke jalan setapak",
+                "setFlags": {
+                    "ins_medic": true
+                },
+                "target": "PW_0003"
+            }
+        ]
+    },
+    {
+        "id": "PW_0011",
+        "title": "Jejak Peziarah Lama",
+        "description": "Angin di sini punya ingatan, dan {skill} membukanya. Di antara akar pohon, kau menemukan jejak yang tak mungkin terlihat: pijakan ribuan peziarah yang menekan tanah selama berabad-abad, membentuk alur dangkal yang terus naik ke lereng.\n\n{skill2} memberimu benang cahaya dari napasmu sendiri, menempel pada alur itu: jalur kuno yang aman dari jurang dan kabut. Kau menandainya dengan tiga batu.\n\nKau tahu lereng nanti akan terasa lebih ramah.",
+        "choices": [
+            {
+                "text": "Kembali ke jalan setapak",
+                "setFlags": {
+                    "ins_ranger": true
+                },
+                "target": "PW_0003"
+            }
+        ]
+    },
+    {
+        "id": "PW_0012",
+        "title": "Lereng Barat",
+        "description": "Jalan kuno menanjak ke lereng barat. Udara lebih tipis, dan setiap beberapa ratus langkah ada punden berundak yang mengikuti kontur gunung seperti anak tangga raksasa. Setiap tingkat lebih sakral dari yang di bawahnya.\n\nTiga tempat menunggumu: punden yang dijaga arca seorang dewi, candi tempat para bangsawan dahulu memuja, dan batu sesaji tempat leluhur dipanggil.",
+        "choices": [
+            {
+                "text": "Menuju punden sang dewi",
+                "unlessFlags": [
+                    "putri_done"
+                ],
+                "target": "PW_0013"
+            },
+            {
+                "text": "Menuju candi para bangsawan",
+                "unlessFlags": [
+                    "pura_done"
+                ],
+                "target": "PW_0016"
+            },
+            {
+                "text": "Menuju batu sesaji",
+                "unlessFlags": [
+                    "gentong_done"
+                ],
+                "target": "PW_0019"
+            },
+            {
+                "text": "Periksa teras yang runtuh di candi bangsawan",
+                "ifRole": [
+                    "vanguard"
+                ],
+                "ifFlags": [
+                    "pura_done"
+                ],
+                "unlessFlags": [
+                    "ins_vanguard"
+                ],
+                "target": "PW_0022"
+            },
+            {
+                "text": "Periksa gentong batu di bawah punden",
+                "ifRole": [
+                    "artificer"
+                ],
+                "ifFlags": [
+                    "gentong_done"
+                ],
+                "unlessFlags": [
+                    "ins_artificer"
+                ],
+                "target": "PW_0023"
+            },
+            {
+                "text": "Mendaki ke barat laut",
+                "ifFlags": [
+                    "putri_done",
+                    "pura_done",
+                    "gentong_done"
+                ],
+                "setLevel": 4,
+                "target": "PW_0024"
+            }
+        ]
+    },
+    {
+        "id": "PW_0013",
+        "title": "Punden Sang Dewi",
+        "description": "Punden itu kecil, tetapi tertata dengan kasih: bunga liar disusun di kaki arca perempuan yang wajahnya aus oleh ratusan tahun hujan. Di tangan kanannya ia memegang seikat padi dari batu. Rumput di sekelilingnya tumbuh paling hijau di seluruh lereng.\n\n\"Dewi kesuburan,\" bisik Sang Kodeks. \"Para petani naik kemari sebelum musim tanam. Konon, dahulu, seorang raja pun datang meminta restu.\"\n\nDi pangkuan arca ada butir-butir padi asli, kering, entah sudah berapa lama di sana.",
+        "choices": [
+            {
+                "text": "Mengambil sebutir padi",
+                "target": "PW_0014"
+            },
+            {
+                "text": "Membiarkannya dan menghormati arca itu",
+                "target": "PW_0015"
+            }
+        ]
+    },
+    {
+        "id": "PW_0014",
+        "title": "Sebutir Padi",
+        "description": "Kau mengambil satu butir. Rumput di sekelilingmu layu sedikit, seperti menahan napas, lalu pulih. Arca itu tak bergerak, tetapi kau merasa sedang dilihat.\n\n\"Mengambil bukan dosa di sini,\" bisik Sang Kodeks, \"tetapi segala yang diambil harus dikembalikan dalam bentuk lain.\"\n\nKau menyimpan butir itu di kantong dan berjanji dalam hati: suatu hari akan kau tanam. Tanah di bawah arca bergetar sebentar, entah tanda restu atau tanda perhitungan.",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "putri_done": true,
+                    "took_grain": true
+                },
+                "target": "PW_0012"
+            }
+        ]
+    },
+    {
+        "id": "PW_0015",
+        "title": "Menghormati Tanpa Mengambil",
+        "description": "Kau menunduk, menyentuhkan kening ke lantai batu di depan arca, dan menaruh sepotong gula aren pemberian Ratih di antara butir-butir padi. Bekalmu berkurang, tetapi hatimu ringan.\n\nRumput di sekelilingmu bergoyang pelan. Untuk sesaat wajah arca yang aus tampak tersenyum, atau mungkin hanya bayangan daun.\n\n\"Memberi tanpa diminta,\" bisik Sang Kodeks. \"Itulah yang paling diingat sang dewi.\"",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "putri_done": true,
+                    "gave_sugar": true
+                },
+                "target": "PW_0012"
+            }
+        ]
+    },
+    {
+        "id": "PW_0016",
+        "title": "Candi Para Bangsawan",
+        "description": "Teras berundak yang luas dan rapi, dari andesit yang dipotong halus. Di sinilah para bangsawan Wilwatikta naik pada hari-hari besar, berkain terbaik, membawa persembahan terbaik. Batu-batunya masih mengilap di tempat banyak lutut pernah bersimpuh.\n\nTetapi tempat ini tak kosong. Di teras tertinggi, seorang lelaki bersorban putih berdiri membelakangimu, tegak dan tak bergerak, begitu mewah pakaiannya sehingga kau yakin ia bukan makhluk hidup.\n\n\"Tamu,\" katanya tanpa berbalik, suaranya bergema dari dua arah. \"Datang tanpa salam, tanpa gelar, tanpa persembahan. Siapa kau?\"",
+        "choices": [
+            {
+                "text": "Memberi hormat dengan santun dan menyebut namamu",
+                "target": "PW_0017"
+            },
+            {
+                "text": "Menjawab jujur: kau pendatang yang ditolak sang dewi",
+                "target": "PW_0018"
+            }
+        ]
+    },
+    {
+        "id": "PW_0017",
+        "title": "Tata Krama",
+        "description": "Kau menunduk dalam, kedua tangan di depan dada, dan menyebut namamu jelas-jelas: \"{name}, tamu yang tak berniat mengganggu.\"\n\nBayangan itu berbalik perlahan. Wajahnya halus, matanya cekung, dan ia membalas hormatmu dengan setengah anggukan. \"Tata kramamu baik. Orang-orang sekarang lupa bahwa kesopanan juga cara mengingat.\"\n\nIa menyingkir. Di belakangnya, ceruk batu terbuka dan menyimpan prasasti pendek. Sang Kodeks menyalinnya: satu halaman lagi.",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "pura_done": true,
+                    "path_santun": true
+                },
+                "target": "PW_0012"
+            }
+        ]
+    },
+    {
+        "id": "PW_0018",
+        "title": "Jawaban yang Jujur",
+        "description": "\"Aku pendatang yang ditolak Sang Dewi,\" katamu. \"Tak ada gelar, tak ada persembahan. Hanya nama, dan aku ingin mengembalikan nama gunung ini.\"\n\nHening panjang. Lalu lelaki itu tertawa, pendek dan kering. \"Para bangsawan selalu datang membawa gelar. Hanya yang ditolak berani datang membawa kejujuran.\"\n\nIa berbalik. Wajahnya letih, tua, dan sangat manusiawi. \"Dahulu aku salah satu yang menolak orang sepertimu. Ambillah ini.\" Ia menunjuk ceruk batu berprasasti. Sang Kodeks menyalinnya: satu halaman lagi.",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "pura_done": true,
+                    "path_jujur": true
+                },
+                "target": "PW_0012"
+            }
+        ]
+    },
+    {
+        "id": "PW_0019",
+        "title": "Batu Sesaji",
+        "description": "Di punggungan yang terbuka, sebuah punden batu andesit berdiri dengan altar rendah di tengahnya. Di atasnya berjajar mangkuk batu berisi sisa abu dupa dan kelopak bunga yang tak pernah layu sepenuhnya.\n\nInilah tempat para peziarah memanggil leluhur yang bersemayam di puncak. Udara di sini terasa seperti ruangan penuh orang yang menahan napas, menunggu seseorang berbicara.\n\n\"Mereka mendengarmu,\" kata Sang Kodeks pelan. \"Tetapi mereka hanya menjawab persembahan yang tulus. Tak harus mahal. Harus berarti.\"",
+        "choices": [
+            {
+                "text": "Mempersembahkan kain tenun dari Laras",
+                "target": "PW_0020"
+            },
+            {
+                "text": "Mempersembahkan satu kenangan dari dunia lamamu",
+                "target": "PW_0021"
+            }
+        ]
+    },
+    {
+        "id": "PW_0020",
+        "title": "Kain dari Laras",
+        "description": "Kau meletakkan kain tenun kecil itu di mangkuk batu dengan hati-hati. Tenunannya sederhana, benangnya kasar, warnanya pudar. Tetapi itu hadiah dari seseorang yang kau selamatkan, dan itu berarti.\n\nAbu di mangkuk bergetar. Kain itu terangkat sedikit, seolah ditiup angin yang tak ada, lalu jatuh kembali, tak berubah. Namun kau merasa ada yang menerima. Sesuatu yang sudah lama tak diberi apa-apa.\n\n\"Kau memberikan yang pernah menahan namamu,\" bisik Aruna dari dalam kristal, tiba-tiba terjaga. \"Para leluhur akan mengingatnya.\"",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "gentong_done": true,
+                    "path_kain": true
+                },
+                "target": "PW_0012"
+            }
+        ]
+    },
+    {
+        "id": "PW_0021",
+        "title": "Kenangan yang Dipersembahkan",
+        "description": "Kau memejamkan mata dan memilih: bukan kenangan terbesar, melainkan yang paling hangat, aroma masakan di rumah lamamu pada sore yang hujan. Pelan-pelan kau mengangkatnya dari kepalamu dan menaruhnya di mangkuk.\n\nAbu di mangkuk menyala biru sebentar, dan kenangan itu lenyap dari ingatanmu seperti uap. Kau tak sedih. Kau hanya tahu bahwa sesuatu yang sangat hangat pernah ada.\n\n\"Persembahan sejati selalu berkurang pada pemberinya,\" kata Aruna, suaranya serius. \"Kenangan itu aman di sini. Mereka tak akan memakannya. Mereka akan menyimpannya.\"",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "gentong_done": true,
+                    "path_kenangan": true
+                },
+                "target": "PW_0012"
+            }
+        ]
+    },
+    {
+        "id": "PW_0022",
+        "title": "Teras yang Runtuh",
+        "description": "Sebagian teras candi bangsawan runtuh. Batu andesit sebesar peti terguling dan menutup jalan ke sebuah ceruk.\n\n{skill} mengeraskan ragamu, dan kau menahan batu itu dengan bahu. {skill2} menaikkan tanah di bawahnya menjadi tiang penopang. Pelan-pelan, teras itu tegak kembali.\n\nDi bawah batu, ceruk kecil menyimpan arca seorang penjaga berperisai, yang dahulu menjaga pintu. Tampaknya ia tersenyum.\n\n\"Satu penjaga bangkit dari lupa,\" bisik Sang Kodeks.",
+        "choices": [
+            {
+                "text": "Kembali ke jalan",
+                "setFlags": {
+                    "ins_vanguard": true
+                },
+                "target": "PW_0012"
+            }
+        ]
+    },
+    {
+        "id": "PW_0023",
+        "title": "Gentong yang Tak Pernah Penuh",
+        "description": "Di bawah punden, sebuah gentong batu raksasa tertanam setengah di tanah. Di atasnya, pancuran bambu kuno tersumbat.\n\n{skill} membaca sambungan-sambungannya: bukan sekadar pancuran, melainkan bagian dari saluran air bawah tanah yang dirancang dengan teliti. {skill2} menempa pasak pengganti dari sisa besi pisau Gandar yang patah di perjalanan.\n\nAir gunung mengalir lagi ke gentong, dan dari bunyinya kau tahu: saluran di bawah tanah itu masih bekerja, menunggu seseorang yang mau membetulkannya.",
+        "choices": [
+            {
+                "text": "Kembali ke jalan",
+                "setFlags": {
+                    "ins_artificer": true
+                },
+                "target": "PW_0012"
+            }
+        ]
+    },
+    {
+        "id": "PW_0024",
+        "title": "Barat Laut",
+        "description": "Jalan memutar ke barat laut, memasuki hutan yang lebih tua. Pohon-pohonnya begitu besar sampai kabut tersangkut di dahannya seperti kain basah. Untuk pertama kalinya sejak Lemah Wangkal, kau mendengar burung.\n\nDi punggung bukit yang ditumbuhi paku-pakuan, dua tempat menunggu: punden tersembunyi di hutan sunyi dengan dua altar, dan jauh di belakang puncak bukit, sebuah candi tiga tingkat yang konon menyimpan sebuah cerita.",
+        "choices": [
+            {
+                "text": "Menuju punden di hutan sunyi",
+                "unlessFlags": [
+                    "lurah_done"
+                ],
+                "target": "PW_0025"
+            },
+            {
+                "text": "Menuju candi di belakang puncak bukit",
+                "unlessFlags": [
+                    "kendali_done"
+                ],
+                "target": "PW_0028"
+            },
+            {
+                "text": "Dengarkan dengung di antara dua altar",
+                "ifRole": [
+                    "mystic"
+                ],
+                "ifFlags": [
+                    "lurah_done"
+                ],
+                "unlessFlags": [
+                    "ins_mystic"
+                ],
+                "target": "PW_0033"
+            },
+            {
+                "text": "Baca aksara di balik lumut candi",
+                "ifRole": [
+                    "scholar"
+                ],
+                "ifFlags": [
+                    "kendali_done"
+                ],
+                "unlessFlags": [
+                    "ins_scholar"
+                ],
+                "target": "PW_0034"
+            },
+            {
+                "text": "Menuruni bukit ke arah utara",
+                "ifFlags": [
+                    "lurah_done",
+                    "kendali_done"
+                ],
+                "setLevel": 5,
+                "target": "PW_0035"
+            }
+        ]
+    },
+    {
+        "id": "PW_0025",
+        "title": "Punden di Hutan Sunyi",
+        "description": "Hutan begitu hening sampai kau mendengar detak jantungmu sendiri. Di tengahnya ada punden berundak sederhana, dengan dua altar batu yang berhadapan: satu menghadap matahari terbit, satu menghadap matahari terbenam.\n\nTempat meditasi dan penyucian diri. Tempat orang berlatih melepaskan sebelum naik lebih tinggi.\n\n\"Di sini orang tak diuji oleh kekuatan,\" kata Sang Kodeks. \"Mereka diuji oleh dirinya sendiri.\"\n\nKabut mengendap di antara dua altar, dan di dalamnya mulai tampak bayang-bayang.",
+        "choices": [
+            {
+                "text": "Duduk di altar yang menghadap timur, tempat fajar",
+                "target": "PW_0026"
+            },
+            {
+                "text": "Duduk di altar yang menghadap barat, tempat senja",
+                "target": "PW_0027"
+            }
+        ]
+    },
+    {
+        "id": "PW_0026",
+        "title": "Altar Fajar",
+        "description": "Kau duduk menghadap timur, dan kabut menunjukkan masa depan yang mungkin: dirimu yang jauh lebih kuat, banyak orang di belakangmu, panji-panji berkibar, kota yang kau selamatkan. Indah dan ramai.\n\nLalu kabut berbisik: \"Semua itu akan jadi milikmu, kalau kau ingat.\" Kau menyadari ini godaan halus: melupakan yang sekarang demi yang nanti.\n\nKau menarik napas, melepas bayangan itu, dan kembali pada napasmu. Kabut menipis. Di batu, aksara kecil muncul: satu halaman lagi.",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "lurah_done": true,
+                    "path_fajar": true
+                },
+                "target": "PW_0024"
+            }
+        ]
+    },
+    {
+        "id": "PW_0027",
+        "title": "Altar Senja",
+        "description": "Kau duduk menghadap barat, dan kabut menunjukkan masa lalu: kamar lamamu, orang-orang yang kau tinggalkan di dunia lama, namamu yang dulu dipanggil seseorang yang kau rindukan. Dadamu sesak.\n\nKabut berbisik: \"Kembali saja. Di sini semuanya akhirnya dihapus.\" Kau menyadari ini godaan lain: menyerah pada kenangan yang tak bisa kau ambil kembali.\n\nKau menghormati kenangan itu tanpa menggenggamnya, membiarkannya pergi pelan-pelan seperti daun di atas air. Kabut menipis. Di batu, aksara kecil muncul: satu halaman lagi.",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "lurah_done": true,
+                    "path_senja": true
+                },
+                "target": "PW_0024"
+            }
+        ]
+    },
+    {
+        "id": "PW_0028",
+        "title": "Candi di Belakang Puncak",
+        "description": "Jalan menanjak ke belakang puncak sebuah bukit, tempat tak ada jalan sebenarnya. Kau harus menyibak paku-pakuan dan merambat di akar. Lalu hutan membuka, dan candi itu ada di sana.\n\nTiga tingkat, megah dalam kesederhanaannya, nyaris utuh dan hanya sedikit dimakan lumut. Di dinding setiap tingkat terpahat deretan relief panjang: kisah yang dibaca dengan berjalan mengelilingi candi, dari bawah ke atas.\n\n\"Ini kisah seorang pangeran,\" kata Sang Kodeks. \"Pangeran yang kehilangan kekasihnya, mengembara dengan menyamar, dan akhirnya menemukannya kembali. Tetapi relief-reliefnya hilang sebagian. Kabut menghapus beberapa adegan. Kita harus menyusunnya kembali.\"",
+        "choices": [
+            {
+                "text": "Mulai dari tingkat pertama",
+                "target": "PW_0029"
+            }
+        ]
+    },
+    {
+        "id": "PW_0029",
+        "title": "Tingkat Pertama: Perpisahan",
+        "description": "Relief tingkat pertama menunjukkan sepasang muda, seorang pangeran dan seorang putri, dipisahkan badai. Dua adegan terhapus; hanya bekas pahatan kosong.\n\nDi antara dua bekas itu ada dua batu kecil yang tampaknya bisa dipasang. Satu berukir pangeran menunduk di tepi pantai. Satu berukir putri menatap bulan sendirian.",
+        "choices": [
+            {
+                "text": "Memasang batu sang pangeran di tepi pantai",
+                "setFlags": {
+                    "k1_pangeran": true
+                },
+                "target": "PW_0030"
+            },
+            {
+                "text": "Memasang batu sang putri yang menatap bulan",
+                "setFlags": {
+                    "k1_putri": true
+                },
+                "target": "PW_0030"
+            }
+        ]
+    },
+    {
+        "id": "PW_0030",
+        "title": "Tingkat Kedua: Pengembaraan",
+        "description": "Tingkat kedua: sang pangeran mengembara dengan menyamar, memakai topeng, melewati hutan, laut, dan kerajaan-kerajaan asing. Ia berganti nama berkali-kali sampai hampir lupa siapa dirinya.\n\nHanya satu adegan yang hilang: ia berdiri di persimpangan, memegang topeng di satu tangan dan melihat wajah aslinya di pantulan air. Dua batu menunggu. Satu berukir ia menyimpan topengnya. Satu berukir ia membuangnya ke air.",
+        "choices": [
+            {
+                "text": "Memasang batu: ia menyimpan topengnya",
+                "setFlags": {
+                    "k2_simpan": true
+                },
+                "target": "PW_0031"
+            },
+            {
+                "text": "Memasang batu: ia membuang topengnya ke air",
+                "setFlags": {
+                    "k2_buang": true
+                },
+                "target": "PW_0031"
+            }
+        ]
+    },
+    {
+        "id": "PW_0031",
+        "title": "Tingkat Ketiga: Pertemuan",
+        "description": "Tingkat ketiga: dua sosok bertemu kembali di sebuah taman. Pangeran dan putri saling mengenali bukan dari wajah, tetapi dari hal lain: sebuah gerak, sebuah kata, sebuah kenangan kecil yang hanya mereka berdua tahu.\n\nBatu terakhir kosong, tak ada pilihan. Hanya satu bentuk yang cocok. Kau memasangnya, dan seluruh dinding bersinar.\n\n\"Mereka saling mengenali karena mengingat,\" bisik Sang Kodeks, nyaris tak terdengar. \"Kisah ini bukan tentang cinta saja. Kisah ini tentang tidak melupakan.\"",
+        "choices": [
+            {
+                "text": "Berjalan mengitari candi sekali lagi",
+                "target": "PW_0032"
+            }
+        ]
+    },
+    {
+        "id": "PW_0032",
+        "title": "Pelepasan",
+        "description": "Kau mengitari ketiga tingkat sekali lagi, dari bawah ke atas, dan kisah itu terbaca utuh di dinding. Di tingkat tertinggi, seorang tokoh tampak melepaskan semua perhiasan dan duduk menghadap gunung. Akhir kisah ini bukan pesta. Akhirnya adalah pelepasan.\n\n\"Itu bagian yang paling sulit,\" kata Sang Kodeks. \"Mengingat tanpa menggenggam.\"\n\nKau merasa sedikit lebih ringan. Satu halaman besar telah kembali. Kau menuruni bukit dengan langkah yang lebih tenang.",
+        "choices": [
+            {
+                "text": "Kembali ke jalan setapak",
+                "setFlags": {
+                    "kendali_done": true
+                },
+                "target": "PW_0024"
+            }
+        ]
+    },
+    {
+        "id": "PW_0033",
+        "title": "Dengung di Antara Altar",
+        "description": "Di antara dua altar, kristal di dadamu berdengung. {skill} menyalurkan getarnya, dan kau mendengar sesuatu di balik keheningan: bukan suara, melainkan satu nada, rendah dan sangat tua, dari gunung itu sendiri.\n\n{skill2} menahan nada itu supaya tidak lepas. Kau memegangnya sampai ia menjadi satu kata yang belum berani kau ucapkan. Kau hanya mengerti artinya: suci.\n\nSang Kodeks diam lama. \"Aku hampir ingat,\" bisiknya.",
+        "choices": [
+            {
+                "text": "Kembali ke jalan setapak",
+                "setFlags": {
+                    "ins_mystic": true
+                },
+                "target": "PW_0024"
+            }
+        ]
+    },
+    {
+        "id": "PW_0034",
+        "title": "Aksara di Balik Lumut",
+        "description": "Di dasar tingkat paling bawah, lumut menutupi deretan aksara. {skill} menembusnya dengan satu tatapan, dan kau membaca nama sang pemahat serta sebaris doa dalam bahasa lama.\n\n{skill2} mengikatnya: kau mengulang doa itu tiga kali dan merasakan kata-katanya tertanam, tak bisa lagi dihapus kabut.\n\nSang Kodeks menyebut nama sang pemahat dengan hormat. \"Seorang pemahat yang ingin dikenang sebagai pencerita, bukan pemilik cerita.\"",
+        "choices": [
+            {
+                "text": "Kembali ke jalan setapak",
+                "setFlags": {
+                    "ins_scholar": true
+                },
+                "target": "PW_0024"
+            }
+        ]
+    },
+    {
+        "id": "PW_0035",
+        "title": "Gajahmungkur",
+        "description": "Dari barat laut, kau menyusuri kaki gunung ke arah utara, melewati sungai kering dan ladang yang kembali menjadi hutan. Di ujungnya, sebuah bukit bundar menjulang pelan, punggungnya melengkung seperti hewan besar yang berbaring membelakangi dunia.\n\n\"Gajahmungkur,\" kata Sang Kodeks. \"Gajah yang berpaling. Kau bisa melihat sebabnya.\" Kau memang bisa: dua bukit kecil seperti telinga, satu punggung seperti punuk.\n\nTiga tempat ada di lereng bukit ini: pusat pemujaan berteras lima, sebuah candi yang namanya diambil dari bukit itu, dan sebuah teras terpencil yang menghadap lembah.",
+        "choices": [
+            {
+                "text": "Menuju teras-teras pusat pemujaan",
+                "unlessFlags": [
+                    "kerajaan_done"
+                ],
+                "target": "PW_0036"
+            },
+            {
+                "text": "Menuju candi di punggung bukit",
+                "ifFlags": [
+                    "kerajaan_done"
+                ],
+                "unlessFlags": [
+                    "gajah_done"
+                ],
+                "target": "PW_0041"
+            },
+            {
+                "text": "Menuju teras terpencil yang menghadap lembah",
+                "ifFlags": [
+                    "gajah_done"
+                ],
+                "unlessFlags": [
+                    "wayang_done"
+                ],
+                "target": "PW_0043"
+            },
+            {
+                "text": "Cari prajurit yang masih berdiri di teras",
+                "ifRole": [
+                    "diplomat"
+                ],
+                "ifFlags": [
+                    "kerajaan_done"
+                ],
+                "unlessFlags": [
+                    "ins_diplomat"
+                ],
+                "target": "PW_0040"
+            },
+            {
+                "text": "Mendaki ke jalan puncak",
+                "ifFlags": [
+                    "kerajaan_done",
+                    "gajah_done",
+                    "wayang_done"
+                ],
+                "setLevel": 6,
+                "target": "PW_0047"
+            }
+        ]
+    },
+    {
+        "id": "PW_0036",
+        "title": "Lima Teras",
+        "description": "Lima teras berundak, lebar-lebar, menyusun lereng menjadi panggung raksasa. Inilah pusat pemujaan di sisi utara: tempat orang dari banyak desa dahulu berkumpul. Dinding teras dipenuhi relief: orang-orang meletakkan tombak mereka di tanah, menunggang kuda dengan tangan kosong, berhadapan tanpa senjata.\n\nKau menyadari satu hal: di tempat suci ini, tak seorang pun membawa senjata.\n\nTetapi di teras tertinggi berdiri barisan prajurit berbaju kuno, tombak tegak, tak bergerak. Mata mereka kosong. Mereka tidak ingat siapa yang harus mereka lindungi.",
+        "choices": [
+            {
+                "text": "Menghampiri barisan itu",
+                "target": "PW_0037"
+            }
+        ]
+    },
+    {
+        "id": "PW_0037",
+        "title": "Prajurit yang Lupa",
+        "description": "Ketika kau mendekat, tombak-tombak itu serempak menurun dan mengarah ke dadamu. Tak ada suara. Hanya gerak serempak makhluk yang tak punya alasan lagi selain menjaga.\n\n\"Dahulu mereka penjaga tempat ini,\" bisik Sang Kodeks. \"Sekarang mereka tak ingat apa yang dijaga. Mereka tidak jahat. Mereka hanya tersesat.\"\n\nRelief di dinding menjawab: orang-orang meletakkan senjata. Mungkin itu jawabannya. Mungkin bukan.",
+        "choices": [
+            {
+                "text": "Meletakkan pisau Gandar di tanah",
+                "target": "PW_0038"
+            },
+            {
+                "text": "Menyebut kepada mereka apa yang dahulu mereka jaga",
+                "target": "PW_0039"
+            }
+        ]
+    },
+    {
+        "id": "PW_0038",
+        "title": "Meletakkan Senjata",
+        "description": "Kau menarik pisau kecil dari pinggang, pisau yang ditempa Gandar semalaman, dan meletakkannya di tanah di antara kau dan mereka. Kedua tanganmu terbuka dan kosong.\n\nTombak-tombak itu bergetar. Salah satu prajurit, yang paling tua, keluar dari barisan, berlutut, dan meletakkan tombaknya di samping pisau itu. Satu per satu yang lain mengikutinya.\n\n\"Mereka ingat,\" kata Sang Kodeks, kagum. \"Tempat ini tempat untuk datang tanpa senjata.\" Prajurit tertua menyentuhkan kening ke tanah di hadapanmu, lalu menghilang bersama yang lain menjadi cahaya.\n\nPisau Gandar tetap tajam. Rupanya ia tak pernah takut diletakkan.",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "kerajaan_done": true,
+                    "path_letak": true
+                },
+                "target": "PW_0035"
+            }
+        ]
+    },
+    {
+        "id": "PW_0039",
+        "title": "Menyebut yang Dijaga",
+        "description": "Kau menunjuk relief dan berbicara pelan: tentang orang-orang dari banyak desa yang datang membawa persembahan, tentang anak-anak yang diajak menaiki teras demi teras, tentang tempat ini sebagai rumah bagi mereka yang tak punya rumah.\n\n\"Itu yang kalian jaga,\" katamu. \"Bukan batu. Bukan teras. Mereka.\"\n\nTombak-tombak itu perlahan menurun. Satu demi satu para prajurit berlutut, dan sosok mereka memudar menjadi cahaya, lega seperti orang yang akhirnya diizinkan pulang.\n\nSang Kodeks menyalin satu halaman lagi, lebih panjang dari yang lain.",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "kerajaan_done": true,
+                    "path_sebut": true
+                },
+                "target": "PW_0035"
+            }
+        ]
+    },
+    {
+        "id": "PW_0040",
+        "title": "Seorang Prajurit Tertinggal",
+        "description": "Setelah yang lain lenyap, satu prajurit muda masih berdiri di sudut teras, menggenggam tombaknya terlalu erat. Ia tidak lupa. Ia takut.\n\n{skill} membuatmu mendengar apa yang tak diucapkannya: ia tak mau pergi sebelum ada yang menggantikannya berjaga. {skill2} mengikat kata-katamu menjadi janji. Kau berjanji menyampaikan namanya kepada serikat.\n\n\"Namaku Jaya,\" bisiknya. Ia memudar, lega. Kau menulis nama itu dengan arang di sisi kartu serikatmu.",
+        "choices": [
+            {
+                "text": "Kembali ke jalan",
+                "setFlags": {
+                    "ins_diplomat": true
+                },
+                "target": "PW_0035"
+            }
+        ]
+    },
+    {
+        "id": "PW_0041",
+        "title": "Gajah yang Berpaling",
+        "description": "Candi Gajah bertengger di punggung bukit yang bundar. Dari sini kau mengerti kenapa bukit itu dinamai gajah: sebuah kepala batu besar tersembunyi di bawah lumut, bagian yang tampaknya sengaja dipahat menyerupai belalai.\n\nSeorang tua duduk di sebelahnya dengan punggung bersandar, menatap jauh ke arah lain. Berpaling, seperti bukit itu sendiri.\n\n\"Gajah berpaling,\" katanya tanpa menoleh, \"karena ia sudah terlalu lama melihat. Kadang yang paling bijak adalah tidak menatap, supaya kita tak dikuasai apa yang kita lihat.\"",
+        "choices": [
+            {
+                "text": "Duduk di sampingnya dan ikut memandang ke arah yang sama",
+                "target": "PW_0042"
+            }
+        ]
+    },
+    {
+        "id": "PW_0042",
+        "title": "Yang Dilihat Gajah",
+        "description": "Kau duduk dan ikut memandang ke arah yang ia pandang: lembah luas di sisi lain, kosong, ditelan kabut. Lama kalian diam.\n\n\"Namaku sudah hilang,\" kata orang tua itu pelan. \"Tetapi aku masih ingat tugasku: menunggu pendaki yang cukup tenang untuk bertanya.\" Akhirnya ia menoleh. \"Pertanyaannya sederhana. Mengapa kau mau mengembalikan nama gunung ini?\"\n\nKau berpikir sebelum menjawab: demi imbalan nama, demi Sang Kodeks, demi Aruna, demi kawan-kawan di Bukit Abu. Demi dirimu sendiri.\n\n\"Karena yang dilupakan juga manusia,\" katamu akhirnya.\n\nOrang tua itu tersenyum, dan dalam sekejap ia menjadi bagian dari bukit: lumut, batu, dan angin. Kau tidak sedih. Ia pulang.",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "gajah_done": true
+                },
+                "target": "PW_0035"
+            }
+        ]
+    },
+    {
+        "id": "PW_0043",
+        "title": "Teras yang Menghadap Lembah",
+        "description": "Candi Wayang adalah yang paling terpencil. Kau harus menuruni tebing kecil dan menyusuri jalan sempit sebelum tiba di teras mungil yang menghadap lembah. Reliefnya berukir tokoh-tokoh bergaya pewayangan: pipih, bertangan panjang, berhias rumit, seolah bayang-bayang yang dipaku ke batu.\n\nTempat ini dahulu dipakai para resi bertapa, jauh dari keramaian. Kini hanya ada satu hal: layar kain tua yang dibentangkan di antara dua tiang bambu entah oleh siapa, dan di belakangnya, sebuah lampu minyak menyala sendirian.\n\nSebuah suara datang dari balik layar. \"Duduklah. Pertunjukan akan dimulai.\"",
+        "choices": [
+            {
+                "text": "Duduk menonton",
+                "target": "PW_0044"
+            }
+        ]
+    },
+    {
+        "id": "PW_0044",
+        "title": "Pagelaran Bayang",
+        "description": "Bayang-bayang bergerak di layar. Mula-mula kisah lama: seorang resi mendaki gunung, bertemu dewa, memohon kedamaian bagi dunia. Lalu kisah berubah, dan sosok di layar tak lagi dikenal: seorang pendatang dengan kristal di dada, berjalan sendirian melintasi tanah gersang.\n\nKau. Sang dalang tahu langkahmu: Lemah Wangkal, gadis kecil dan serigala, naga merah yang tertidur di dadamu.\n\nDi layar, bayangan dirimu berhenti di persimpangan. Dua jalan. Sang dalang bertanya, \"Di sini kisahmu bercabang. Mana yang kau tuliskan?\"",
+        "choices": [
+            {
+                "text": "Jalan yang sendirian, supaya tak ada yang terluka karenaku",
+                "target": "PW_0045"
+            },
+            {
+                "text": "Jalan yang ramai, mengajak mereka yang bersedia",
+                "target": "PW_0046"
+            }
+        ]
+    },
+    {
+        "id": "PW_0045",
+        "title": "Bayang yang Berjalan Sendiri",
+        "description": "Di layar, bayanganmu menempuh jalan yang sunyi: kuat, dingin, tak tersentuh. Lalu sang dalang menggerakkan bayangan lain di tepi jalan: tiga sosok yang menunggu di tempat jauh, lalu menunduk lesu.\n\n\"Sendiri itu pilihan yang sah,\" kata sang dalang dari balik layar. \"Tetapi mereka yang kau tinggalkan tak ikut memilih.\"\n\nKau terdiam. Pisau Gandar, jamu Wulan, bait kidung Darpa di sakumu terasa berat. Bayangan di layar memudar. Sang dalang menyelipkan sebuah wayang kecil ke tanganmu: boneka kulit sebesar telapak, hanya satu sosok, sendirian.\n\n\"Satu halaman lagi.\"",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "wayang_done": true,
+                    "path_sendiri": true
+                },
+                "target": "PW_0035"
+            }
+        ]
+    },
+    {
+        "id": "PW_0046",
+        "title": "Bayang yang Berjalan Beramai-ramai",
+        "description": "Di layar, jalanmu ramai: banyak sosok bergabung satu demi satu, berbeda bentuk, berbeda tinggi, berbeda cara melangkah. Tiga sosok yang sudah kau kenal berdiri paling dekat. Ada yang berpisah, ada yang jatuh, ada yang kembali.\n\n\"Ramai itu berat,\" kata sang dalang. \"Tetapi di sana kisahmu menjadi lebih panjang dari umurmu.\"\n\nKau tersenyum. Sebuah wayang kecil diselipkan ke tanganmu: boneka kulit sebesar telapak, sosok dengan tangan terulur.\n\n\"Satu halaman lagi. Yang ini akan kau butuhkan.\"",
+        "choices": [
+            {
+                "text": "Melanjutkan perjalanan",
+                "setFlags": {
+                    "wayang_done": true,
+                    "path_ramai": true
+                },
+                "target": "PW_0035"
+            }
+        ]
+    },
+    {
+        "id": "PW_0047",
+        "title": "Jalan ke Puncak",
+        "description": "Kini tak ada lagi punden. Hanya jalan menanjak yang makin curam, dan kabut yang makin tebal sampai kau harus meraba batu untuk tahu di mana berpijak. Napasmu berat. Udara dingin sekali.\n\nBeberapa kali kau hampir tergelincir. Beberapa kali kau mendengar bisikan: \"Kembalilah. Tak perlu naik. Tak ada yang tahu kau berhenti.\" Tetapi di dadamu, kristal berdenyut, dan untuk pertama kalinya sejak Bukit Abu, Aruna terbangun sepenuhnya.\n\n\"Aku memang tertidur,\" katanya, \"tetapi aku masih ingat caranya terbang. Naiklah, {name}. Aku di sini.\"\n\nKau naik.",
+        "choices": [
+            {
+                "text": "Terus mendaki",
+                "target": "PW_0048"
+            }
+        ]
+    },
+    {
+        "id": "PW_0048",
+        "title": "Delapan Bukit",
+        "cinematic": true,
+        "description": "Kabut tiba-tiba sirna. Kau berdiri di puncak, dan seluruh dunia terhampar di bawahmu.\n\nDelapan bukit melingkari gunung ini, persis seperti sketsa di ambang pintu serikat. Kau melihat yang tadi kau lewati: bukit tempat candi tiga tingkat, bukit gajah yang berpaling. Di antaranya, enam bukit lain masih berselubung kabut tebal.\n\nDi arah barat daya, di salah satu bukit, asap tipis mengepul dari tanah yang rata. Pondok-pondok Danawa. Tungku Gandar.\n\n\"Bukit Abu,\" bisikmu. \"Aku tak tahu... ia salah satunya.\"\n\n\"Satu dari delapan penjaga,\" kata Sang Kodeks, suaranya gemetar. \"Kita meninggalkan satu penjaga tanpa menyadarinya.\"",
+        "choices": [
+            {
+                "text": "Maju ke puncak",
+                "target": "PW_0049"
+            }
+        ]
+    },
+    {
+        "id": "PW_0049",
+        "title": "Sosok Tanpa Nama",
+        "mood": "void",
+        "cinematic": true,
+        "description": "Di puncak berdiri sosok yang serupa gunung itu sendiri: samar, tinggi, terbentuk dari kabut dan batu, tanpa wajah. Ia tidak menyerang. Ia menatapmu, dan suaranya, kalau itu suara, terasa datang dari bawah kakimu.\n\n\"Aku yang tak memiliki nama,\" katanya. \"Aku paku yang menahan pulau ini dari guncangan. Kabut mengambil namaku. Tanpa nama, aku akan terlepas. Dan bila aku terlepas, tanah akan berguncang lagi, seperti dahulu kala.\"\n\nIa mendekat. \"Pendatang. Kau sudah berjalan di tubuhku. Kau sudah menyentuh halaman-halamanku. Katakan: siapakah aku?\"",
+        "choices": [
+            {
+                "text": "Menyebut namamu sendiri lebih dulu, sebagai jangkar",
+                "target": "PW_0050"
+            },
+            {
+                "text": "Menyebut makna dari halaman-halaman yang kau kumpulkan",
+                "target": "PW_0051"
+            },
+            {
+                "text": "Menyebut mereka yang dilupakan sepanjang jalan",
+                "target": "PW_0052"
+            }
+        ]
+    },
+    {
+        "id": "PW_0050",
+        "title": "Jangkar Terlebih Dahulu",
+        "mood": "void",
+        "description": "\"{name},\" katamu, jelas dan tanpa ragu. \"Namaku {name}. Aku berdiri di sini, dan aku ada. Karena aku ada, aku bisa menyebut yang lain.\"\n\nSosok itu bergetar, seperti orang yang mendengar sepatah kata dari bahasa ibunya setelah bertahun-tahun.\n\n\"Jangkar,\" katanya. \"Nama adalah paku yang pertama.\"\n\nDi dadamu, Sang Kodeks membacakan halaman-halaman yang terkumpul satu per satu, dan satu kata terbentuk di lidahmu, kata yang sudah kau dengar bergema di antara dua altar.",
+        "choices": [
+            {
+                "text": "Mengucapkan nama itu",
+                "setLevel": 7,
+                "target": "PW_0053"
+            }
+        ]
+    },
+    {
+        "id": "PW_0051",
+        "title": "Makna yang Terkumpul",
+        "mood": "void",
+        "description": "Sang Kodeks membaca halaman-halaman itu satu per satu, dan kau menyusun maknanya: air yang menyucikan, penantian yang menemani, tamu yang dihormati, persembahan yang berkurang pada pemberinya, pelepasan yang tak menggenggam, penjagaan tanpa senjata, yang berpaling agar tak dikuasai apa yang dilihat, dan kisah yang bercabang.\n\nDari semuanya, satu kata terbentuk di lidahmu.",
+        "choices": [
+            {
+                "text": "Mengucapkan nama itu",
+                "setLevel": 7,
+                "target": "PW_0053"
+            }
+        ]
+    },
+    {
+        "id": "PW_0052",
+        "title": "Mereka yang Dilupakan",
+        "mood": "void",
+        "description": "Kau menyebut mereka yang tak kau ketahui namanya: peziarah berkain putih yang membasuh wajah di air, pendeta pemula yang duduk menunggu, bangsawan yang akhirnya jujur, para prajurit yang akhirnya pulang.\n\n\"Gunung ini bukan batu,\" katamu. \"Gunung ini mereka semua.\"\n\nSosok itu menunduk. Sesuatu seperti air mata, atau embun, jatuh dari wajahnya yang tak berwajah.\n\nDan satu kata terbentuk di lidahmu.",
+        "choices": [
+            {
+                "text": "Mengucapkan nama itu",
+                "setLevel": 7,
+                "target": "PW_0053"
+            }
+        ]
+    },
+    {
+        "id": "PW_0053",
+        "title": "Paku yang Tertanam",
+        "cinematic": true,
+        "description": "\"Pawitra,\" katamu. \"Yang suci.\"\n\nSeluruh gunung bergetar. Bukan marah, melainkan seperti raksasa yang akhirnya menarik napas panjang setelah bertahun-tahun tertahan. Kabut tersapu dari puncak dalam satu hentakan, dan langit di atasmu begitu biru hingga menyakitkan.\n\nSosok itu mengambil wajah: bukan wajah manusia, hanya garis-garis lembut seperti pahatan batu tua, dengan dua titik cahaya sebagai mata. \"Aku mengingat,\" katanya. \"Terima kasih, {name}.\"\n\nDelapan bukit di bawah sana menyala satu per satu. Dua menyala terang. Enam masih redup.\n\n\"Aku belum utuh,\" kata Pawitra. \"Enam penjaga masih tanpa nama, dan Kabut belum kalah. Tetapi paku sudah tertancap, dan pulau ini tak akan terguncang dalam waktu dekat. Itu cukup, untuk hari ini.\"\n\nAruna bernyanyi pelan dari dalam kristal, dan untuk pertama kalinya kau mendengar sesuatu dalam suaranya yang bukan kelelahan.",
+        "choices": [
+            {
+                "text": "Turun gunung",
+                "target": "PW_0054"
+            }
+        ]
+    },
+    {
+        "id": "PW_0054",
+        "title": "Turun Gunung",
+        "description": "Turun jauh lebih mudah daripada naik. Kabut menyingkir di depanmu, dan jalan terbuka seolah sedang membalas budi. Sepanjang jalan kau melewati tempat-tempat yang tadi kau datangi: pemandian, punden kecil, teras, candi, bukit gajah. Mereka kini punya nama. Mereka kini bernyanyi.\n\nDi punggung bukit, kau berhenti dan memandang ke barat daya. Asap dari Bukit Abu masih mengepul. Kau berjanji: kau akan kembali ke sana dan membawa kabar ini kepada Gandar, Wulan, Darpa, dan Laras.\n\nTetapi lebih dulu, laporan.",
+        "choices": [
+            {
+                "text": "Kembali ke Wilwatikta",
+                "target": "PW_0055"
+            }
+        ]
+    },
+    {
+        "id": "PW_0055",
+        "title": "Laporan di Balai Dharmayatra",
+        "cinematic": true,
+        "description": "Ratih mengangkat kepala saat kau melangkah masuk balai, dan untuk pertama kalinya ia lupa menyembunyikan lega. \"Kau kembali.\" Ia menulis cepat. \"Kau satu-satunya yang kembali.\"\n\nNyi Candrawati sudah berdiri di belakangmu, tongkatnya mengetuk lantai. Kau menaruh peta kulit di meja, dan di tempat lubang itu, tinta mengalir kembali dari bawah, membentuk satu puncak, delapan bukit, dan satu nama.\n\n\"Pawitra,\" bisik Nyi Candrawati. Matanya basah. \"Aku ingat. Aku ingat semuanya.\"\n\nKartu serikatmu diambil. Ratih mencoret kata \"Tunas\" dan menulis kata baru: \"Dahan\". Kata \"Tunggal\" tidak ia coret. \"Itu milikmu,\" katanya, \"sampai kau ubah sendiri.\"\n\nDi atas meja, peta kini menunjukkan enam bukit tanpa nama dan satu lingkaran merah di salah satunya. Bukit Abu.\n\nKabut belum sepenuhnya kalah. Tetapi hari ini, satu gunung kembali dipaku."
+    }
+]

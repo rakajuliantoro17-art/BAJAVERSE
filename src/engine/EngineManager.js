@@ -47,6 +47,18 @@ class EngineManager {
                 console.warn(`[CharacterEngine] ${problem}`);
             });
 
+        for (const storyboard of this.storyboardEngine.storyboards.values()) {
+            for (const choice of storyboard.choices || []) {
+                for (const id of choice.ifRole || []) {
+                    if (!this.roleEngine.getRole(id)) {
+                        console.warn(
+                            `[StoryboardEngine] ${storyboard.id}: choice "${choice.text}" ifRole has unknown role "${id}"`
+                        );
+                    }
+                }
+            }
+        }
+
     }
 
 }

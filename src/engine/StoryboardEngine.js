@@ -4,6 +4,8 @@ const sources = [
     require("../data/storyboards/berkah.json"),
     require("../data/storyboards/perjanjian.json"),
     require("../data/storyboards/bukit-abu.json"),
+    require("../data/storyboards/wilwatikta.json"),
+    require("../data/storyboards/pawitra.json"),
     require("../data/storyboards/main.json")
 ];
 
@@ -72,7 +74,7 @@ class StoryboardEngine {
                         );
                     }
 
-                    for (const key of ["ifFlags", "unlessFlags"]) {
+                    for (const key of ["ifFlags", "unlessFlags", "ifRole"]) {
                         if (choice[key] !== undefined && !Array.isArray(choice[key])) {
                             problems.push(
                                 `${storyboard.id}: choice "${choice.text}" ${key} must be a list`

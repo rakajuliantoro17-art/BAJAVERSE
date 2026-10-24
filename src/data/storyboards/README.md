@@ -2,7 +2,7 @@
 
 Semua adegan ada di file JSON di folder ini. Cerita tidak ditulis di halaman web;
 engine membaca data ini. Urutan file dimuat diatur di `src/engine/StoryboardEngine.js`
-(`prologue.json`, `berkah.json`, `perjanjian.json`, lalu `main.json`).
+(`prologue.json`, `berkah.json`, `perjanjian.json`, `bukit-abu.json`, `wilwatikta.json`, `pawitra.json`, lalu `main.json`).
 
 ## Alur saat ini
 
@@ -25,7 +25,14 @@ PR_0001 Kegelapan -> PR_0002 Terlahir Kembali -> PR_0003 (isi nama)
  -> bukit-abu.json (bagian 2): BA_0001 desa (hub, urutan bebas)
       BA_0002 Gandar | BA_0003 Wulan | BA_0004 Darpa  (masing-masing kembali ke BA_0001; mereka tetap di desa, hanya flag met_* yang diisi)
  -> BA_0005 Perapian Malam (belajar skill kedua) -> BA_0006 Sampai Bertemu Lagi -> BA_0007 gerbang (pemain masih sendirian)
- -> SB_0001 (cerita gerbang; level 1 -> 2 saat pemain "Masuk ke kota" di SB_0002)
+ -> SB_0001 (cerita gerbang; level 1 -> 2 saat pemain "Masuk ke kota" di SB_0002) -> SB_0006 "Masuk ke alun-alun"
+ -> wilwatikta.json (WK_0001-0015, solo): alun-alun hub (3 petunjuk: pasar | dermaga | warung, plus candi mandala opsional)
+      -> balai Dharmayatra, daftar sebagai petualang tunggal, ambil tugas Pawitra (flag quest_pawitra)
+ -> pawitra.json (PW_0001-0055): 5 tahap, tiap tahap hub dengan flag *_done; pilihan keluar hanya muncul setelah semua tempat selesai
+      tahap 1 Kaki Barat (Jolotundo, Candi Bayi) -> level 3 | tahap 2 Lereng Barat (Putri, Pura, Gentong) -> level 4
+      tahap 3 Barat Laut (Lurah, Kendalisodo) -> level 5 | tahap 4 Gajahmungkur (Kerajaan, Gajah, Wayang) -> level 6
+      tahap 5 Puncak: tiga cara menyebut nama -> PW_0053 "Paku yang Tertanam" -> level 7 -> PW_0055 laporan (akhir bagian ini, belum ada pilihan lanjut)
+      satu adegan wawasan per role (ifRole), tampil opsional di tahap 1-4; satu role hanya melihat wawasannya sendiri
 ```
 
 Flag yang sudah diisi tetapi belum dipakai cerita lanjutan: `aruna_pact` (selalu true setelah
@@ -95,6 +102,7 @@ Sebuah pilihan dapat mengatur flag dan dapat disembunyikan berdasarkan flag:
 
 - `setFlags` diatur saat pilihan dipilih.
 - `ifFlags` pilihan tampil hanya jika semua flag itu sudah diatur.
+- `ifRole` (daftar id role, mis. `["medic"]`) pilihan tampil hanya untuk pemain dengan role itu.
 - `unlessFlags` pilihan disembunyikan jika salah satu flag itu sudah diatur.
 
 Pilihan juga dapat memberi hadiah:
