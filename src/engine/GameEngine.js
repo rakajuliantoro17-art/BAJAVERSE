@@ -424,6 +424,77 @@ class GameEngine {
     }
 
 
+    // A paragraph that starts with "@id:" is spoken by that character ("@player:" is the
+    // player, shown with their role's portrait). Other paragraphs are narration.
+    parseLines(text, player = {}, sceneId = "") {
+
+        const lines = [];
+        const speakers = [];
+        const cast = {};
+
+        for (const raw of text.split(/\n\s*\n/)) {
+
+            const paragraph = raw.trim();
+
+            if (!paragraph) continue;
+
+            const match = /^@([a-z0-9_]+):\s*([\s\S]*)$/.exec(paragraph);
+
+            if (!match) {
+                lines.push(paragraph);
+                speakers.push(null);
+                continue;
+            }
+
+            const id = match[1];
+
+            if (!cast[id]) {
+
+                if (id === "player") {
+
+                    cast[id] = {
+                        id,
+                        name: player.name || "Kamu",
+                        title: player.role || null,
+                        image: player.roleId
+                            ? `/images/roles/${player.roleId}.png`
+                            : null,
+                        roleId: player.roleId || null
+                    };
+
+                } else {
+
+                    const character =
+                        this.engineManager.characterEngine.getCharacter(id);
+
+                    if (!character) {
+                        console.warn(`[GameEngine] ${sceneId}: unknown speaker "${id}"`);
+                        lines.push(match[2]);
+                        speakers.push(null);
+                        continue;
+                    }
+
+                    cast[id] = {
+                        id,
+                        name: character.name,
+                        title: character.title || null,
+                        image: character.image || null,
+                        roleId: (character.roles || [])[0] || null
+                    };
+
+                }
+
+            }
+
+            lines.push(match[2]);
+            speakers.push(id);
+
+        }
+
+        return { lines, speakers, cast };
+
+    }
+
     getScene(state) {
 
         const storyboard = this.currentStoryboard(state);
@@ -460,6 +531,12 @@ class GameEngine {
 
         }
 
+        const parsed = this.parseLines(
+            fill(storyboard.description || ""),
+            state.player,
+            storyboard.id
+        );
+
         const cinematic =
             typeof storyboard.cinematic === "boolean"
                 ? storyboard.cinematic
@@ -471,10 +548,9 @@ class GameEngine {
             id: storyboard.id,
             title: fill(storyboard.title),
 
-            lines: fill(storyboard.description || "")
-                .split(/\n\s*\n/)
-                .map((line) => line.trim())
-                .filter(Boolean),
+            lines: parsed.lines,
+            speakers: parsed.speakers,
+            cast: parsed.cast,
 
             mood: storyboard.mood || "world",
             cinematic,

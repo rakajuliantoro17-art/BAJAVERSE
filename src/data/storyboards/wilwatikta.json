@@ -3,7 +3,7 @@
         "id": "WK_0001",
         "title": "Pintu Kota",
         "cinematic": true,
-        "description": "Gerbang bergeser pelan dan kau melangkah masuk. Tak ada sorak, tak ada pemberitahuan, hanya derit engsel tua dan bau asap kayu yang bercampur kabut.\n\nWilwatikta ternyata kecil. Kota yang kau lihat dari atas tembok, megah dengan menara-menara candinya, kini tinggal sepetak: separuh jalannya berhenti mendadak di dinding kabut, seperti halaman yang disobek. Kota ini sedang dihapus sedikit demi sedikit.\n\n\"Kau sendirian sekarang,\" bisik Sang Kodeks. \"Tak ada kawan, tak ada tuan. Pendatang tanpa nama di kota ini tak mendapat apa-apa: tak ada makanan, tak ada penginapan, tak ada kepercayaan. Carilah serikat para penjelajah. Mereka memberi nama dan tugas kepada orang-orang seperti kita.\"\n\nPisau Gandar terasa dingin di pinggangmu. Kau berjalan menuju alun-alun.",
+        "description": "Gerbang bergeser pelan dan kau melangkah masuk. Tak ada sorak, tak ada pemberitahuan, hanya derit engsel tua dan bau asap kayu yang bercampur kabut.\n\nWilwatikta ternyata kecil. Kota yang kau lihat dari atas tembok, megah dengan menara-menara candinya, kini tinggal sepetak: separuh jalannya berhenti mendadak di dinding kabut, seperti halaman yang disobek. Kota ini sedang dihapus sedikit demi sedikit.\n\n@kodeks: \"Kau sendirian sekarang,\" bisik Sang Kodeks. \"Tak ada kawan, tak ada tuan. Pendatang tanpa nama di kota ini tak mendapat apa-apa: tak ada makanan, tak ada penginapan, tak ada kepercayaan. Carilah serikat para penjelajah. Mereka memberi nama dan tugas kepada orang-orang seperti kita.\"\n\nPisau Gandar terasa dingin di pinggangmu. Kau berjalan menuju alun-alun.",
         "choices": [
             {
                 "text": "Berjalan ke alun-alun",
@@ -133,7 +133,7 @@
     {
         "id": "WK_0009",
         "title": "Candi Kecil di Pojok Kota",
-        "description": "Di sudut alun-alun berdiri candi kecil setinggi dua depa, nyaris tertutup lumut. Tak ada yang mengurusnya. Di ambangnya terukir lingkaran dengan satu titik di tengah dan delapan titik melingkarinya.\n\n\"Mandala,\" gumam Sang Kodeks, lirih. \"Satu pusat, delapan penjaga. Ukiran ini bukan hiasan, {name}. Ini peta yang kehilangan namanya.\"\n\nKau menyentuhnya, dan jemarimu merasakan getar halus, seperti datang dari tempat yang sangat jauh.\n\nKau mengingat bentuk itu baik-baik.",
+        "description": "Di sudut alun-alun berdiri candi kecil setinggi dua depa, nyaris tertutup lumut. Tak ada yang mengurusnya. Di ambangnya terukir lingkaran dengan satu titik di tengah dan delapan titik melingkarinya.\n\n@kodeks: \"Mandala,\" gumam Sang Kodeks, lirih. \"Satu pusat, delapan penjaga. Ukiran ini bukan hiasan, {name}. Ini peta yang kehilangan namanya.\"\n\nKau menyentuhnya, dan jemarimu merasakan getar halus, seperti datang dari tempat yang sangat jauh.\n\nKau mengingat bentuk itu baik-baik.",
         "choices": [
             {
                 "text": "Kembali ke alun-alun",
@@ -169,7 +169,7 @@
     {
         "id": "WK_0012",
         "title": "Juru Tulis Ratih",
-        "description": "\"Pendaftaran?\" Ia tidak menunggu jawaban. Tangannya sudah menarik selembar daluang kosong dan pena bulu. \"Namaku Ratih. Aku mencatat nama setiap orang yang masuk dan keluar dari balai ini. Banyak yang masuk. Yang keluar lebih sedikit, dan yang kembali lebih sedikit lagi.\"\n\nIa menatapmu tajam. \"Tulis namamu. Ucapkan keras-keras supaya kuingat.\"\n\n\"{name},\" katamu.\n\nPena itu bergerak. \"Role?\"\n\n\"{role}.\"\n\n\"Berkah awal?\" Sebelum kau menjawab, matanya berpindah ke dadamu, ke kristal yang berdenyut samar. \"Ah. {skill}.\" Ia menuliskannya. \"Dan satu lagi, yang baru kau pelajari. {skill2}.\"",
+        "description": "@ratih: \"Pendaftaran?\" Ia tidak menunggu jawaban. Tangannya sudah menarik selembar daluang kosong dan pena bulu. \"Namaku Ratih. Aku mencatat nama setiap orang yang masuk dan keluar dari balai ini. Banyak yang masuk. Yang keluar lebih sedikit, dan yang kembali lebih sedikit lagi.\"\n\nIa menatapmu tajam. \"Tulis namamu. Ucapkan keras-keras supaya kuingat.\"\n\n@player: \"{name},\" katamu.\n\nPena itu bergerak. \"Role?\"\n\n@player: \"{role}.\"\n\n@ratih: \"Berkah awal?\" Sebelum kau menjawab, matanya berpindah ke dadamu, ke kristal yang berdenyut samar. \"Ah. {skill}.\" Ia menuliskannya. \"Dan satu lagi, yang baru kau pelajari. {skill2}.\"",
         "choices": [
             {
                 "text": "Lanjutkan pendaftaran",
@@ -180,7 +180,7 @@
     {
         "id": "WK_0013",
         "title": "Petualang Tunggal",
-        "description": "\"Rombongan atau tunggal?\" tanya Ratih. \"Kebanyakan datang berdelapan, berenam, bertiga. Serikat ini tidak melarang yang tunggal, tetapi...\" Ia menggantung kalimatnya.\n\n\"Aku sendirian,\" katamu.\n\n\"Sendirian.\" Ratih menulis satu kata di sudut kartu. \"Tunggal. Kata itu akan menyertai namamu sampai kau mengubahnya sendiri.\"\n\nIa menyerahkan selembar kartu daluang tebal. Namamu, rolemu, dan peringkatmu: Tunas, tingkat paling awal. Di baliknya, cap serikat: delapan titik mengelilingi satu.\n\n\"Selamat datang di Dharmayatra, {name}. Tugas pertama biasanya dibagikan Nyi Candrawati sendiri. Lihat dulu papan di dinding itu.\"",
+        "description": "@ratih: \"Rombongan atau tunggal?\" tanya Ratih. \"Kebanyakan datang berdelapan, berenam, bertiga. Serikat ini tidak melarang yang tunggal, tetapi...\" Ia menggantung kalimatnya.\n\n@player: \"Aku sendirian,\" katamu.\n\n@ratih: \"Sendirian.\" Ratih menulis satu kata di sudut kartu. \"Tunggal. Kata itu akan menyertai namamu sampai kau mengubahnya sendiri.\"\n\nIa menyerahkan selembar kartu daluang tebal. Namamu, rolemu, dan peringkatmu: Tunas, tingkat paling awal. Di baliknya, cap serikat: delapan titik mengelilingi satu.\n\n@ratih: \"Selamat datang di Dharmayatra, {name}. Tugas pertama biasanya dibagikan Nyi Candrawati sendiri. Lihat dulu papan di dinding itu.\"",
         "choices": [
             {
                 "text": "Menuju papan tugas",
@@ -202,7 +202,7 @@
     {
         "id": "WK_0015",
         "title": "Peta yang Berlubang",
-        "description": "\"Aku Candrawati, pemimpin balai ini.\" Matanya jernih, tak seperti orang seusianya. Ia membentangkan peta kulit di atas meja. Sebagian besar peta penuh sungai, kota, dan hutan lengkap dengan namanya. Tetapi di sebelah timur ada lubang, bukan sobekan, melainkan bagian yang tintanya hilang. Hanya bayangan samar satu puncak yang dikelilingi delapan bukit kecil.\n\n\"Dulu gunung itu punya nama,\" katanya. \"Semua orang tahu. Sekarang yang tersisa hanya perasaan bahwa ada sesuatu yang suci di sana. Tiga penjelajah kukirim, dan tak seorang pun kembali. Kini aku bahkan tak ingat nama mereka. Hanya catatan di buku ini.\"\n\nIa menatapmu. \"Kau sendirian dan tanpa peringkat. Aku tak akan memaksa. Tetapi kau membawa sesuatu di dadamu yang tahu cara mengingat. Kalau kau bisa mengembalikan nama gunung itu, balai ini akan mengingat jasamu seumur hidupnya.\"",
+        "description": "@candrawati: \"Aku Candrawati, pemimpin balai ini.\" Matanya jernih, tak seperti orang seusianya. Ia membentangkan peta kulit di atas meja. Sebagian besar peta penuh sungai, kota, dan hutan lengkap dengan namanya. Tetapi di sebelah timur ada lubang, bukan sobekan, melainkan bagian yang tintanya hilang. Hanya bayangan samar satu puncak yang dikelilingi delapan bukit kecil.\n\n@candrawati: \"Dulu gunung itu punya nama,\" katanya. \"Semua orang tahu. Sekarang yang tersisa hanya perasaan bahwa ada sesuatu yang suci di sana. Tiga penjelajah kukirim, dan tak seorang pun kembali. Kini aku bahkan tak ingat nama mereka. Hanya catatan di buku ini.\"\n\nIa menatapmu. \"Kau sendirian dan tanpa peringkat. Aku tak akan memaksa. Tetapi kau membawa sesuatu di dadamu yang tahu cara mengingat. Kalau kau bisa mengembalikan nama gunung itu, balai ini akan mengingat jasamu seumur hidupnya.\"",
         "choices": [
             {
                 "text": "Mengambil tugas itu",

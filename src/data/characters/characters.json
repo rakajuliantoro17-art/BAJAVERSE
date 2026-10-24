@@ -33,5 +33,35 @@
             "scholar",
             "ranger"
         ]
+    },
+    {
+        "id": "ratih",
+        "name": "Ratih",
+        "title": "Juru Tulis Dharmayatra",
+        "image": "/images/characters/ratih.png"
+    },
+    {
+        "id": "candrawati",
+        "name": "Nyi Candrawati",
+        "title": "Pemimpin Balai Dharmayatra",
+        "image": "/images/characters/candrawati.png"
+    },
+    {
+        "id": "aruna",
+        "name": "Naga Aruna",
+        "title": "Penghuni Kristal",
+        "image": "/images/characters/aruna.png"
+    },
+    {
+        "id": "kodeks",
+        "name": "Sang Kodeks",
+        "title": "Kitab yang Mengingat",
+        "image": "/images/characters/kodeks.png"
+    },
+    {
+        "id": "pawitra",
+        "name": "Pawitra",
+        "title": "Penjaga Tanpa Nama",
+        "image": "/images/characters/pawitra.png"
     }
 ]

@@ -38,6 +38,14 @@ PR_0001 Kegelapan -> PR_0002 Terlahir Kembali -> PR_0003 (isi nama)
 Flag yang sudah diisi tetapi belum dipakai cerita lanjutan: `aruna_pact` (selalu true setelah
 PJ_0004) dan `aruna_vow` (true jika pemain meminta Aruna berhenti menuntut persembahan).
 
+## Dialog dengan potret
+
+Awali sebuah paragraf dengan `@id:` agar dibaca sebagai ucapan karakter, mis. `@ratih: "Pendaftaran?"`.
+`@player:` adalah pemain, ditampilkan dengan potret rolenya (`public/images/roles/<roleId>.png`).
+Id lain harus ada di `characters.json`; potretnya dari `image` (`public/images/characters/<id>.png`).
+Jika berkas gambar belum ada, UI memakai ikon role (pemain) atau huruf awal nama (NPC).
+Paragraf tanpa `@` tetap narasi.
+
 ## Satu adegan
 
 ```json

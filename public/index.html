@@ -317,6 +317,22 @@
     border: 1px solid var(--border);
   }
   .figure figcaption small { display: block; color: var(--muted); font-size: 0.7rem; }
+
+  /* Dialogue: a portrait beside what the speaker says. */
+  .talk { display: flex; gap: 12px; align-items: flex-start; margin: 14px 0; }
+  .talk .face {
+    flex: 0 0 auto; width: 64px; height: 80px; border-radius: 8px; overflow: hidden;
+    border: 1px solid var(--border); background: #1c1812;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; color: #d8c79a;
+  }
+  .talk .face img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .talk .face svg { width: 60%; height: 60%; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .talk .said { flex: 1 1 auto; min-width: 0; }
+  .talk .who { font-size: 0.78rem; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 2px; }
+  .talk .who b { color: #e6d6a8; font-weight: 600; }
+  .talk.me { flex-direction: row-reverse; text-align: right; }
+  .talk .said p { margin: 0; }
   [hidden] { display: none !important; }
 
   @media (prefers-reduced-motion: reduce) {
@@ -484,16 +500,69 @@
     characters.forEach((character) => figures.appendChild(makeFigure(character, token)));
   }
 
-  function renderLines(lines, cinematic) {
+  const ROLE_GLYPH = {
+    vanguard: '<path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/>',
+    ranger: '<path d="M6 4c8 2 8 14 0 16M6 12h13M16 9l3 3-3 3"/>',
+    scholar: '<path d="M6 4h10a2 2 0 012 2v14H8a2 2 0 01-2-2zM9 9h6M9 13h6"/>',
+    artificer: '<path d="M5 19l8-8M10 5l5-2 4 4-2 5-5-2z"/>',
+    mystic: '<path d="M12 3l6 9-6 9-6-9zM12 8v8"/>',
+    diplomat: '<path d="M4 6h16v10H10l-4 4v-4H4z"/>',
+    medic: '<path d="M12 4c4 3 6 6 6 9a6 6 0 01-12 0c0-3 2-6 6-9zM12 11v5M9.5 13.5h5"/>'
+  };
+
+  function makeFace(who) {
+    const face = document.createElement("div");
+    face.className = "face";
+    const fallback = () => {
+      const glyph = who.roleId && ROLE_GLYPH[who.roleId];
+      if (glyph) face.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">' + glyph + "</svg>";
+      else face.textContent = (who.name || "?").trim().charAt(0).toUpperCase();
+    };
+    fallback();
+    if (who.image) {
+      probeImage(who.image).then((ok) => {
+        if (!ok) return;
+        const img = document.createElement("img");
+        img.alt = who.name;
+        img.src = who.image;
+        face.replaceChildren(img);
+      });
+    }
+    return face;
+  }
+
+  function renderLines(scene) {
+    const lines = scene.lines, cinematic = !!scene.cinematic;
+    const speakers = scene.speakers || [], cast = scene.cast || {};
     const box = $("lines");
     box.replaceChildren();
     lines.forEach((text, index) => {
       const p = document.createElement("p");
       p.className = "line";
       p.style.setProperty("--i", index);
+      const who = speakers[index] && cast[speakers[index]];
+      if (who) {
+        const row = document.createElement("div");
+        row.className = "line talk" + (who.id === "player" ? " me" : "");
+        row.style.setProperty("--i", index);
+        const said = document.createElement("div");
+        said.className = "said";
+        const label = document.createElement("div");
+        label.className = "who";
+        const b = document.createElement("b");
+        b.textContent = who.name;
+        label.appendChild(b);
+        if (who.title) label.appendChild(document.createTextNode(" \u00b7 " + who.title));
+        p.textContent = text;
+        said.append(label, p);
+        p.className = "";
+        row.append(makeFace(who), said);
+        box.appendChild(row);
+        return;
+      }
       // Short lines in cinematic scenes are the dramatic beats; longer quotes are speech.
       if (cinematic && text.length <= 56) p.classList.add("big");
-      else if (/^["“]/.test(text)) p.classList.add("quote");
+      else if (/^["\u201c]/.test(text)) p.classList.add("quote");
       p.textContent = text;
       box.appendChild(p);
     });
@@ -539,7 +608,7 @@
     }
 
     const animate = !!scene.cinematic && !reduceMotion;
-    renderLines(scene.lines, !!scene.cinematic);
+    renderLines(scene);
 
     const after = scene.lines.length;
     const reveals = [$("status-box"), $("name-box"), $("role-box"), $("choices"), $("advance")];
