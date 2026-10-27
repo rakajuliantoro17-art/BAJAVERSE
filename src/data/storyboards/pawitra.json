@@ -942,6 +942,12 @@
         "id": "PW_0055",
         "title": "Laporan di Balai Dharmayatra",
         "cinematic": true,
-        "description": "Ratih mengangkat kepala saat kau melangkah masuk balai, dan untuk pertama kalinya ia lupa menyembunyikan lega. \"Kau kembali.\" Ia menulis cepat. \"Kau satu-satunya yang kembali.\"\n\nNyi Candrawati sudah berdiri di belakangmu, tongkatnya mengetuk lantai. Kau menaruh peta kulit di meja, dan di tempat lubang itu, tinta mengalir kembali dari bawah, membentuk satu puncak, delapan bukit, dan satu nama.\n\n@candrawati: \"Pawitra,\" bisik Nyi Candrawati. Matanya basah. \"Aku ingat. Aku ingat semuanya.\"\n\nKartu serikatmu diambil. Ratih mencoret kata \"Tunas\" dan menulis kata baru: \"Dahan\". Kata \"Tunggal\" tidak ia coret. \"Itu milikmu,\" katanya, \"sampai kau ubah sendiri.\"\n\nDi atas meja, peta kini menunjukkan enam bukit tanpa nama dan satu lingkaran merah di salah satunya. Bukit Abu.\n\nKabut belum sepenuhnya kalah. Tetapi hari ini, satu gunung kembali dipaku."
+        "description": "Ratih mengangkat kepala saat kau melangkah masuk balai, dan untuk pertama kalinya ia lupa menyembunyikan lega. \"Kau kembali.\" Ia menulis cepat. \"Kau satu-satunya yang kembali.\"\n\nNyi Candrawati sudah berdiri di belakangmu, tongkatnya mengetuk lantai. Kau menaruh peta kulit di meja, dan di tempat lubang itu, tinta mengalir kembali dari bawah, membentuk satu puncak, delapan bukit, dan satu nama.\n\n@candrawati: \"Pawitra,\" bisik Nyi Candrawati. Matanya basah. \"Aku ingat. Aku ingat semuanya.\"\n\nKartu serikatmu diambil. Ratih mencoret kata \"Tunas\" dan menulis kata baru: \"Dahan\". Kata \"Tunggal\" tidak ia coret. \"Itu milikmu,\" katanya, \"sampai kau ubah sendiri.\"\n\nDi atas meja, peta kini menunjukkan enam bukit tanpa nama dan satu lingkaran merah di salah satunya. Bukit Abu.\n\nKabut belum sepenuhnya kalah. Tetapi hari ini, satu gunung kembali dipaku.",
+        "choices": [
+            {
+                "text": "Menikmati malam di Wilwatikta",
+                "target": "JB_0001"
+            }
+        ]
     }
 ]
