@@ -69,7 +69,7 @@
     {
         "id": "WK_0004",
         "title": "Pedagang Rempah",
-        "description": "\"Serikat?\" Ia berhenti menimbang. \"Dulu aku sering mengirim rempah ke sana. Bangunannya beratap tiga tingkat, berpanji merah, kalau aku tak salah.\" Ia memejamkan mata keras-keras. \"Letaknya... dekat pohon besar? Aku lupa. Maafkan aku.\"\n\nIa menyodorkan segenggam jahe. \"Kalau kau ingin mengingat sesuatu di kota ini, nak, jahe membantu. Setidaknya hangat.\"\n\nPetunjuk pertamamu: atap tiga tingkat, panji merah.",
+        "description": "@pedagang_rempah: \"Serikat?\" Ia berhenti menimbang. \"Dulu aku sering mengirim rempah ke sana. Bangunannya beratap tiga tingkat, berpanji merah, kalau aku tak salah.\" Ia memejamkan mata keras-keras. \"Letaknya... dekat pohon besar? Aku lupa. Maafkan aku.\"\n\nIa menyodorkan segenggam jahe. \"Kalau kau ingin mengingat sesuatu di kota ini, nak, jahe membantu. Setidaknya hangat.\"\n\nPetunjuk pertamamu: atap tiga tingkat, panji merah.",
         "choices": [
             {
                 "text": "Kembali ke alun-alun",
@@ -94,7 +94,7 @@
     {
         "id": "WK_0006",
         "title": "Juru Perahu",
-        "description": "\"Serikat para penjelajah? Dulu aku mengantar mereka sampai ke belakang gedungnya lewat kanal.\" Ia menunjuk lengkung jembatan batu di kejauhan. \"Dari jembatan itu, belok kiri ke gang para pandai. Aku masih ingat bunyi palunya.\"\n\nIa tertawa kecil. \"Sampan ini kuingat, kanal ini kuingat. Yang kulupa justru nama istriku. Anehnya, hidungku masih ingat aroma masakannya.\"\n\nPetunjuk keduamu: jembatan batu, gang para pandai.",
+        "description": "@juru_perahu: \"Serikat para penjelajah? Dulu aku mengantar mereka sampai ke belakang gedungnya lewat kanal.\" Ia menunjuk lengkung jembatan batu di kejauhan. \"Dari jembatan itu, belok kiri ke gang para pandai. Aku masih ingat bunyi palunya.\"\n\nIa tertawa kecil. \"Sampan ini kuingat, kanal ini kuingat. Yang kulupa justru nama istriku. Anehnya, hidungku masih ingat aroma masakannya.\"\n\nPetunjuk keduamu: jembatan batu, gang para pandai.",
         "choices": [
             {
                 "text": "Kembali ke alun-alun",
@@ -119,7 +119,7 @@
     {
         "id": "WK_0008",
         "title": "Cerita Pemilik Warung",
-        "description": "\"Pendatang baru,\" katanya, bukan pertanyaan. \"Tiga bulan terakhir ada banyak yang seperti kau. Yang ditolak Sang Dewi, kata mereka. Aku tak peduli apa kata dewa. Orang lapar tetap lapar.\"\n\nIa mengetuk meja. \"Serikat Dharmayatra ada di ujung gang yang berbau besi. Pintunya jati hitam, dan di atas ambangnya ada gambar delapan bukit mengelilingi satu. Pergilah kalau kau mau tugas. Tugas membuatmu tetap diingat.\"\n\nKantongmu kosong. Kau hanya bisa mengangguk berterima kasih. \"Bayar nanti,\" katanya, \"kalau kau sudah punya nama.\"\n\nPetunjuk ketigamu: pintu jati hitam, delapan bukit di ambangnya.",
+        "description": "@pemilik_warung: \"Pendatang baru,\" katanya, bukan pertanyaan. \"Tiga bulan terakhir ada banyak yang seperti kau. Yang ditolak Sang Dewi, kata mereka. Aku tak peduli apa kata dewa. Orang lapar tetap lapar.\"\n\nIa mengetuk meja. \"Serikat Dharmayatra ada di ujung gang yang berbau besi. Pintunya jati hitam, dan di atas ambangnya ada gambar delapan bukit mengelilingi satu. Pergilah kalau kau mau tugas. Tugas membuatmu tetap diingat.\"\n\nKantongmu kosong. Kau hanya bisa mengangguk berterima kasih. \"Bayar nanti,\" katanya, \"kalau kau sudah punya nama.\"\n\nPetunjuk ketigamu: pintu jati hitam, delapan bukit di ambangnya.",
         "choices": [
             {
                 "text": "Kembali ke alun-alun",
@@ -191,7 +191,7 @@
     {
         "id": "WK_0014",
         "title": "Papan Tugas",
-        "description": "Papan itu penuh lembar daluang yang dijepit bambu. Hampir semuanya bertanda merah: diambil.\n\nKau membaca yang tersisa. \"Antar kiriman ke dermaga: diambil.\" \"Kawal pedagang kain: diambil.\" \"Cari jamur kabut: diambil.\" Hanya satu lembar tak bertanda, kertasnya paling tua, tintanya pudar hingga nyaris tak terbaca: \"Telusuri gunung yang tak bernama di sebelah timur. Tiga penjelajah belum kembali. Imbalan: nama.\"\n\n\"Tak ada yang mengambilnya sejak musim lalu,\" kata seseorang di belakangmu. Seorang perempuan tua berkain hitam bersandar pada tongkat.",
+        "description": "Papan itu penuh lembar daluang yang dijepit bambu. Hampir semuanya bertanda merah: diambil.\n\nKau membaca yang tersisa. \"Antar kiriman ke dermaga: diambil.\" \"Kawal pedagang kain: diambil.\" \"Cari jamur kabut: diambil.\" Hanya satu lembar tak bertanda, kertasnya paling tua, tintanya pudar hingga nyaris tak terbaca: \"Telusuri gunung yang tak bernama di sebelah timur. Tiga penjelajah belum kembali. Imbalan: nama.\"\n\n@perempuan_tua: \"Tak ada yang mengambilnya sejak musim lalu,\" kata seseorang di belakangmu. Seorang perempuan tua berkain hitam bersandar pada tongkat.",
         "choices": [
             {
                 "text": "Membaca lembar itu lebih saksama",

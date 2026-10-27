@@ -63,5 +63,65 @@
         "name": "Pawitra",
         "title": "Penjaga Tanpa Nama",
         "image": "/images/characters/pawitra.png"
+    },
+    {
+        "id": "laras",
+        "name": "Laras",
+        "title": "Gadis Danawa",
+        "image": "/images/characters/laras.png"
+    },
+    {
+        "id": "dewi",
+        "name": "Sang Dewi",
+        "title": "Penjaga Tatanan",
+        "image": "/images/characters/dewi.png"
+    },
+    {
+        "id": "pedagang_rempah",
+        "name": "Pedagang Rempah",
+        "title": "Pasar Tua Wilwatikta",
+        "image": "/images/characters/pedagang_rempah.png"
+    },
+    {
+        "id": "juru_perahu",
+        "name": "Juru Perahu",
+        "title": "Dermaga Kanal",
+        "image": "/images/characters/juru_perahu.png"
+    },
+    {
+        "id": "pemilik_warung",
+        "name": "Pemilik Warung",
+        "title": "Warung Wedang",
+        "image": "/images/characters/pemilik_warung.png"
+    },
+    {
+        "id": "perempuan_tua",
+        "name": "Perempuan Tua",
+        "title": "Berkain Hitam, Bertongkat",
+        "image": "/images/characters/perempuan_tua.png"
+    },
+    {
+        "id": "bangsawan",
+        "name": "Bangsawan Bersorban",
+        "title": "Penghuni Candi Pura",
+        "image": "/images/characters/bangsawan.png"
+    },
+    {
+        "id": "jaya",
+        "name": "Jaya",
+        "title": "Prajurit Muda",
+        "image": "/images/characters/jaya.png"
+    },
+    {
+        "id": "penjaga_gajah",
+        "name": "Orang Tua Berpaling",
+        "title": "Penunggu Candi Gajah",
+        "image": "/images/characters/penjaga_gajah.png"
+    },
+    {
+        "id": "dalang",
+        "name": "Sang Dalang",
+        "title": "Pagelaran Bayang",
+        "image": "/images/characters/dalang.png"
     }
 ]

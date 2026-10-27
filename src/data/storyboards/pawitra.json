@@ -110,7 +110,7 @@
     {
         "id": "PW_0006",
         "title": "Basuhan Hormat",
-        "description": "Kau membungkuk, menyauk air dengan kedua telapak, dan membasuh wajah pelan-pelan seperti yang mereka lakukan. Airnya sedingin pagi, tetapi anehnya hangat di bawah kulit.\n\nBayangan perempuan itu tersenyum untuk pertama kalinya. Ia mengangguk, mengisi kendinya dengan air kolam, lalu menuangkannya ke tanganmu. Setelah itu ia berubah menjadi uap tipis dan menghilang.\n\nDi dasar kolam, sebaris aksara menyala sekilas, dan Sang Kodeks menyalinnya: satu halaman catatan gunung ini kembali.\n\n\"Mereka tak butuh kata-kata,\" bisiknya. \"Mereka hanya butuh dihormati.\"",
+        "description": "Kau membungkuk, menyauk air dengan kedua telapak, dan membasuh wajah pelan-pelan seperti yang mereka lakukan. Airnya sedingin pagi, tetapi anehnya hangat di bawah kulit.\n\nBayangan perempuan itu tersenyum untuk pertama kalinya. Ia mengangguk, mengisi kendinya dengan air kolam, lalu menuangkannya ke tanganmu. Setelah itu ia berubah menjadi uap tipis dan menghilang.\n\nDi dasar kolam, sebaris aksara menyala sekilas, dan Sang Kodeks menyalinnya: satu halaman catatan gunung ini kembali.\n\n@kodeks: \"Mereka tak butuh kata-kata,\" bisiknya. \"Mereka hanya butuh dihormati.\"",
         "choices": [
             {
                 "text": "Kembali ke jalan setapak",
@@ -125,7 +125,7 @@
     {
         "id": "PW_0007",
         "title": "Memanggil Tanpa Tahu",
-        "description": "@player: \"Aku tak tahu nama kalian,\" katamu pelan ke arah kolam, \"tetapi aku tahu kalian pernah ada.\"\n\nSunyi. Lalu satu per satu bayangan menoleh. Perempuan berkendi mulai menangis tanpa suara, dan setiap air matanya menetes menjadi riak cahaya kecil. Satu riak, satu nama. Kau tak mendengarnya, tetapi Sang Kodeks mencatat semuanya, terbata-bata seperti orang membaca surat lama.\n\n\"Dipanggil adalah hadiah terbesar bagi yang dilupakan,\" katanya. \"Satu halaman kembali.\"\n\nPara bayangan menghilang satu per satu, tersenyum.",
+        "description": "@player: \"Aku tak tahu nama kalian,\" katamu pelan ke arah kolam, \"tetapi aku tahu kalian pernah ada.\"\n\nSunyi. Lalu satu per satu bayangan menoleh. Perempuan berkendi mulai menangis tanpa suara, dan setiap air matanya menetes menjadi riak cahaya kecil. Satu riak, satu nama. Kau tak mendengarnya, tetapi Sang Kodeks mencatat semuanya, terbata-bata seperti orang membaca surat lama.\n\n@kodeks: \"Dipanggil adalah hadiah terbesar bagi yang dilupakan,\" katanya. \"Satu halaman kembali.\"\n\nPara bayangan menghilang satu per satu, tersenyum.",
         "choices": [
             {
                 "text": "Kembali ke jalan setapak",
@@ -302,7 +302,7 @@
     {
         "id": "PW_0016",
         "title": "Candi Para Bangsawan",
-        "description": "Teras berundak yang luas dan rapi, dari andesit yang dipotong halus. Di sinilah para bangsawan Wilwatikta naik pada hari-hari besar, berkain terbaik, membawa persembahan terbaik. Batu-batunya masih mengilap di tempat banyak lutut pernah bersimpuh.\n\nTetapi tempat ini tak kosong. Di teras tertinggi, seorang lelaki bersorban putih berdiri membelakangimu, tegak dan tak bergerak, begitu mewah pakaiannya sehingga kau yakin ia bukan makhluk hidup.\n\n\"Tamu,\" katanya tanpa berbalik, suaranya bergema dari dua arah. \"Datang tanpa salam, tanpa gelar, tanpa persembahan. Siapa kau?\"",
+        "description": "Teras berundak yang luas dan rapi, dari andesit yang dipotong halus. Di sinilah para bangsawan Wilwatikta naik pada hari-hari besar, berkain terbaik, membawa persembahan terbaik. Batu-batunya masih mengilap di tempat banyak lutut pernah bersimpuh.\n\nTetapi tempat ini tak kosong. Di teras tertinggi, seorang lelaki bersorban putih berdiri membelakangimu, tegak dan tak bergerak, begitu mewah pakaiannya sehingga kau yakin ia bukan makhluk hidup.\n\n@bangsawan: \"Tamu,\" katanya tanpa berbalik, suaranya bergema dari dua arah. \"Datang tanpa salam, tanpa gelar, tanpa persembahan. Siapa kau?\"",
         "choices": [
             {
                 "text": "Memberi hormat dengan santun dan menyebut namamu",
@@ -740,7 +740,7 @@
     {
         "id": "PW_0040",
         "title": "Seorang Prajurit Tertinggal",
-        "description": "Setelah yang lain lenyap, satu prajurit muda masih berdiri di sudut teras, menggenggam tombaknya terlalu erat. Ia tidak lupa. Ia takut.\n\n{skill} membuatmu mendengar apa yang tak diucapkannya: ia tak mau pergi sebelum ada yang menggantikannya berjaga. {skill2} mengikat kata-katamu menjadi janji. Kau berjanji menyampaikan namanya kepada serikat.\n\n\"Namaku Jaya,\" bisiknya. Ia memudar, lega. Kau menulis nama itu dengan arang di sisi kartu serikatmu.",
+        "description": "Setelah yang lain lenyap, satu prajurit muda masih berdiri di sudut teras, menggenggam tombaknya terlalu erat. Ia tidak lupa. Ia takut.\n\n{skill} membuatmu mendengar apa yang tak diucapkannya: ia tak mau pergi sebelum ada yang menggantikannya berjaga. {skill2} mengikat kata-katamu menjadi janji. Kau berjanji menyampaikan namanya kepada serikat.\n\n@jaya: \"Namaku Jaya,\" bisiknya. Ia memudar, lega. Kau menulis nama itu dengan arang di sisi kartu serikatmu.",
         "choices": [
             {
                 "text": "Kembali ke jalan",
@@ -754,7 +754,7 @@
     {
         "id": "PW_0041",
         "title": "Gajah yang Berpaling",
-        "description": "Candi Gajah bertengger di punggung bukit yang bundar. Dari sini kau mengerti kenapa bukit itu dinamai gajah: sebuah kepala batu besar tersembunyi di bawah lumut, bagian yang tampaknya sengaja dipahat menyerupai belalai.\n\nSeorang tua duduk di sebelahnya dengan punggung bersandar, menatap jauh ke arah lain. Berpaling, seperti bukit itu sendiri.\n\n\"Gajah berpaling,\" katanya tanpa menoleh, \"karena ia sudah terlalu lama melihat. Kadang yang paling bijak adalah tidak menatap, supaya kita tak dikuasai apa yang kita lihat.\"",
+        "description": "Candi Gajah bertengger di punggung bukit yang bundar. Dari sini kau mengerti kenapa bukit itu dinamai gajah: sebuah kepala batu besar tersembunyi di bawah lumut, bagian yang tampaknya sengaja dipahat menyerupai belalai.\n\nSeorang tua duduk di sebelahnya dengan punggung bersandar, menatap jauh ke arah lain. Berpaling, seperti bukit itu sendiri.\n\n@penjaga_gajah: \"Gajah berpaling,\" katanya tanpa menoleh, \"karena ia sudah terlalu lama melihat. Kadang yang paling bijak adalah tidak menatap, supaya kita tak dikuasai apa yang kita lihat.\"",
         "choices": [
             {
                 "text": "Duduk di sampingnya dan ikut memandang ke arah yang sama",
@@ -765,7 +765,7 @@
     {
         "id": "PW_0042",
         "title": "Yang Dilihat Gajah",
-        "description": "Kau duduk dan ikut memandang ke arah yang ia pandang: lembah luas di sisi lain, kosong, ditelan kabut. Lama kalian diam.\n\n\"Namaku sudah hilang,\" kata orang tua itu pelan. \"Tetapi aku masih ingat tugasku: menunggu pendaki yang cukup tenang untuk bertanya.\" Akhirnya ia menoleh. \"Pertanyaannya sederhana. Mengapa kau mau mengembalikan nama gunung ini?\"\n\nKau berpikir sebelum menjawab: demi imbalan nama, demi Sang Kodeks, demi Aruna, demi kawan-kawan di Bukit Abu. Demi dirimu sendiri.\n\n@player: \"Karena yang dilupakan juga manusia,\" katamu akhirnya.\n\nOrang tua itu tersenyum, dan dalam sekejap ia menjadi bagian dari bukit: lumut, batu, dan angin. Kau tidak sedih. Ia pulang.",
+        "description": "Kau duduk dan ikut memandang ke arah yang ia pandang: lembah luas di sisi lain, kosong, ditelan kabut. Lama kalian diam.\n\n@penjaga_gajah: \"Namaku sudah hilang,\" kata orang tua itu pelan. \"Tetapi aku masih ingat tugasku: menunggu pendaki yang cukup tenang untuk bertanya.\" Akhirnya ia menoleh. \"Pertanyaannya sederhana. Mengapa kau mau mengembalikan nama gunung ini?\"\n\nKau berpikir sebelum menjawab: demi imbalan nama, demi Sang Kodeks, demi Aruna, demi kawan-kawan di Bukit Abu. Demi dirimu sendiri.\n\n@player: \"Karena yang dilupakan juga manusia,\" katamu akhirnya.\n\nOrang tua itu tersenyum, dan dalam sekejap ia menjadi bagian dari bukit: lumut, batu, dan angin. Kau tidak sedih. Ia pulang.",
         "choices": [
             {
                 "text": "Melanjutkan perjalanan",
@@ -805,7 +805,7 @@
     {
         "id": "PW_0045",
         "title": "Bayang yang Berjalan Sendiri",
-        "description": "Di layar, bayanganmu menempuh jalan yang sunyi: kuat, dingin, tak tersentuh. Lalu sang dalang menggerakkan bayangan lain di tepi jalan: tiga sosok yang menunggu di tempat jauh, lalu menunduk lesu.\n\n\"Sendiri itu pilihan yang sah,\" kata sang dalang dari balik layar. \"Tetapi mereka yang kau tinggalkan tak ikut memilih.\"\n\nKau terdiam. Pisau Gandar, jamu Wulan, bait kidung Darpa di sakumu terasa berat. Bayangan di layar memudar. Sang dalang menyelipkan sebuah wayang kecil ke tanganmu: boneka kulit sebesar telapak, hanya satu sosok, sendirian.\n\n\"Satu halaman lagi.\"",
+        "description": "Di layar, bayanganmu menempuh jalan yang sunyi: kuat, dingin, tak tersentuh. Lalu sang dalang menggerakkan bayangan lain di tepi jalan: tiga sosok yang menunggu di tempat jauh, lalu menunduk lesu.\n\n@dalang: \"Sendiri itu pilihan yang sah,\" kata sang dalang dari balik layar. \"Tetapi mereka yang kau tinggalkan tak ikut memilih.\"\n\nKau terdiam. Pisau Gandar, jamu Wulan, bait kidung Darpa di sakumu terasa berat. Bayangan di layar memudar. Sang dalang menyelipkan sebuah wayang kecil ke tanganmu: boneka kulit sebesar telapak, hanya satu sosok, sendirian.\n\n@dalang: \"Satu halaman lagi.\"",
         "choices": [
             {
                 "text": "Melanjutkan perjalanan",
@@ -820,7 +820,7 @@
     {
         "id": "PW_0046",
         "title": "Bayang yang Berjalan Beramai-ramai",
-        "description": "Di layar, jalanmu ramai: banyak sosok bergabung satu demi satu, berbeda bentuk, berbeda tinggi, berbeda cara melangkah. Tiga sosok yang sudah kau kenal berdiri paling dekat. Ada yang berpisah, ada yang jatuh, ada yang kembali.\n\n\"Ramai itu berat,\" kata sang dalang. \"Tetapi di sana kisahmu menjadi lebih panjang dari umurmu.\"\n\nKau tersenyum. Sebuah wayang kecil diselipkan ke tanganmu: boneka kulit sebesar telapak, sosok dengan tangan terulur.\n\n\"Satu halaman lagi. Yang ini akan kau butuhkan.\"",
+        "description": "Di layar, jalanmu ramai: banyak sosok bergabung satu demi satu, berbeda bentuk, berbeda tinggi, berbeda cara melangkah. Tiga sosok yang sudah kau kenal berdiri paling dekat. Ada yang berpisah, ada yang jatuh, ada yang kembali.\n\n@dalang: \"Ramai itu berat,\" kata sang dalang. \"Tetapi di sana kisahmu menjadi lebih panjang dari umurmu.\"\n\nKau tersenyum. Sebuah wayang kecil diselipkan ke tanganmu: boneka kulit sebesar telapak, sosok dengan tangan terulur.\n\n@dalang: \"Satu halaman lagi. Yang ini akan kau butuhkan.\"",
         "choices": [
             {
                 "text": "Melanjutkan perjalanan",
@@ -835,7 +835,7 @@
     {
         "id": "PW_0047",
         "title": "Jalan ke Puncak",
-        "description": "Kini tak ada lagi punden. Hanya jalan menanjak yang makin curam, dan kabut yang makin tebal sampai kau harus meraba batu untuk tahu di mana berpijak. Napasmu berat. Udara dingin sekali.\n\nBeberapa kali kau hampir tergelincir. Beberapa kali kau mendengar bisikan: \"Kembalilah. Tak perlu naik. Tak ada yang tahu kau berhenti.\" Tetapi di dadamu, kristal berdenyut, dan untuk pertama kalinya sejak Bukit Abu, Aruna terbangun sepenuhnya.\n\n\"Aku memang tertidur,\" katanya, \"tetapi aku masih ingat caranya terbang. Naiklah, {name}. Aku di sini.\"\n\nKau naik.",
+        "description": "Kini tak ada lagi punden. Hanya jalan menanjak yang makin curam, dan kabut yang makin tebal sampai kau harus meraba batu untuk tahu di mana berpijak. Napasmu berat. Udara dingin sekali.\n\nBeberapa kali kau hampir tergelincir. Beberapa kali kau mendengar bisikan: \"Kembalilah. Tak perlu naik. Tak ada yang tahu kau berhenti.\" Tetapi di dadamu, kristal berdenyut, dan untuk pertama kalinya sejak Bukit Abu, Aruna terbangun sepenuhnya.\n\n@aruna: \"Aku memang tertidur,\" katanya, \"tetapi aku masih ingat caranya terbang. Naiklah, {name}. Aku di sini.\"\n\nKau naik.",
         "choices": [
             {
                 "text": "Terus mendaki",
@@ -860,7 +860,7 @@
         "title": "Sosok Tanpa Nama",
         "mood": "void",
         "cinematic": true,
-        "description": "Di puncak berdiri sosok yang serupa gunung itu sendiri: samar, tinggi, terbentuk dari kabut dan batu, tanpa wajah. Ia tidak menyerang. Ia menatapmu, dan suaranya, kalau itu suara, terasa datang dari bawah kakimu.\n\n\"Aku yang tak memiliki nama,\" katanya. \"Aku paku yang menahan pulau ini dari guncangan. Kabut mengambil namaku. Tanpa nama, aku akan terlepas. Dan bila aku terlepas, tanah akan berguncang lagi, seperti dahulu kala.\"\n\nIa mendekat. \"Pendatang. Kau sudah berjalan di tubuhku. Kau sudah menyentuh halaman-halamanku. Katakan: siapakah aku?\"",
+        "description": "Di puncak berdiri sosok yang serupa gunung itu sendiri: samar, tinggi, terbentuk dari kabut dan batu, tanpa wajah. Ia tidak menyerang. Ia menatapmu, dan suaranya, kalau itu suara, terasa datang dari bawah kakimu.\n\n@pawitra: \"Aku yang tak memiliki nama,\" katanya. \"Aku paku yang menahan pulau ini dari guncangan. Kabut mengambil namaku. Tanpa nama, aku akan terlepas. Dan bila aku terlepas, tanah akan berguncang lagi, seperti dahulu kala.\"\n\nIa mendekat. \"Pendatang. Kau sudah berjalan di tubuhku. Kau sudah menyentuh halaman-halamanku. Katakan: siapakah aku?\"",
         "choices": [
             {
                 "text": "Menyebut namamu sendiri lebih dulu, sebagai jangkar",
@@ -880,7 +880,7 @@
         "id": "PW_0050",
         "title": "Jangkar Terlebih Dahulu",
         "mood": "void",
-        "description": "@player: \"{name},\" katamu, jelas dan tanpa ragu. \"Namaku {name}. Aku berdiri di sini, dan aku ada. Karena aku ada, aku bisa menyebut yang lain.\"\n\nSosok itu bergetar, seperti orang yang mendengar sepatah kata dari bahasa ibunya setelah bertahun-tahun.\n\n\"Jangkar,\" katanya. \"Nama adalah paku yang pertama.\"\n\nDi dadamu, Sang Kodeks membacakan halaman-halaman yang terkumpul satu per satu, dan satu kata terbentuk di lidahmu, kata yang sudah kau dengar bergema di antara dua altar.",
+        "description": "@player: \"{name},\" katamu, jelas dan tanpa ragu. \"Namaku {name}. Aku berdiri di sini, dan aku ada. Karena aku ada, aku bisa menyebut yang lain.\"\n\nSosok itu bergetar, seperti orang yang mendengar sepatah kata dari bahasa ibunya setelah bertahun-tahun.\n\n@pawitra: \"Jangkar,\" katanya. \"Nama adalah paku yang pertama.\"\n\nDi dadamu, Sang Kodeks membacakan halaman-halaman yang terkumpul satu per satu, dan satu kata terbentuk di lidahmu, kata yang sudah kau dengar bergema di antara dua altar.",
         "choices": [
             {
                 "text": "Mengucapkan nama itu",

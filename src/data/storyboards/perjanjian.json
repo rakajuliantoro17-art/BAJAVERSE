@@ -17,7 +17,7 @@
         "title": "Laras",
         "mood": "void",
         "cinematic": true,
-        "description": "Kau memotong tali rotan di kakinya. Gadis itu menatapmu dengan mata lebar, lalu berbicara cepat dalam bahasa yang tak pernah kau dengar, dan kau mengerti setiap katanya.\n\nIni gunanya Aksara Sejuta Lidah. Satu-satunya pemberian Sang Dewi ternyata berguna juga.\n\n\"Namaku Laras, dari kaum Danawa di Bukit Abu,\" katanya, terisak. \"Mereka mengikatku di sini. Kami harus mempersembahkan satu anak setiap purnama kepada Naga Aruna, supaya kabut tidak memakan desa kami.\"\n\n\"Aruna,\" bisik Sang Kodeks, lirih. \"Sang Penjaga Langit yang kau lihat dari atas tembok.\"\n\n\"Antar aku ke desamu,\" katamu. \"Aku ingin bicara dengan naga itu.\"",
+        "description": "Kau memotong tali rotan di kakinya. Gadis itu menatapmu dengan mata lebar, lalu berbicara cepat dalam bahasa yang tak pernah kau dengar, dan kau mengerti setiap katanya.\n\nIni gunanya Aksara Sejuta Lidah. Satu-satunya pemberian Sang Dewi ternyata berguna juga.\n\n@laras: \"Namaku Laras, dari kaum Danawa di Bukit Abu,\" katanya, terisak. \"Mereka mengikatku di sini. Kami harus mempersembahkan satu anak setiap purnama kepada Naga Aruna, supaya kabut tidak memakan desa kami.\"\n\n@kodeks: \"Aruna,\" bisik Sang Kodeks, lirih. \"Sang Penjaga Langit yang kau lihat dari atas tembok.\"\n\n@player: \"Antar aku ke desamu,\" katamu. \"Aku ingin bicara dengan naga itu.\"",
         "choices": [
             {
                 "text": "Ikuti Laras menembus kabut",
@@ -30,7 +30,7 @@
         "title": "Kabut yang Berbicara",
         "mood": "void",
         "cinematic": true,
-        "description": "Kabut menebal di tengah jalan, lalu berubah.\n\nKau mencium aroma masakan yang kau kenal. Dinding kamar lamamu muncul di antara batu hitam, lengkap dengan lampu meja yang selalu lupa kau matikan. Seseorang memanggilmu dengan nama dari dunia yang lama, dan suaranya begitu rindu.\n\nLaras menarik ujung bajumu, ketakutan. Ia tidak melihat apa-apa selain kabut. Ilusi itu hanya untukmu.\n\n\"Nama adalah jangkar,\" bisik Sang Kodeks, samar tetapi hadir.\n\nKau menggenggam tangan Laras dan mengucapkan namamu keras-keras.\n\n\"{name}!\"\n\nIlusi itu retak seperti kaca. Dan di baliknya, sepasang mata emas sebesar pintu gerbang membuka.",
+        "description": "Kabut menebal di tengah jalan, lalu berubah.\n\nKau mencium aroma masakan yang kau kenal. Dinding kamar lamamu muncul di antara batu hitam, lengkap dengan lampu meja yang selalu lupa kau matikan. Seseorang memanggilmu dengan nama dari dunia yang lama, dan suaranya begitu rindu.\n\nLaras menarik ujung bajumu, ketakutan. Ia tidak melihat apa-apa selain kabut. Ilusi itu hanya untukmu.\n\n@kodeks: \"Nama adalah jangkar,\" bisik Sang Kodeks, samar tetapi hadir.\n\nKau menggenggam tangan Laras dan mengucapkan namamu keras-keras.\n\n@player: \"{name}!\"\n\nIlusi itu retak seperti kaca. Dan di baliknya, sepasang mata emas sebesar pintu gerbang membuka.",
         "choices": [
             {
                 "text": "Tatap mata itu",
@@ -43,7 +43,7 @@
         "title": "Sang Penjaga Langit",
         "mood": "void",
         "cinematic": true,
-        "description": "Naga itu bersisik merah, bermahkota emas, sama seperti yang kau lihat membelah awan dari atas tembok kota. Hanya saja sisiknya kini kusam dan sorot matanya letih.\n\n\"Seratus tahun lamanya aku bertahan,\" katanya, suaranya gemuruh yang pelan. \"Setiap kenangan yang kumakan memperlambat Lupa. Para Danawa memberiku anak-anak mereka karena kuminta. Aku malu, tetapi aku takut.\"\n\nIa mendekatkan wajahnya padamu. \"Namun kenanganmu tidak berbau kabut. Kenangan dari dunia yang jauh, dan aku ingin menyimpannya. Bukan memakannya. Berbagilah denganku, pendatang, dan aku akan mengingat bersamamu. Ketika aku lupa, ingatkan aku. Ketika kau goyah, apiku adalah milikmu.\"\n\nDi dadamu, kristal berdenyut menunggu jawaban.",
+        "description": "Naga itu bersisik merah, bermahkota emas, sama seperti yang kau lihat membelah awan dari atas tembok kota. Hanya saja sisiknya kini kusam dan sorot matanya letih.\n\n@aruna: \"Seratus tahun lamanya aku bertahan,\" katanya, suaranya gemuruh yang pelan. \"Setiap kenangan yang kumakan memperlambat Lupa. Para Danawa memberiku anak-anak mereka karena kuminta. Aku malu, tetapi aku takut.\"\n\nIa mendekatkan wajahnya padamu. \"Namun kenanganmu tidak berbau kabut. Kenangan dari dunia yang jauh, dan aku ingin menyimpannya. Bukan memakannya. Berbagilah denganku, pendatang, dan aku akan mengingat bersamamu. Ketika aku lupa, ingatkan aku. Ketika kau goyah, apiku adalah milikmu.\"\n\nDi dadamu, kristal berdenyut menunggu jawaban.",
         "choices": [
             {
                 "text": "Terima ikatan itu",
@@ -67,7 +67,7 @@
         "title": "Ikatan",
         "mood": "void",
         "cinematic": true,
-        "description": "Naga itu terdiam sangat lama. Kemudian ia menunduk, dan mahkota emasnya menyentuh tanah di hadapanmu.\n\n\"Baik.\"\n\nTubuh raksasanya mengurai menjadi ribuan serpihan cahaya merah, mengalir ke dadamu, dan meresap ke dalam kristal. Hangat. Berat. Seperti menerima janji yang sangat tua.\n\n\"Aku tidur dulu,\" bisik suara Aruna dari dalam dirimu, jauh lebih kecil dari sebelumnya. \"Jangan lupa memanggilku.\"\n\nLaras menangis dan tertawa sekaligus. Kabut di sekeliling kalian menipis untuk pertama kalinya setelah seratus tahun.",
+        "description": "Naga itu terdiam sangat lama. Kemudian ia menunduk, dan mahkota emasnya menyentuh tanah di hadapanmu.\n\n@aruna: \"Baik.\"\n\nTubuh raksasanya mengurai menjadi ribuan serpihan cahaya merah, mengalir ke dadamu, dan meresap ke dalam kristal. Hangat. Berat. Seperti menerima janji yang sangat tua.\n\n@aruna: \"Aku tidur dulu,\" bisik suara Aruna dari dalam dirimu, jauh lebih kecil dari sebelumnya. \"Jangan lupa memanggilku.\"\n\nLaras menangis dan tertawa sekaligus. Kabut di sekeliling kalian menipis untuk pertama kalinya setelah seratus tahun.",
         "choices": [
             {
                 "text": "Antar Laras pulang ke Bukit Abu",
@@ -80,7 +80,7 @@
         "title": "Pelahap Nama",
         "mood": "void",
         "cinematic": true,
-        "description": "Desa Bukit Abu menyambut kalian dengan tangis dan sorak. Namun sorak itu belum selesai ketika langit menggelap.\n\nDari kabut yang menipis merayap sesuatu yang jauh lebih tua dari Aruna: laba-laba hitam sebesar bukit, delapan kakinya menapak tanpa suara. Di mana ia melangkah, pondok-pondok lenyap, bukan runtuh, melainkan seolah tak pernah ada.\n\n\"Pelahap Nama,\" bisik Sang Kodeks, gemetar. \"Kabut Lupa yang telah berwujud.\"\n\nKau berdiri di depan Laras dan seluruh desa, mengangkat tangan, dan memanggil {skill} tanpa ragu. {skillDesc}\n\nTubuh laba-laba itu retak, pecah, lalu menyambung kembali. Kabut Lupa tak bisa dibunuh, hanya ditunda. Lututmu menyentuh tanah. Pandanganmu menyempit.\n\nDi ujung kesadaran, Laras berteriak, dan yang ia teriakkan adalah namamu. Suara itu menahanmu, cukup lama. Kabut mundur. Lalu gelap.",
+        "description": "Desa Bukit Abu menyambut kalian dengan tangis dan sorak. Namun sorak itu belum selesai ketika langit menggelap.\n\nDari kabut yang menipis merayap sesuatu yang jauh lebih tua dari Aruna: laba-laba hitam sebesar bukit, delapan kakinya menapak tanpa suara. Di mana ia melangkah, pondok-pondok lenyap, bukan runtuh, melainkan seolah tak pernah ada.\n\n@kodeks: \"Pelahap Nama,\" bisik Sang Kodeks, gemetar. \"Kabut Lupa yang telah berwujud.\"\n\nKau berdiri di depan Laras dan seluruh desa, mengangkat tangan, dan memanggil {skill} tanpa ragu. {skillDesc}\n\nTubuh laba-laba itu retak, pecah, lalu menyambung kembali. Kabut Lupa tak bisa dibunuh, hanya ditunda. Lututmu menyentuh tanah. Pandanganmu menyempit.\n\nDi ujung kesadaran, Laras berteriak, dan yang ia teriakkan adalah namamu. Suara itu menahanmu, cukup lama. Kabut mundur. Lalu gelap.",
         "choices": [
             {
                 "text": "Tenggelam dalam gelap",
@@ -92,7 +92,7 @@
         "id": "PJ_0007",
         "title": "Pagi di Bukit Abu",
         "cinematic": true,
-        "description": "Kau terbangun dengan pipi menempel pada lantai anyaman, di bawah atap ilalang yang bocor. Bau asap dan getah pinus. Pondok Danawa, dua kali lebih besar dari pondok manusia.\n\nLaras duduk bersila di sampingmu. \"Tiga hari kau tidur,\" katanya. \"Namamu menahan kabut itu, {name}. Separuh desa kami tetap ada karena itu.\"\n\nSeparuh lagi tidak. Di luar, di tempat sepuluh pondok semestinya berdiri, hanya ada tanah rata, dan tak seorang pun ingat pernah ada rumah di sana, kecuali Laras, yang diam-diam menghitungnya.\n\n\"Desa ini harus dibangun kembali,\" bisik Aruna dari dalam kristal, mengantuk. \"Bukan dengan batu, melainkan dengan orang-orang yang bersedia saling mengingat.\"\n\nLaras menunjuk ke luar. \"Ada tiga orang yang tak mau pergi. Temuilah mereka.\"",
+        "description": "Kau terbangun dengan pipi menempel pada lantai anyaman, di bawah atap ilalang yang bocor. Bau asap dan getah pinus. Pondok Danawa, dua kali lebih besar dari pondok manusia.\n\nLaras duduk bersila di sampingmu. \"Tiga hari kau tidur,\" katanya. \"Namamu menahan kabut itu, {name}. Separuh desa kami tetap ada karena itu.\"\n\nSeparuh lagi tidak. Di luar, di tempat sepuluh pondok semestinya berdiri, hanya ada tanah rata, dan tak seorang pun ingat pernah ada rumah di sana, kecuali Laras, yang diam-diam menghitungnya.\n\n@aruna: \"Desa ini harus dibangun kembali,\" bisik Aruna dari dalam kristal, mengantuk. \"Bukan dengan batu, melainkan dengan orang-orang yang bersedia saling mengingat.\"\n\nLaras menunjuk ke luar. \"Ada tiga orang yang tak mau pergi. Temuilah mereka.\"",
         "choices": [
             {
                 "text": "Keluar menemui mereka",
