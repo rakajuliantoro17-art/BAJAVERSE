@@ -118,7 +118,7 @@
                     "jolo_done": true,
                     "path_hormat": true
                 },
-                "target": "PW_0003"
+                "target": "PW_0056"
             }
         ]
     },
@@ -133,7 +133,7 @@
                     "jolo_done": true,
                     "path_panggil": true
                 },
-                "target": "PW_0003"
+                "target": "PW_0056"
             }
         ]
     },
@@ -158,7 +158,7 @@
                 "setFlags": {
                     "bayi_done": true
                 },
-                "target": "PW_0003"
+                "target": "PW_0057"
             }
         ]
     },
@@ -688,7 +688,7 @@
         "choices": [
             {
                 "text": "Menghampiri barisan itu",
-                "target": "PW_0037"
+                "target": "PW_0058"
             }
         ]
     },
@@ -758,7 +758,7 @@
         "choices": [
             {
                 "text": "Duduk di sampingnya dan ikut memandang ke arah yang sama",
-                "target": "PW_0042"
+                "target": "PW_0059"
             }
         ]
     },
@@ -783,7 +783,7 @@
         "choices": [
             {
                 "text": "Duduk menonton",
-                "target": "PW_0044"
+                "target": "PW_0060"
             }
         ]
     },
@@ -943,10 +943,60 @@
         "title": "Laporan di Balai Dharmayatra",
         "cinematic": true,
         "description": "Ratih mengangkat kepala saat kau melangkah masuk balai, dan untuk pertama kalinya ia lupa menyembunyikan lega. \"Kau kembali.\" Ia menulis cepat. \"Kau satu-satunya yang kembali.\"\n\nNyi Candrawati sudah berdiri di belakangmu, tongkatnya mengetuk lantai. Kau menaruh peta kulit di meja, dan di tempat lubang itu, tinta mengalir kembali dari bawah, membentuk satu puncak, delapan bukit, dan satu nama.\n\n@candrawati: \"Pawitra,\" bisik Nyi Candrawati. Matanya basah. \"Aku ingat. Aku ingat semuanya.\"\n\nKartu serikatmu diambil. Ratih mencoret kata \"Tunas\" dan menulis kata baru: \"Dahan\". Kata \"Tunggal\" tidak ia coret. \"Itu milikmu,\" katanya, \"sampai kau ubah sendiri.\"\n\nDi atas meja, peta kini menunjukkan enam bukit tanpa nama dan satu lingkaran merah di salah satunya. Bukit Abu.\n\nKabut belum sepenuhnya kalah. Tetapi hari ini, satu gunung kembali dipaku.",
+        "choices": []
+    },
+    {
+        "id": "PW_0056",
+        "title": "Angka di Dinding Kolam",
+        "description": "Sebelum pergi, kau menemukan sesuatu yang tadi luput: di dinding batu belakang pemandian, di balik tirai pakis yang basah, terpahat deretan angka. Pahatannya dalam dan rapi, dan lumutnya hanya menyentuh tepi.\n\n@kodeks: \"Sembilan, tujuh, tujuh,\" bacanya pelan, seperti mengeja kata dari bahasa yang hampir mati. \"Tarikh dalam hitungan lama. Pemandian ini dibangun lebih dulu daripada hampir semua yang akan kau lihat di gunung ini. Ia gerbang pertama, dan penanda waktunya dipahat di tempat yang paling sering disentuh air.\"\n\nKau menyentuh angka-angka itu. Dingin, licin, dan anehnya terasa berdenyut. Setiap kali pancuran jatuh, air menyiram deretan angka itu sebentar, lalu menetes lagi ke kolam, seolah-olah waktu sendiri sedang dimandikan.\n\n@kodeks: \"Catatlah,\" pintanya. \"Kalau kelak ada yang bertanya sejak kapan gunung ini dijaga, jawabannya ada di sini.\"\n\nKau menyalin angka itu di punggung kartu serikatmu, di sebelah arang yang lain.",
         "choices": [
             {
-                "text": "Menikmati malam di Wilwatikta",
-                "target": "JB_0001"
+                "text": "Kembali ke jalan setapak",
+                "target": "PW_0003"
+            }
+        ]
+    },
+    {
+        "id": "PW_0057",
+        "title": "Sebelum Fajar di Punden",
+        "description": "Langit di timur baru mulai kelabu ketika kau menyadari kau tidak sendirian di teras itu. Di teras paling atas duduk satu sosok pertapa muda berkain putih, bersila, mata terpejam, napasnya begitu pelan sampai nyaris tak terdengar. Ia bukan hidup dan bukan hantu; ia bayang seseorang yang dulu duduk di sini untuk belajar diam.\n\nKau tak mengganggunya. Kau menirunya: punggung tegak, tangan di pangkuan, napas dihitung. Dan kau mengerti sesuatu tentang tempat ini. Pendeta muda di sini tidak dilarang naik karena dianggap kurang pantas. Mereka disuruh menunggu supaya tubuh dan pikirannya tiba di gunung ini pada waktu yang sama.\n\n@kodeks: \"Banyak orang mendaki dengan tubuh saja,\" katanya lirih. \"Pikirannya tertinggal di bawah. Di sini mereka diajari menunggu sampai keduanya tiba.\"\n\nSaat cahaya pertama menyentuh batu, sosok pertapa itu membuka mata, mengangguk kecil padamu, dan memudar.",
+        "choices": [
+            {
+                "text": "Berkemas dan turun ke jalan",
+                "target": "PW_0003"
+            }
+        ]
+    },
+    {
+        "id": "PW_0058",
+        "title": "Penunggang Tanpa Senjata",
+        "description": "Sebelum mendekati barisan prajurit, kau menyusuri relief di dinding teras kedua. Pahatannya lebih jelas di sini: barisan orang berkuda, jubahnya berkibar, pelana berhias, kuda-kudanya melangkah panjang. Tetapi tak satu pun tangan mereka memegang tombak, busur, atau pedang. Telapak mereka terbuka ke depan, seperti menunjukkan bahwa mereka datang dengan damai.\n\nDi ujung relief, seorang penunggang menurunkan sesuatu dari pelana dan meletakkannya di tanah: sebilah keris. Di depannya, orang-orang berjongkok menerima salam, dan di belakang mereka, bukit-bukit digambarkan dengan garis lembut.\n\n@kodeks: \"Di tempat ini bahkan para penunggang kuda meninggalkan senjatanya di gerbang,\" katanya. \"Mereka tidak lemah. Mereka tahu bahwa kekuatan paling sulit ditunjukkan dengan tidak menggunakannya.\"\n\nKau menyentuh ukiran keris itu, kemudian pisau Gandar di pinggangmu. Dua benda yang sama-sama untuk memotong, dan kau tahu: ada waktunya meletakkan keduanya.",
+        "choices": [
+            {
+                "text": "Menghampiri barisan prajurit",
+                "target": "PW_0037"
+            }
+        ]
+    },
+    {
+        "id": "PW_0059",
+        "title": "Belalai yang Tersembunyi",
+        "description": "Sebelum duduk di sebelah orang tua itu, kau mengelilingi bukit sekali. Dari sisi barat, bentuknya sama sekali bukan bukit: kepala besar yang diam menunduk, belalai melengkung ke tanah, kuping lebar menjuntai ke kedua sisi. Hutan yang tumbuh di punggungnya adalah kulit hewan raksasa yang sedang tidur.\n\nDi ujung belalai batu itu, terselip sebuah ceruk kecil dengan arca gajah mungil, sebesar kepalan, hampir seluruhnya ditutupi lumut. Seseorang pernah menaruh sesajen kecil di depannya: tiga butir beras kering dan sehelai daun sirih.\n\n@kodeks: \"Gajah adalah penjaga ingatan di banyak kisah,\" katanya, \"karena ia tak pernah lupa. Pantas kabut tak berani merampok bukit ini sepenuhnya.\"\n\nKau menaruh satu butir kerikil di samping sesajen itu, sekadar tanda bahwa seseorang mampir. Lalu kau kembali ke arah orang tua yang menunggu.",
+        "choices": [
+            {
+                "text": "Menemui orang tua itu",
+                "target": "PW_0042"
+            }
+        ]
+    },
+    {
+        "id": "PW_0060",
+        "title": "Relief yang Pipih",
+        "description": "Sebelum duduk di depan layar, kau memperhatikan dinding teras. Reliefnya aneh di mata orang dari dunia lama: tokoh-tokohnya pipih, menyamping, dengan tangan panjang dan perhiasan rumit seperti wayang kulit yang dipaku ke batu. Ada raksasa bertaring, satria dengan mahkota tinggi, punakawan gemuk yang tampak sedang tertawa.\n\nSatu panel menarik perhatianmu: seorang resi duduk di sebuah teras seperti ini, menghadap lembah yang berkabut, dengan sebatang lampu di sisinya. Di bawah panel itu terpahat deretan aksara singkat.\n\n@kodeks: \"Tempat bertapa,\" bacanya. \"Jauh dari keramaian, menghadap yang luas. Bukan untuk melarikan diri dari dunia, melainkan untuk menjaga supaya dunia tidak lepas dari ingatan.\"\n\nKau menoleh ke layar kain di tengah teras. Lampu minyak di belakangnya berkedip, seakan menunggumu selesai membaca.",
+        "choices": [
+            {
+                "text": "Duduk menonton",
+                "target": "PW_0044"
             }
         ]
     }

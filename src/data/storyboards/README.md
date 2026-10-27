@@ -28,10 +28,11 @@ PR_0001 Kegelapan -> PR_0002 Terlahir Kembali -> PR_0003 (isi nama)
  -> SB_0001 (cerita gerbang; level 1 -> 2 saat pemain "Masuk ke kota" di SB_0002) -> SB_0006 "Masuk ke alun-alun"
  -> wilwatikta.json (WK_0001-0015, solo): alun-alun hub (3 petunjuk: pasar | dermaga | warung, plus candi mandala opsional)
       -> balai Dharmayatra, daftar sebagai petualang tunggal, ambil tugas Pawitra (flag quest_pawitra)
- -> pawitra.json (PW_0001-0055): 5 tahap, tiap tahap hub dengan flag *_done; pilihan keluar hanya muncul setelah semua tempat selesai
+ -> pawitra.json (PW_0001-0060; 75 adegan bersama wilwatikta.json): 5 tahap, tiap tahap hub dengan flag *_done; pilihan keluar hanya muncul setelah semua tempat selesai
       tahap 1 Kaki Barat (Jolotundo, Candi Bayi) -> level 3 | tahap 2 Lereng Barat (Putri, Pura, Gentong) -> level 4
       tahap 3 Barat Laut (Lurah, Kendalisodo) -> level 5 | tahap 4 Gajahmungkur (Kerajaan, Gajah, Wayang) -> level 6
       tahap 5 Puncak: tiga cara menyebut nama -> PW_0053 "Paku yang Tertanam" -> level 7 -> PW_0055 laporan (akhir bagian ini, belum ada pilihan lanjut)
+      PW_0056-0060 = adegan peninggalan tambahan (tarikh Jolotundo, fajar Candi Bayi, penunggang Kerajaan, belalai Gajah, relief Wayang); ID di akhir agar simpanan lama tetap valid
       satu adegan wawasan per role (ifRole), tampil opsional di tahap 1-4; satu role hanya melihat wawasannya sendiri
 ```
 

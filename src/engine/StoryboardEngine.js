@@ -6,7 +6,6 @@ const sources = [
     require("../data/storyboards/bukit-abu.json"),
     require("../data/storyboards/wilwatikta.json"),
     require("../data/storyboards/pawitra.json"),
-    require("../data/storyboards/jembatan.json"),
     require("../data/storyboards/main.json")
 ];
 
