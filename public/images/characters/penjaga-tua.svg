@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="480" viewBox="0 0 60 120" shape-rendering="crispEdges">
+<title>Penjaga Tua — sprite pixel-art BAJAVERSE</title>
+<!-- shadow --><ellipse cx="30" cy="114" rx="19" ry="4" fill="#10131b" opacity=".55"/>
+<!-- boots and legs --><path d="M18 85H28V106H22V112H10V108H16V97H18ZM33 85H42V101H47V108H39V104H33Z" fill="#3a3030"/><path d="M10 108H23V114H8V112ZM38 108H49V114H36V112Z" fill="#211e27"/>
+<!-- robe --><path d="M19 45H41L47 88H13Z" fill="#6b443c"/><path d="M19 45H29V88H13Z" fill="#89564a"/><path d="M30 47H39L43 85H30Z" fill="#49313a"/><path d="M17 58H43V63H17ZM15 76H45V80H15Z" fill="#c08b5c"/><rect x="27" y="51" width="6" height="34" fill="#d6b078"/>
+<!-- belt and pouch --><rect x="16" y="68" width="28" height="5" fill="#2d2930"/><rect x="36" y="69" width="6" height="9" fill="#b67c4c"/>
+<!-- arms --><path d="M18 49H12V67H17V73H22V66H19ZM41 49H47V65H43V72H38V65H41Z" fill="#795044"/><rect x="11" y="65" width="7" height="8" fill="#c28c69"/><rect x="42" y="64" width="7" height="8" fill="#c28c69"/>
+<!-- neck and head --><rect x="26" y="38" width="9" height="10" fill="#b77d62"/><path d="M20 22H40V36H36V41H25V37H20Z" fill="#c99372"/><path d="M19 23H24V36H20ZM36 23H41V35H37Z" fill="#805345"/><path d="M20 30H26V34H20ZM35 30H40V34H35Z" fill="#b77d62"/>
+<!-- hair and beard --><path d="M19 20H41V27H37V24H24V28H19Z" fill="#d2c2a4"/><rect x="18" y="24" width="4" height="10" fill="#d2c2a4"/><rect x="38" y="24" width="4" height="10" fill="#d2c2a4"/><path d="M23 34H37V39H34V44H27V40H23Z" fill="#e0d0b4"/><rect x="26" y="38" width="9" height="3" fill="#bba98f"/>
+<!-- eyes and brows --><rect x="23" y="28" width="5" height="2" fill="#382b31"/><rect x="33" y="28" width="5" height="2" fill="#382b31"/><rect x="24" y="30" width="3" height="2" fill="#f4d29a"/><rect x="34" y="30" width="3" height="2" fill="#f4d29a"/>
+<!-- head wrap and bronze clasp --><path d="M18 22V17H23V13H37V17H42V22H37V20H23V22Z" fill="#a77a4b"/><rect x="27" y="15" width="7" height="5" fill="#e9c37a"/><rect x="29" y="16" width="3" height="3" fill="#69d8e4"/>
+<!-- staff --><rect x="49" y="43" width="3" height="70" fill="#6b4937"/><rect x="47" y="40" width="7" height="5" fill="#d5a15d"/><rect x="49" y="36" width="3" height="4" fill="#6fe3ed"/><rect x="48" y="34" width="5" height="2" fill="#a4faff"/>
+<!-- highlights --><rect x="15" y="53" width="3" height="9" fill="#a76b58"/><rect x="39" y="51" width="3" height="8" fill="#9b6253"/><rect x="21" y="46" width="4" height="3" fill="#bd8c69"/>
+</svg>
