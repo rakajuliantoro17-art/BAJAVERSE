@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 320 180" shape-rendering="crispEdges">
+<title>Wilwatikta saat senja — latar pixel-art BAJAVERSE</title>
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#171d3b"/><stop offset=".55" stop-color="#78435a"/><stop offset="1" stop-color="#e39b65"/></linearGradient><linearGradient id="water" x2="0" y2="1"><stop stop-color="#3e8e9b"/><stop offset="1" stop-color="#142c49"/></linearGradient></defs>
+<rect width="320" height="180" fill="url(#sky)"/><rect x="0" y="72" width="320" height="2" fill="#f7c47c" opacity=".65"/>
+<circle cx="252" cy="35" r="13" fill="#ffd58a"/><rect x="239" y="35" width="26" height="3" fill="#f5a66d" opacity=".6"/>
+<!-- distant volcanic ridge --><path d="M0 88 24 67 39 78 64 49 79 67 98 55 121 82 143 61 165 80 187 56 210 77 234 58 254 78 279 63 320 89V115H0Z" fill="#352c49"/>
+<path d="M56 60 64 49 72 60 67 58 64 53 61 58Z" fill="#b7a2a5"/><path d="M180 67 187 56 194 67 190 64 187 60 184 64Z" fill="#c3a8a7"/>
+<!-- city silhouette --><path d="M0 104H320V146H0Z" fill="#29263b"/><g fill="#4d3546"><rect x="8" y="88" width="24" height="58"/><rect x="12" y="78" width="16" height="12"/><rect x="17" y="68" width="6" height="12"/><rect x="43" y="99" width="31" height="47"/><rect x="50" y="87" width="17" height="12"/><rect x="55" y="76" width="7" height="11"/><rect x="245" y="94" width="28" height="52"/><rect x="251" y="82" width="16" height="12"/><rect x="256" y="71" width="6" height="11"/><rect x="287" y="101" width="25" height="45"/></g>
+<!-- candi towers --><g fill="#9b5d58"><path d="M100 132V95H106V82H111V70H117V82H122V95H128V132Z"/><path d="M132 132V105H138V93H143V82H149V93H154V105H160V132Z"/><path d="M190 132V102H196V90H201V78H207V90H212V102H218V132Z"/></g><g fill="#e3a06a"><rect x="108" y="96" width="12" height="4"/><rect x="140" y="106" width="10" height="4"/><rect x="198" y="103" width="12" height="4"/></g>
+<!-- canal and stone bridges --><rect y="142" width="320" height="38" fill="url(#water)"/><path d="M0 149H320M0 160H320M0 172H320" stroke="#67b7b9" stroke-width="1" opacity=".55"/><path d="M22 142V151H75V142M229 142V151H281V142" fill="none" stroke="#c78b68" stroke-width="5"/><rect x="0" y="139" width="320" height="4" fill="#d6a077"/>
+<!-- foreground brick parapet --><rect y="174" width="320" height="6" fill="#342637"/><path d="M0 176H320M24 174V180M55 174V180M88 174V180M121 174V180M154 174V180M187 174V180M220 174V180M253 174V180M286 174V180" stroke="#7a4b4b" stroke-width="1"/>
+<!-- crystal lamps --><g><path d="M82 126l4-7 4 7-4 6Z" fill="#6fe9f4"/><path d="M82 126h8" stroke="#b6ffff"/><path d="M230 128l4-7 4 7-4 6Z" fill="#6fe9f4"/><path d="M230 128h8" stroke="#b6ffff"/></g>
+<rect width="320" height="180" fill="#10142b" opacity=".12"/>
+</svg>
