@@ -36,7 +36,7 @@ Folder: `public/images/characters/`
 { "id": "SB_0002", "characters": ["penjaga_tua"] }
 ```
 
-Gunakan PNG atau WebP dengan latar transparan, berdiri penuh, tinggi sekitar 600 px.
+Gunakan PNG, SVG, atau WebP dengan latar transparan, berdiri penuh. SVG pixel-art cocok untuk sprite bergaya retro dan dapat ditampilkan tanpa latar kotak.
 Nama file memakai huruf kecil dan tanda hubung, tanpa spasi.
 
 Nama file di data harus sama persis dengan file di folder, termasuk huruf besar-kecil
