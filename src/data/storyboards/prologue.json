@@ -9,7 +9,8 @@
                 "text": "Ikuti denyut itu",
                 "target": "PR_0002"
             }
-        ]
+        ],
+        "background": "/images/backgrounds/kegelapan-kristal.svg"
     },
     {
         "id": "PR_0002",
