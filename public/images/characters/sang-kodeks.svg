@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img" aria-labelledby="title desc" shape-rendering="crispEdges">
+<title id="title">Sang Kodeks</title><desc id="desc">Kitab hidup kuno bersampul biru gelap, bertepi emas dan kristal biru bercahaya.</desc>
+<defs><linearGradient id="cover" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#28617b"/><stop offset=".55" stop-color="#16314d"/><stop offset="1" stop-color="#09162a"/></linearGradient><linearGradient id="page"><stop stop-color="#f7e6b3"/><stop offset="1" stop-color="#b98a4d"/></linearGradient></defs>
+<ellipse cx="120" cy="264" rx="72" ry="12" fill="#2a9bd1" opacity=".24"/>
+<g transform="translate(120 142)">
+ <path d="M-94 -100 Q-49 -120 -7 -91 L-7 95 Q-52 72 -94 92Z" fill="url(#cover)" stroke="#d8ae60" stroke-width="7"/>
+ <path d="M7 -91 Q49 -120 94 -100 L94 92 Q52 72 7 95Z" fill="url(#cover)" stroke="#d8ae60" stroke-width="7"/>
+ <path d="M-78 -82 Q-45 -95 -20 -78 L-20 72 Q-48 59 -78 74Z" fill="url(#page)" stroke="#f6d98e" stroke-width="3"/>
+ <path d="M20 -78 Q45 -95 78 -82 L78 74 Q48 59 20 72Z" fill="url(#page)" stroke="#f6d98e" stroke-width="3"/>
+ <path d="M0 -92 V96" stroke="#e5bf70" stroke-width="10"/>
+ <g fill="#456a7d"><rect x="-67" y="-62" width="37" height="5"/><rect x="-67" y="-44" width="41" height="5"/><rect x="-67" y="-26" width="29" height="5"/><rect x="30" y="-62" width="37" height="5"/><rect x="26" y="-44" width="41" height="5"/><rect x="38" y="-26" width="29" height="5"/></g>
+ <path d="M0 -14 20 10 0 38 -20 10Z" fill="#31b9ed" stroke="#b8faff" stroke-width="4"/>
+ <path d="M0 -14 V38 L20 10Z" fill="#c8ffff"/>
+ <path d="M-84 -109 H-66 M66 -109 H84 M-84 102 H-66 M66 102 H84" stroke="#f5d27b" stroke-width="5"/>
+</g>
+<g fill="#8cefff"><rect x="32" y="55" width="7" height="7"/><rect x="198" y="72" width="5" height="5"/><rect x="51" y="229" width="5" height="5"/><rect x="184" y="217" width="7" height="7"/></g>
+</svg>
