@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc" shape-rendering="crispEdges">
+<title id="title">Nama Pertama — Mantra Kristal</title>
+<desc id="desc">Latar pixel art ruang gelap dengan kristal biru yang menyala di atas lingkaran aksara kuno, serpihan cahaya membentuk ruang kosong untuk nama pertama.</desc>
+<defs>
+ <linearGradient id="night" x2=".8" y2="1"><stop stop-color="#030610"/><stop offset=".55" stop-color="#091329"/><stop offset="1" stop-color="#17172c"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#a0f8ff" stop-opacity=".75"/><stop offset=".27" stop-color="#328fdf" stop-opacity=".34"/><stop offset="1" stop-color="#0a1630" stop-opacity="0"/></radialGradient>
+ <linearGradient id="crystal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#efffff"/><stop offset=".32" stop-color="#74efff"/><stop offset=".72" stop-color="#218bdb"/><stop offset="1" stop-color="#102d68"/></linearGradient>
+</defs>
+<rect width="960" height="540" fill="url(#night)"/>
+<ellipse cx="480" cy="236" rx="330" ry="265" fill="url(#halo)"/>
+<!-- Repeating pixel stars, matching the prior two scenes -->
+<g fill="#91eaff" opacity=".6">
+ <rect x="153" y="108" width="4" height="4"/><rect x="238" y="186" width="3" height="3"/><rect x="745" y="122" width="4" height="4"/><rect x="800" y="310" width="3" height="3"/><rect x="321" y="80" width="3" height="3"/><rect x="664" y="399" width="4" height="4"/><rect x="193" y="357" width="3" height="3"/><rect x="704" y="217" width="3" height="3"/>
+</g>
+<!-- Ancient name sigil -->
+<g fill="none" stroke="#4ccff2" stroke-width="3" opacity=".65">
+ <path d="M330 314h28v-10h22v-12h30v-12h140v12h30v12h22v10h28"/>
+ <path d="M350 330h42v10h32v10h112v-10h32v-10h42"/>
+ <path d="M385 357h38v9h30v9h54v-9h30v-9h38"/>
+ <path d="M400 398h160M420 414h120"/>
+</g>
+<g fill="#d0fbff" opacity=".85">
+ <rect x="351" y="302" width="7" height="7"/><rect x="602" y="302" width="7" height="7"/><rect x="392" y="333" width="6" height="6"/><rect x="563" y="333" width="6" height="6"/>
+</g>
+<!-- Crystal, deliberately lifted above the name area -->
+<g transform="translate(480 204)">
+ <path d="M0 -112 60 -38 42 45 0 82 -42 45 -60 -38Z" fill="#0b3c78" opacity=".45" transform="translate(0 9)"/>
+ <path d="M0 -112 60 -38 42 45 0 82 -42 45 -60 -38Z" fill="url(#crystal)" stroke="#b7fbff" stroke-width="4"/>
+ <path d="M0 -112 0 7 -42 45 -60 -38Z" fill="#b9fbff" opacity=".85"/>
+ <path d="M0 -112 60 -38 0 7Z" fill="#f0ffff" opacity=".85"/>
+ <path d="M0 7 42 45 0 82Z" fill="#0c4c9b"/>
+</g>
+<!-- A stable empty panel area for the actual name-entry UI -->
+<path d="M272 433h416v12h-24v10H296v-10h-24Z" fill="#07182c" stroke="#276fa5" stroke-width="2" opacity=".9"/>
+<g fill="#7ce9ff"><rect x="256" y="434" width="8" height="8"/><rect x="696" y="434" width="8" height="8"/></g>
+<g fill="#d6b66c"><rect x="276" y="468" width="24" height="4"/><rect x="660" y="468" width="24" height="4"/></g>
+<rect x="0" y="492" width="960" height="48" fill="#050914" opacity=".75"/>
+<rect x="0" y="0" width="960" height="540" fill="none" stroke="#121b35" stroke-width="12"/>
+</svg>
