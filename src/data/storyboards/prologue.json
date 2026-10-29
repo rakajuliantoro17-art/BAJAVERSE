@@ -22,6 +22,10 @@
                 "text": "Apa yang harus kulakukan?",
                 "target": "PR_0003"
             }
+        ],
+        "background": "/images/backgrounds/terlahir-kembali-kodeks.svg",
+        "characters": [
+            "kodeks"
         ]
     },
     {
