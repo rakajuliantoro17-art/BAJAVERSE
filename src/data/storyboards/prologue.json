@@ -34,7 +34,11 @@
         "title": "Nama Pertama",
         "mood": "void",
         "description": "Cahaya itu menunggu.\n\n@kodeks: \"Di sini, nama adalah mantra pertama. Hanya mereka yang bernama yang sanggup melawan Kabut Lupa, sebab nama adalah jangkar yang menahanmu agar tidak ikut terhapus.\"\n\n@kodeks: \"Ucapkan namamu, wahai pendatang.\"",
-        "next": "PR_0004"
+        "next": "PR_0004",
+        "background": "/images/backgrounds/nama-pertama-kristal.svg",
+        "characters": [
+            "kodeks"
+        ]
     },
     {
         "id": "PR_0004",
