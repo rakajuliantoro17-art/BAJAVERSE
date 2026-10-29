@@ -35,7 +35,7 @@
         "id": "PR_0004",
         "title": "Gema {name}",
         "description": "\"{name}.\"\n\nNama itu bergema ke seluruh kegelapan. Retakan cahaya merambat seperti petir di atas kaca, dan dunia pun pecah terbuka.\n\nKau berdiri di tepi tembok bata merah, jauh di atas sebuah kota. Menara-menara candi menjulang di antara jembatan batu dan kanal berair biru. Kristal berpendar di setiap sudut, dan di kejauhan, gunung api mengepulkan asap ke langit senja.\n\nInilah Wilwatikta. Inilah BAJAVERSE.",
-        "background": "/images/backgrounds/bajaverse-hero.jpg",
+        "background": "/images/backgrounds/wilwatikta-senja.svg",
         "choices": [
             {
                 "text": "Pandangi dunia ini",
@@ -47,7 +47,7 @@
         "id": "PR_0005",
         "title": "Bayangan di Langit",
         "description": "Sebuah bayangan raksasa melintas, dan seluruh kota membeku. Seekor naga bersisik merah dengan mahkota emas membelah awan, dan auman rendahnya mengguncang menara-menara.\n\n@kodeks: \"Itu Sang Penjaga Langit,\" bisik Sang Kodeks. \"Ia masih mengingat. Tetapi tidak semua yang mengingat berpihak padamu.\"\n\nSebuah kristal terlepas dari tebing dan melayang ke arahmu, berdenyut seirama dengan jantungmu.\n\n@kodeks: \"Kristal ini memilihmu, {name}. Ia menawarkan satu jalan. Pilihlah dengan hati-hati, sebab jalan itu akan menjadi caramu mengingat.\"",
-        "background": "/images/backgrounds/bajaverse-hero.jpg",
+        "background": "/images/backgrounds/wilwatikta-senja.svg",
         "choices": [
             {
                 "text": "Ulurkan tangan",
